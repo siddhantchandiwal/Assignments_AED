@@ -7,27 +7,43 @@ package Business;
 
 /**
  *
- * @author siddhant
+ * @author Siddhant
  */
 public class Resume {
     
     private String firstName;
     private String lastName;
-    private String streetln1;
-    private String streetln2;
+    private String contactNo;
+    private String emailId;
+    private String streetLn1;
+    private String streetLn2;
     private String city;
     private String zipCode;
     private String country;
-    private String affiliation;
-    private String careerObjectiveStatement;
-    private String degree1Name;
-    private String degree1Year;
-    private String degree2Name;
-    private String degree2Year;
-   
-    private String totalWorkExperienceInYears;
-     private String contactNo;
-    private String emailId;
+    private String affiliations;
+    private String careerObjective;
+    private String degreeName1;
+    private String degreeDate1;
+    private String gpa1;
+    private String degreeName2;
+    private String degreeDate2;
+    private String gpa2;
+    private String degreeName3;
+    private String degreeDate3;
+    private String gpa3;
+    private String workExperience;
+    private String programmingLang;
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+    
+    // Getters and Setters
 
     public String getFirstName() {
         return firstName;
@@ -45,20 +61,36 @@ public class Resume {
         this.lastName = lastName;
     }
 
-    public String getStreetln1() {
-        return streetln1;
+    public String getContactNo() {
+        return contactNo;
     }
 
-    public void setStreetln1(String streetln1) {
-        this.streetln1 = streetln1;
+    public void setContactNo(String contactNo) {
+        this.contactNo = contactNo;
     }
 
-    public String getStreetln2() {
-        return streetln2;
+    public String getEmailId() {
+        return emailId;
     }
 
-    public void setStreetln2(String streetln2) {
-        this.streetln2 = streetln2;
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    public String getStreetLn1() {
+        return streetLn1;
+    }
+
+    public void setStreetLn1(String streetLn1) {
+        this.streetLn1 = streetLn1;
+    }
+
+    public String getStreetLn2() {
+        return streetLn2;
+    }
+
+    public void setStreetLn2(String streetLn2) {
+        this.streetLn2 = streetLn2;
     }
 
     public String getCity() {
@@ -68,8 +100,8 @@ public class Resume {
     public void setCity(String city) {
         this.city = city;
     }
-    
-     public String getZipCode() {
+
+    public String getZipCode() {
         return zipCode;
     }
 
@@ -85,76 +117,109 @@ public class Resume {
         this.country = country;
     }
 
-    public String getAffiliation() {
-        return affiliation;
+    public String getAffiliations() {
+        return affiliations;
     }
 
-    public void setAffiliation(String affiliation) {
-        this.affiliation = affiliation;
+    public void setAffiliations(String affiliations) {
+        this.affiliations = affiliations;
     }
 
-    public String getCareerObjectiveStatement() {
-        return careerObjectiveStatement;
+    public String getCareerObjective() {
+        return careerObjective;
     }
 
-    public void setCareerObjectiveStatement(String careerObjectiveStatement) {
-        this.careerObjectiveStatement = careerObjectiveStatement;
+    public void setCareerObjective(String careerObjective) {
+        this.careerObjective = careerObjective;
     }
 
-    public String getDegree1Name() {
-        return degree1Name;
+    public String getDegreeName1() {
+        return degreeName1;
     }
 
-    public void setDegree1Name(String degree1Name) {
-        this.degree1Name = degree1Name;
+    public void setDegreeName1(String degreeName1) {
+        this.degreeName1 = degreeName1;
     }
 
-    public String getDegree1Year() {
-        return degree1Year;
+    public String getDegreeDate1() {
+        return degreeDate1;
     }
 
-    public void setDegree1Year(String degree1Year) {
-        this.degree1Year = degree1Year;
+    public void setDegreeDate1(String degreeDate1) {
+        this.degreeDate1 = degreeDate1;
     }
 
-    public String getDegree2Name() {
-        return degree2Name;
+    public String getGpa1() {
+        return gpa1;
     }
 
-    public void setDegree2Name(String degree2Name) {
-        this.degree2Name = degree2Name;
+    public void setGpa1(String gpa1) {
+        this.gpa1 = gpa1;
     }
 
-    public String getDegree2Year() {
-        return degree2Year;
+    public String getDegreeName2() {
+        return degreeName2;
     }
 
-    public void setDegree2Year(String degree2Year) {
-        this.degree2Year = degree2Year;
+    public void setDegreeName2(String degreeName2) {
+        this.degreeName2 = degreeName2;
     }
 
-    public String getContactNo() {
-        return contactNo;
+    public String getDegreeDate2() {
+        return degreeDate2;
     }
 
-    public void setContactNo(String contactNo) {
-        this.contactNo = contactNo;
+    public void setDegreeDate2(String degreeDate1) {
+        this.degreeDate1 = degreeDate1;
     }
 
-    public String getTotalWorkExperienceInYears() {
-        return totalWorkExperienceInYears;
+    public String getGpa2() {
+        return gpa2;
     }
 
-    public void setTotalWorkExperienceInYears(String totalWorkExperienceInYears) {
-        this.totalWorkExperienceInYears = totalWorkExperienceInYears;
+    public void setGpa2(String gpa2) {
+        this.gpa2 = gpa2;
     }
 
-    public String getEmailId() {
-        return emailId;
+    public String getDegreeName3() {
+        return degreeName3;
     }
 
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
+    public void setDegreeName3(String degreeName3) {
+        this.degreeName3 = degreeName3;
     }
+
+    public String getDegreeDate3() {
+        return degreeDate3;
+    }
+
+    public void setDegreeDate3(String degreeDate3) {
+        this.degreeDate3 = degreeDate3;
+    }
+
+    public String getGpa3() {
+        return gpa3;
+    }
+
+    public void setGpa3(String gpa3) {
+        this.gpa3 = gpa3;
+    }
+
+    public String getWorkExperience() {
+        return workExperience;
+    }
+
+    public void setWorkExperience(String workExperience) {
+        this.workExperience = workExperience;
+    }
+
+    public String getProgrammingLang() {
+        return programmingLang;
+    }
+
+    public void setProgrammingLang(String programmingLang) {
+        this.programmingLang = programmingLang;
+    }
+    
     
 }

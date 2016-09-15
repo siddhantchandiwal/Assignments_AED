@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package Interface;
+
 import Business.Resume;
+
 /**
  *
  * @author Siddhant
@@ -14,7 +16,6 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    
     private Resume resume;
     public MainJFrame() {
         initComponents();
@@ -31,62 +32,62 @@ public class MainJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         splitPane = new javax.swing.JSplitPane();
-        ControlJPanel = new javax.swing.JPanel();
+        controlJPanel = new javax.swing.JPanel();
         createBtn = new javax.swing.JButton();
         displayBtn = new javax.swing.JButton();
-        DisplayJPanel = new javax.swing.JPanel();
+        displayJPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        createBtn.setText("Create Resume");
+        createBtn.setText("Create");
         createBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createBtnActionPerformed(evt);
             }
         });
 
-        displayBtn.setText("Display Resume");
+        displayBtn.setText("Display");
         displayBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 displayBtnActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout ControlJPanelLayout = new javax.swing.GroupLayout(ControlJPanel);
-        ControlJPanel.setLayout(ControlJPanelLayout);
-        ControlJPanelLayout.setHorizontalGroup(
-            ControlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ControlJPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout controlJPanelLayout = new javax.swing.GroupLayout(controlJPanel);
+        controlJPanel.setLayout(controlJPanelLayout);
+        controlJPanelLayout.setHorizontalGroup(
+            controlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controlJPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(ControlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(createBtn)
-                    .addComponent(displayBtn))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(controlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(displayBtn)
+                    .addComponent(createBtn))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
-        ControlJPanelLayout.setVerticalGroup(
-            ControlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ControlJPanelLayout.createSequentialGroup()
-                .addGap(95, 95, 95)
+        controlJPanelLayout.setVerticalGroup(
+            controlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controlJPanelLayout.createSequentialGroup()
+                .addGap(83, 83, 83)
                 .addComponent(createBtn)
-                .addGap(44, 44, 44)
+                .addGap(40, 40, 40)
                 .addComponent(displayBtn)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
-        splitPane.setLeftComponent(ControlJPanel);
+        splitPane.setLeftComponent(controlJPanel);
 
-        javax.swing.GroupLayout DisplayJPanelLayout = new javax.swing.GroupLayout(DisplayJPanel);
-        DisplayJPanel.setLayout(DisplayJPanelLayout);
-        DisplayJPanelLayout.setHorizontalGroup(
-            DisplayJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout displayJPanelLayout = new javax.swing.GroupLayout(displayJPanel);
+        displayJPanel.setLayout(displayJPanelLayout);
+        displayJPanelLayout.setHorizontalGroup(
+            displayJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 293, Short.MAX_VALUE)
         );
-        DisplayJPanelLayout.setVerticalGroup(
-            DisplayJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        displayJPanelLayout.setVerticalGroup(
+            displayJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 298, Short.MAX_VALUE)
         );
 
-        splitPane.setRightComponent(DisplayJPanel);
+        splitPane.setRightComponent(displayJPanel);
 
         getContentPane().add(splitPane, java.awt.BorderLayout.CENTER);
 
@@ -96,12 +97,12 @@ public class MainJFrame extends javax.swing.JFrame {
     private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
         // TODO add your handling code here:
         CreateResumeJPanel createPanel =new CreateResumeJPanel(resume);
-        splitPane.setRightComponent(createPanel); 
+        splitPane.setRightComponent(createPanel);
     }//GEN-LAST:event_createBtnActionPerformed
 
     private void displayBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayBtnActionPerformed
         // TODO add your handling code here:
-        DisplayResumeJPanel displayPanel=new DisplayResumeJPanel(resume);
+         DisplayResumeJPanel displayPanel=new DisplayResumeJPanel(resume);
         splitPane.setRightComponent(displayPanel);
     }//GEN-LAST:event_displayBtnActionPerformed
 
@@ -141,10 +142,10 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel ControlJPanel;
-    private javax.swing.JPanel DisplayJPanel;
+    private javax.swing.JPanel controlJPanel;
     private javax.swing.JButton createBtn;
     private javax.swing.JButton displayBtn;
+    private javax.swing.JPanel displayJPanel;
     private javax.swing.JSplitPane splitPane;
     // End of variables declaration//GEN-END:variables
 }

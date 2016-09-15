@@ -4,8 +4,14 @@
  * and open the template in the editor.
  */
 package Interface;
+
 import Business.Resume;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author Siddhant
@@ -13,9 +19,8 @@ import javax.swing.JOptionPane;
 public class CreateResumeJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form Test
+     * Creates new form CreateJPanel
      */
-    
     private Resume resume;
     public CreateResumeJPanel(Resume resume) {
         initComponents();
@@ -31,338 +36,431 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        degreeName1TextField = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        workExperienceTextField = new javax.swing.JTextField();
-        degreeYear2TextField = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        degreeYear1TextField = new javax.swing.JTextField();
-        degreeName2TextField = new javax.swing.JTextField();
-        cityTextField = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        lastNameTextField = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        checkbox1 = new java.awt.Checkbox();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        countryTextField = new javax.swing.JTextField();
-        contactNoTextField = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
-        streetLine1TextField = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        affiliationsTextField = new javax.swing.JTextField();
-        zipCodeTextField = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        firstNameTextField = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
-        emailTextField = new javax.swing.JTextField();
-        streetLine2TextField = new javax.swing.JTextField();
-        createBtn = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        careerObjectiveStatementTextField = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        firstNameTextField = new javax.swing.JTextField();
+        lastNameTextField = new javax.swing.JTextField();
+        contactNoTextField = new javax.swing.JTextField();
+        emailIdTextField = new javax.swing.JTextField();
+        streetLine1TextField = new javax.swing.JTextField();
+        streetLine2TextField = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        cityTextField = new javax.swing.JTextField();
+        zipCodeTextField = new javax.swing.JTextField();
+        countryTextField = new javax.swing.JTextField();
+        affiliationsTextField = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        degreeName1TextField = new javax.swing.JTextField();
+        degreeDate1TextField = new javax.swing.JTextField();
+        gpa1TextField = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        degreeName2TextField = new javax.swing.JTextField();
+        degreeDate2TextField = new javax.swing.JTextField();
+        gpa2TextField = new javax.swing.JTextField();
+        gpa3TextField = new javax.swing.JTextField();
+        degreeDate3textField = new javax.swing.JTextField();
+        degreeName3TextField = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        workExperienceTextField = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        careerObjectiveTextField = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        programmingLangTextField = new javax.swing.JTextArea();
+        checkbox1 = new java.awt.Checkbox();
+        submitBtn = new javax.swing.JButton();
+        resetBtn = new javax.swing.JButton();
+        picBrowseBtn = new javax.swing.JButton();
+        picPathTextField = new javax.swing.JTextField();
+        picLabel = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel17.setText("Degree 2 Completion Year:");
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel18.setText("Contact No:");
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel11.setText("Career Objectives:");
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel7.setText("City:");
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel13.setText("Degree 1:");
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel5.setText("Street Line 1:");
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel14.setText("Degree 1 Completion Year:");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setText("Create a Resume");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 24, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Name");
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel16.setText("Create Resume");
-
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel15.setText("Degree 2:");
-
-        checkbox1.setLabel("All the above information is true and accurate to the best of my knowledge");
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel8.setText("Country:");
+        jLabel2.setText("First Name:");
+        jLabel2.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 89, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("First Name:");
-
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel20.setText("Email id:");
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel10.setText("Affiliations:");
+        jLabel3.setText("Last Name:");
+        jLabel3.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 129, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("Address");
+        jLabel4.setText("Contact No:");
+        jLabel4.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 169, -1, -1));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel12.setText("Education");
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setText("Email id:");
+        jLabel5.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 209, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel6.setText("Last Name:");
+        jLabel6.setText("Address");
+        jLabel6.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 249, -1, -1));
 
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel19.setText("Work Experience (In Years):");
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setText("Street Line 1:");
+        jLabel7.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 289, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel9.setText("Street Line 2:");
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setText("Street Line 2:");
+        jLabel8.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 329, -1, -1));
 
-        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel22.setText("Zip Code:");
-
-        createBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        createBtn.setText("Submit");
-        createBtn.addActionListener(new java.awt.event.ActionListener() {
+        firstNameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        firstNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createBtnActionPerformed(evt);
+                firstNameTextFieldActionPerformed(evt);
             }
         });
+        jPanel1.add(firstNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 85, 312, -1));
 
-        careerObjectiveStatementTextField.setColumns(20);
-        careerObjectiveStatementTextField.setRows(5);
-        jScrollPane2.setViewportView(careerObjectiveStatementTextField);
+        lastNameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lastNameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lastNameTextFieldActionPerformed(evt);
+            }
+        });
+        jPanel1.add(lastNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 125, 312, -1));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setText("Browse Image");
+        contactNoTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(contactNoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 165, 312, -1));
 
-        jLabel1.setText("picLabel");
+        emailIdTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(emailIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 205, 312, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(373, 373, 373)
-                                .addComponent(createBtn))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel22)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel11))
-                                .addGap(108, 108, 108)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(affiliationsTextField)
-                                    .addComponent(countryTextField)
-                                    .addComponent(cityTextField)
-                                    .addComponent(streetLine2TextField)
-                                    .addComponent(streetLine1TextField)
-                                    .addComponent(lastNameTextField)
-                                    .addComponent(firstNameTextField)
-                                    .addComponent(zipCodeTextField)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(63, 63, 63))))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(175, 175, 175)
-                        .addComponent(jLabel16))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(checkbox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(25, 25, 25)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(degreeName1TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
-                                    .addComponent(degreeYear1TextField)
-                                    .addComponent(degreeName2TextField)
-                                    .addComponent(degreeYear2TextField)
-                                    .addComponent(workExperienceTextField)
-                                    .addComponent(contactNoTextField)
-                                    .addComponent(emailTextField)))
-                            .addComponent(jLabel12))))
-                .addGap(116, 116, 116))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(streetLine1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(streetLine2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(zipCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel22)
-                            .addComponent(jButton1))
-                        .addGap(18, 36, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(countryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(affiliationsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(57, 57, 57))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)))
-                .addComponent(jLabel12)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(degreeName1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13))
-                        .addGap(18, 18, 18)
-                        .addComponent(degreeYear1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(degreeName2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(degreeYear2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(workExperienceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contactNoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20))
-                .addGap(18, 18, 18)
-                .addComponent(checkbox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(createBtn)
-                .addContainerGap())
-        );
+        streetLine1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(streetLine1TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 285, 312, -1));
 
-        jScrollPane1.setViewportView(jPanel1);
+        streetLine2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(streetLine2TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 325, 312, -1));
 
-        add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel9.setText("City:");
+        jLabel9.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 369, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel10.setText("Zip Code:");
+        jLabel10.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 409, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel11.setText("Country:");
+        jLabel11.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 449, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel12.setText("Affiliations:");
+        jLabel12.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 489, -1, -1));
+
+        cityTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(cityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 369, 312, -1));
+
+        zipCodeTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(zipCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 409, 312, -1));
+
+        countryTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(countryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 449, 312, -1));
+
+        affiliationsTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(affiliationsTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 489, 312, -1));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel13.setText("Career Objectives:");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 529, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel14.setText("Education Qualifications");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 661, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel15.setText("Name");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 701, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel16.setText("Date");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 701, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel17.setText("GPA");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 701, -1, -1));
+
+        degreeName1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        degreeName1TextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                degreeName1TextFieldActionPerformed(evt);
+            }
+        });
+        jPanel1.add(degreeName1TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 703, 187, -1));
+
+        degreeDate1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(degreeDate1TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 703, 242, -1));
+
+        gpa1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gpa1TextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gpa1TextFieldActionPerformed(evt);
+            }
+        });
+        jPanel1.add(gpa1TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 703, 45, -1));
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel18.setText("Name");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 743, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel19.setText("Date");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 743, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel20.setText("GPA");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 743, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel21.setText("Name");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 785, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel22.setText("Date");
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 785, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel23.setText("GPA");
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 785, -1, -1));
+
+        degreeName2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(degreeName2TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 745, 187, -1));
+
+        degreeDate2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(degreeDate2TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 745, 242, -1));
+
+        gpa2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(gpa2TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 745, 45, -1));
+
+        gpa3TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(gpa3TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 787, 45, -1));
+
+        degreeDate3textField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(degreeDate3textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 787, 242, -1));
+
+        degreeName3TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(degreeName3TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 787, 187, -1));
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel24.setText("Work Experience:");
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 827, -1, -1));
+
+        workExperienceTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(workExperienceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 829, 309, -1));
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel25.setText("Languages Known:");
+        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 869, -1, -1));
+
+        careerObjectiveTextField.setColumns(20);
+        careerObjectiveTextField.setLineWrap(true);
+        careerObjectiveTextField.setRows(5);
+        careerObjectiveTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane1.setViewportView(careerObjectiveTextField);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 529, 312, -1));
+
+        programmingLangTextField.setColumns(20);
+        programmingLangTextField.setLineWrap(true);
+        programmingLangTextField.setRows(5);
+        programmingLangTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane2.setViewportView(programmingLangTextField);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 869, 309, -1));
+
+        checkbox1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        checkbox1.setLabel("All the above information is true and correct to the best of my knowledge");
+        checkbox1.setName(""); // NOI18N
+        jPanel1.add(checkbox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 1019, -1, -1));
+
+        submitBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        submitBtn.setText("Submit");
+        submitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(submitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 1088, -1, -1));
+
+        resetBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        resetBtn.setText("Reset");
+        resetBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(resetBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(491, 1088, -1, -1));
+
+        picBrowseBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        picBrowseBtn.setText("Browse Image");
+        picBrowseBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                picBrowseBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(picBrowseBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 410, -1, -1));
+
+        picPathTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(picPathTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 370, 238, -1));
+
+        picLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        picLabel.setPreferredSize(new java.awt.Dimension(120, 120));
+        jPanel1.add(picLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 130, 148, 176));
+
+        jScrollPane3.setViewportView(jPanel1);
+
+        add(jScrollPane3, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
+    private void firstNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_firstNameTextFieldActionPerformed
+
+    private void lastNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lastNameTextFieldActionPerformed
+
+    private void degreeName1TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_degreeName1TextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_degreeName1TextFieldActionPerformed
+
+    private void gpa1TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gpa1TextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gpa1TextFieldActionPerformed
+
+    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // TODO add your handling code here:
         resume.setFirstName(firstNameTextField.getText());
         resume.setLastName(lastNameTextField.getText());
-        resume.setStreetln1(streetLine1TextField.getText());
-        resume.setStreetln2(streetLine2TextField.getText());
+        resume.setContactNo(contactNoTextField.getText());
+        resume.setEmailId(emailIdTextField.getText());
+        resume.setStreetLn1(streetLine1TextField.getText());
+        resume.setStreetLn2(streetLine2TextField.getText());
         resume.setCity(cityTextField.getText());
         resume.setZipCode(zipCodeTextField.getText());
         resume.setCountry(countryTextField.getText());
-        resume.setAffiliation(affiliationsTextField.getText());
-        resume.setCareerObjectiveStatement(careerObjectiveStatementTextField.getText());
-        resume.setDegree1Name(degreeName1TextField.getText());
-        resume.setDegree1Year(degreeYear1TextField.getText());
-        resume.setDegree2Name(degreeName2TextField.getText());
-        resume.setDegree2Year(degreeYear2TextField.getText());
-        resume.setContactNo(contactNoTextField.getText());
-        resume.setTotalWorkExperienceInYears(workExperienceTextField.getText());
-        resume.setEmailId(emailTextField.getText());
+        resume.setAffiliations(affiliationsTextField.getText());
+        resume.setCareerObjective(careerObjectiveTextField.getText());
+        resume.setDegreeName1(degreeName1TextField.getText());
+        resume.setDegreeDate1(degreeDate1TextField.getText());
+        resume.setGpa1(gpa1TextField.getText());
+        resume.setDegreeName2(degreeName2TextField.getText());
+        resume.setGpa2(gpa2TextField.getText());
+        resume.setDegreeName3(degreeName3TextField.getText());
+        resume.setDegreeDate3(degreeDate3textField.getText());
+        resume.setWorkExperience(workExperienceTextField.getText());
+        resume.setProgrammingLang(programmingLangTextField.getText());
+        
         
         JOptionPane.showMessageDialog(null, "Resume Submitted Successfully !!!");
-    }//GEN-LAST:event_createBtnActionPerformed
+    }//GEN-LAST:event_submitBtnActionPerformed
+
+    private void resetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetBtnActionPerformed
+        // TODO add your handling code here:
+        firstNameTextField.setText("");
+        lastNameTextField.setText("");
+        contactNoTextField.setText("");
+        emailIdTextField.setText("");
+        streetLine1TextField.setText("");
+        streetLine2TextField.setText("");
+        cityTextField.setText("");
+        zipCodeTextField.setText("");
+        countryTextField.setText("");
+        affiliationsTextField.setText("");
+        careerObjectiveTextField.setText("");
+        degreeName1TextField.setText("");
+        degreeDate1TextField.setText("");
+        gpa1TextField.setText("");
+        degreeName2TextField.setText("");
+        degreeDate2TextField.setText("");
+        gpa2TextField.setText("");
+        degreeName3TextField.setText("");
+        degreeDate3textField.setText("");
+        gpa3TextField.setText("");
+        workExperienceTextField.setText("");
+        programmingLangTextField.setText("");
+        
+        picPathTextField.setText("");
+        ImageIcon icon=new ImageIcon();
+       jLabel1.setIcon(icon);
+    }//GEN-LAST:event_resetBtnActionPerformed
+
+    private void picBrowseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_picBrowseBtnActionPerformed
+        // TODO add your handling code here:
+       JFileChooser chooseimage = new JFileChooser();
+       chooseimage.showOpenDialog(null);
+       File f=chooseimage.getSelectedFile();
+       String filename=f.getAbsolutePath();
+    //   FileNameExtensionFilter filter = new FileNameExtensionFilter("Image Files", "jpg");
+     //  chooseimage.setFileFilter(filter);
+       picPathTextField.setText(filename);
+       ImageIcon icon=new ImageIcon(filename);
+       resume.setImage(filename);
+       picLabel.setIcon(icon);
+       
+       
+       
+      // ImageIcon icon = new ImageIcon(UrlToPngFile);
+//Image scaleImage = icon.getImage().getScaledInstance(28, 28,Image.SCALE_DEFAULT);
+       
+    }//GEN-LAST:event_picBrowseBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField affiliationsTextField;
-    private javax.swing.JTextArea careerObjectiveStatementTextField;
+    private javax.swing.JTextArea careerObjectiveTextField;
     private java.awt.Checkbox checkbox1;
     private javax.swing.JTextField cityTextField;
     private javax.swing.JTextField contactNoTextField;
     private javax.swing.JTextField countryTextField;
-    private javax.swing.JButton createBtn;
+    private javax.swing.JTextField degreeDate1TextField;
+    private javax.swing.JTextField degreeDate2TextField;
+    private javax.swing.JTextField degreeDate3textField;
     private javax.swing.JTextField degreeName1TextField;
     private javax.swing.JTextField degreeName2TextField;
-    private javax.swing.JTextField degreeYear1TextField;
-    private javax.swing.JTextField degreeYear2TextField;
-    private javax.swing.JTextField emailTextField;
+    private javax.swing.JTextField degreeName3TextField;
+    private javax.swing.JTextField emailIdTextField;
     private javax.swing.JTextField firstNameTextField;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField gpa1TextField;
+    private javax.swing.JTextField gpa2TextField;
+    private javax.swing.JTextField gpa3TextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -376,7 +474,11 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -387,9 +489,16 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField lastNameTextField;
+    private javax.swing.JButton picBrowseBtn;
+    private javax.swing.JLabel picLabel;
+    private javax.swing.JTextField picPathTextField;
+    private javax.swing.JTextArea programmingLangTextField;
+    private javax.swing.JButton resetBtn;
     private javax.swing.JTextField streetLine1TextField;
     private javax.swing.JTextField streetLine2TextField;
+    private javax.swing.JButton submitBtn;
     private javax.swing.JTextField workExperienceTextField;
     private javax.swing.JTextField zipCodeTextField;
     // End of variables declaration//GEN-END:variables
