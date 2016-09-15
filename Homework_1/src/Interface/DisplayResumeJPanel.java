@@ -4,24 +4,23 @@
  * and open the template in the editor.
  */
 package Interface;
-
-import Business.Resume;
+import Business.Resume;                         //Importing Business Package
 import javax.swing.ImageIcon;
 
 /**
- *
- * @author chand
+ * @author Siddhant
  */
 public class DisplayResumeJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form NewJPanel
      */
-    public DisplayResumeJPanel(Resume resume) {
+    public DisplayResumeJPanel(Resume resume) {     //Passing Parameters to constructors
         initComponents();
         displayResume(resume);
     }
     
+    // Creating a Separate Method and passing resume as Parameter
     private void displayResume(Resume resume){
         String ResumeFirstName=resume.getFirstName();
         firstNameTextField.setText(ResumeFirstName);
@@ -73,6 +72,8 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         
         String ResumeDegreeDate2=resume.getDegreeDate2();
         degreeDate2TextField.setText(ResumeDegreeDate2);
+       // String ResumeDegreeDate2=resume.getDegreeDate2();
+       // degreeDate2TextField.setText(ResumeDegreeDate2);
         
         String ResumeGpa2=resume.getGpa2();
         gpa2TextField.setText(ResumeGpa2);
@@ -346,13 +347,14 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 827, -1, -1));
 
         workExperienceTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(workExperienceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 829, 309, -1));
+        jPanel1.add(workExperienceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 830, 309, -1));
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel25.setText("Languages Known:");
         jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 869, -1, -1));
 
         careerObjectiveTextField.setColumns(20);
+        careerObjectiveTextField.setLineWrap(true);
         careerObjectiveTextField.setRows(5);
         careerObjectiveTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane1.setViewportView(careerObjectiveTextField);
@@ -360,11 +362,12 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 529, 312, -1));
 
         programmingLangTextField.setColumns(20);
+        programmingLangTextField.setLineWrap(true);
         programmingLangTextField.setRows(5);
         programmingLangTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane2.setViewportView(programmingLangTextField);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 869, 309, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 870, 309, -1));
 
         picLabel.setPreferredSize(new java.awt.Dimension(120, 120));
         jPanel1.add(picLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 130, 148, 176));

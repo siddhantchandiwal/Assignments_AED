@@ -4,11 +4,9 @@
  * and open the template in the editor.
  */
 package Interface;
-
 import Business.Resume;
 
 /**
- *
  * @author Siddhant
  */
 public class MainJFrame extends javax.swing.JFrame {
@@ -16,8 +14,8 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    private Resume resume;
-    public MainJFrame() {
+    private Resume resume;       //Making object of Resume
+    public MainJFrame() {        // Default Constructor
         initComponents();
         resume=new Resume();
     }
@@ -97,13 +95,13 @@ public class MainJFrame extends javax.swing.JFrame {
     private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
         // TODO add your handling code here:
         CreateResumeJPanel createPanel =new CreateResumeJPanel(resume);
-        splitPane.setRightComponent(createPanel);
+        splitPane.setRightComponent(createPanel);       //Passing all the fields to the right side
     }//GEN-LAST:event_createBtnActionPerformed
 
     private void displayBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayBtnActionPerformed
         // TODO add your handling code here:
          DisplayResumeJPanel displayPanel=new DisplayResumeJPanel(resume);
-        splitPane.setRightComponent(displayPanel);
+        splitPane.setRightComponent(displayPanel);       //Passing all the fields to the right side
     }//GEN-LAST:event_displayBtnActionPerformed
 
     /**

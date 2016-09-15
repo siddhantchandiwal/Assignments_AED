@@ -6,7 +6,6 @@
 package Business;
 
 /**
- *
  * @author Siddhant
  */
 public class Resume {
@@ -35,6 +34,8 @@ public class Resume {
     private String programmingLang;
     private String image;
 
+    // Getters and Setters
+    
     public String getImage() {
         return image;
     }
@@ -43,8 +44,6 @@ public class Resume {
         this.image = image;
     }
     
-    // Getters and Setters
-
     public String getFirstName() {
         return firstName;
     }
@@ -219,7 +218,5 @@ public class Resume {
 
     public void setProgrammingLang(String programmingLang) {
         this.programmingLang = programmingLang;
-    }
-    
-    
+    }  
 }

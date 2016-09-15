@@ -6,14 +6,15 @@
 package Interface;
 
 import Business.Resume;
+import java.awt.Image;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
- *
  * @author Siddhant
  */
 public class CreateResumeJPanel extends javax.swing.JPanel {
@@ -22,8 +23,12 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
      * Creates new form CreateJPanel
      */
     private Resume resume;
-    public CreateResumeJPanel(Resume resume) {
+    public CreateResumeJPanel(Resume resume) {                  //Parameterised Constructor
         initComponents();
+      //  if(!checkbox1.getState())                               
+        //{ 
+         submitBtn.setVisible(false);                           //Setting "Submit" button not visible 
+       // }
         this.resume=resume;
     }
 
@@ -58,7 +63,6 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         cityTextField = new javax.swing.JTextField();
         zipCodeTextField = new javax.swing.JTextField();
-        countryTextField = new javax.swing.JTextField();
         affiliationsTextField = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -81,7 +85,6 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         degreeDate3textField = new javax.swing.JTextField();
         degreeName3TextField = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        workExperienceTextField = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         careerObjectiveTextField = new javax.swing.JTextArea();
@@ -93,6 +96,8 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         picBrowseBtn = new javax.swing.JButton();
         picPathTextField = new javax.swing.JTextField();
         picLabel = new javax.swing.JLabel();
+        countryTextField = new javax.swing.JComboBox<>();
+        workExperienceTextField = new javax.swing.JComboBox<>();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -189,17 +194,14 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         jPanel1.add(cityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 369, 312, -1));
 
         zipCodeTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(zipCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 409, 312, -1));
-
-        countryTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(countryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 449, 312, -1));
+        jPanel1.add(zipCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 312, -1));
 
         affiliationsTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(affiliationsTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 489, 312, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel13.setText("Career Objectives:");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 529, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 600, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel14.setText("Education Qualifications");
@@ -282,12 +284,9 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         jLabel24.setText("Work Experience:");
         jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 827, -1, -1));
 
-        workExperienceTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(workExperienceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 829, 309, -1));
-
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel25.setText("Languages Known:");
-        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 869, -1, -1));
+        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 940, -1, -1));
 
         careerObjectiveTextField.setColumns(20);
         careerObjectiveTextField.setLineWrap(true);
@@ -303,11 +302,16 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         programmingLangTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane2.setViewportView(programmingLangTextField);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 869, 309, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 870, 309, -1));
 
         checkbox1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         checkbox1.setLabel("All the above information is true and correct to the best of my knowledge");
         checkbox1.setName(""); // NOI18N
+        checkbox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                checkbox1ItemStateChanged(evt);
+            }
+        });
         jPanel1.add(checkbox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 1019, -1, -1));
 
         submitBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -344,56 +348,40 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         picLabel.setPreferredSize(new java.awt.Dimension(120, 120));
         jPanel1.add(picLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 130, 148, 176));
 
+        countryTextField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USA", "India", "China", "United Kingdom" }));
+        countryTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(countryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, 310, -1));
+
+        workExperienceTextField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0-2 Years", "2-4 Years", "4-7 Years", "7 Years and Above" }));
+        workExperienceTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(workExperienceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 830, 140, -1));
+
         jScrollPane3.setViewportView(jPanel1);
 
         add(jScrollPane3, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void firstNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTextFieldActionPerformed
+    private void picBrowseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_picBrowseBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_firstNameTextFieldActionPerformed
-
-    private void lastNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lastNameTextFieldActionPerformed
-
-    private void degreeName1TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_degreeName1TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_degreeName1TextFieldActionPerformed
-
-    private void gpa1TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gpa1TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_gpa1TextFieldActionPerformed
-
-    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
-        // TODO add your handling code here:
-        resume.setFirstName(firstNameTextField.getText());
-        resume.setLastName(lastNameTextField.getText());
-        resume.setContactNo(contactNoTextField.getText());
-        resume.setEmailId(emailIdTextField.getText());
-        resume.setStreetLn1(streetLine1TextField.getText());
-        resume.setStreetLn2(streetLine2TextField.getText());
-        resume.setCity(cityTextField.getText());
-        resume.setZipCode(zipCodeTextField.getText());
-        resume.setCountry(countryTextField.getText());
-        resume.setAffiliations(affiliationsTextField.getText());
-        resume.setCareerObjective(careerObjectiveTextField.getText());
-        resume.setDegreeName1(degreeName1TextField.getText());
-        resume.setDegreeDate1(degreeDate1TextField.getText());
-        resume.setGpa1(gpa1TextField.getText());
-        resume.setDegreeName2(degreeName2TextField.getText());
-        resume.setGpa2(gpa2TextField.getText());
-        resume.setDegreeName3(degreeName3TextField.getText());
-        resume.setDegreeDate3(degreeDate3textField.getText());
-        resume.setWorkExperience(workExperienceTextField.getText());
-        resume.setProgrammingLang(programmingLangTextField.getText());
-        
-        
-        JOptionPane.showMessageDialog(null, "Resume Submitted Successfully !!!");
-    }//GEN-LAST:event_submitBtnActionPerformed
+        //Choosing image from JFile Chooser
+        JFileChooser chooseimage = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg files", "jpg");   // Restricting filter for only jpg images
+        chooseimage.setFileFilter(filter);
+        int returnVal=chooseimage.showOpenDialog(null);
+        if (returnVal == JFileChooser.APPROVE_OPTION){
+            File f=chooseimage.getSelectedFile();
+            String filename=f.getAbsolutePath();
+            picPathTextField.setText(filename);
+            ImageIcon icon=new ImageIcon(filename);
+            resume.setImage(filename);
+            picLabel.setIcon(new ImageIcon(icon.getImage().getScaledInstance(830, 130, Image.SCALE_DEFAULT)));
+            picLabel.setIcon(icon);
+        }
+    }//GEN-LAST:event_picBrowseBtnActionPerformed
 
     private void resetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetBtnActionPerformed
         // TODO add your handling code here:
+        //Making all the spaces blank in order to reset the fields
         firstNameTextField.setText("");
         lastNameTextField.setText("");
         contactNoTextField.setText("");
@@ -402,7 +390,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         streetLine2TextField.setText("");
         cityTextField.setText("");
         zipCodeTextField.setText("");
-        countryTextField.setText("");
+        countryTextField.setSelectedItem("US");
         affiliationsTextField.setText("");
         careerObjectiveTextField.setText("");
         degreeName1TextField.setText("");
@@ -414,34 +402,117 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         degreeName3TextField.setText("");
         degreeDate3textField.setText("");
         gpa3TextField.setText("");
-        workExperienceTextField.setText("");
+        workExperienceTextField.setSelectedItem("0-2 Years");
         programmingLangTextField.setText("");
-        
         picPathTextField.setText("");
         ImageIcon icon=new ImageIcon();
-       jLabel1.setIcon(icon);
+        jLabel1.setIcon(icon);
     }//GEN-LAST:event_resetBtnActionPerformed
 
-    private void picBrowseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_picBrowseBtnActionPerformed
-        // TODO add your handling code here:
-       JFileChooser chooseimage = new JFileChooser();
-       chooseimage.showOpenDialog(null);
-       File f=chooseimage.getSelectedFile();
-       String filename=f.getAbsolutePath();
-    //   FileNameExtensionFilter filter = new FileNameExtensionFilter("Image Files", "jpg");
-     //  chooseimage.setFileFilter(filter);
-       picPathTextField.setText(filename);
-       ImageIcon icon=new ImageIcon(filename);
-       resume.setImage(filename);
-       picLabel.setIcon(icon);
-       
-       
-       
-      // ImageIcon icon = new ImageIcon(UrlToPngFile);
-//Image scaleImage = icon.getImage().getScaledInstance(28, 28,Image.SCALE_DEFAULT);
-       
-    }//GEN-LAST:event_picBrowseBtnActionPerformed
+    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
+        // If Validate Field turns true then Call Set Text Method
+        if (validateJFieldText()==1) {
+            setTextFields();
+            //JOptionPane.showMessageDialog(null,"");
+        }
+    }//GEN-LAST:event_submitBtnActionPerformed
 
+    private void checkbox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkbox1ItemStateChanged
+        // TODO add your handling code here:
+        //Now Checking the status of checkbox
+        if(!checkbox1.getState()){
+            submitBtn.setVisible(false);
+        }
+        else{
+            submitBtn.setVisible(true);
+        }
+    }//GEN-LAST:event_checkbox1ItemStateChanged
+
+    private void gpa1TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gpa1TextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gpa1TextFieldActionPerformed
+
+    private void degreeName1TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_degreeName1TextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_degreeName1TextFieldActionPerformed
+
+    private void lastNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lastNameTextFieldActionPerformed
+
+    private void firstNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_firstNameTextFieldActionPerformed
+
+       public int validateJFieldText(){                     //Method created to check if any field is empty
+           
+           // Accepting all the text fields in an array of size
+        JTextField jField[]=new JTextField[18];
+        jField[0]=firstNameTextField;
+        jField[1]=lastNameTextField;
+        jField[2]=contactNoTextField;
+        jField[3]=emailIdTextField;
+        jField[4]=streetLine1TextField;
+        jField[5]=streetLine2TextField;
+        jField[6]=cityTextField;
+        jField[7]=zipCodeTextField;
+        jField[8]=affiliationsTextField;
+        //jTextField[9]=careerObjectiveTextField;
+        jField[9]=degreeName1TextField;
+        jField[10]=degreeDate1TextField;
+        jField[11]=gpa1TextField;
+        jField[12]=degreeName2TextField;
+        jField[13]=degreeDate2TextField;
+        jField[14]=gpa2TextField;
+        jField[15]=degreeName3TextField;
+        jField[16]=degreeDate3textField;
+        jField[17]=gpa3TextField;
+        //jTextField[18]=programmingLangTextField;
+        
+        int isValidationSuccessfull = 1;                 
+        for (int i = 0; i < jField.length; i++) {                 // Traversing across the array length
+            if (jField[i].getText().trim().isEmpty()) {
+                //If any field is empty throw message
+                JOptionPane.showMessageDialog(null, "All fields are mandatory");
+                isValidationSuccessfull = 0;
+                break;
+            } else {
+                isValidationSuccessfull = 1;
+            }
+        }
+        return isValidationSuccessfull;
+    }
+       
+       public void setTextFields(){
+           // Setting all the attributes
+        resume.setFirstName(firstNameTextField.getText());
+        resume.setLastName(lastNameTextField.getText());
+        resume.setContactNo(contactNoTextField.getText());
+        resume.setEmailId(emailIdTextField.getText());
+        resume.setStreetLn1(streetLine1TextField.getText());
+        resume.setStreetLn2(streetLine2TextField.getText());
+        resume.setCity(cityTextField.getText());
+        resume.setZipCode(zipCodeTextField.getText());
+        resume.setCountry(countryTextField.getSelectedItem().toString());
+        resume.setAffiliations(affiliationsTextField.getText());
+        resume.setCareerObjective(careerObjectiveTextField.getText());
+        resume.setDegreeName1(degreeName1TextField.getText());
+        resume.setDegreeDate1(degreeDate1TextField.getText());
+        resume.setGpa1(gpa1TextField.getText());
+        resume.setDegreeName2(degreeName2TextField.getText());
+        resume.setDegreeDate2(degreeDate2TextField.getText());
+        resume.setGpa2(gpa2TextField.getText());
+        resume.setDegreeName3(degreeName3TextField.getText());
+        resume.setDegreeDate3(degreeDate3textField.getText());
+        resume.setGpa3(gpa3TextField.getText());
+        resume.setWorkExperience(workExperienceTextField.getSelectedItem().toString());
+        resume.setProgrammingLang(programmingLangTextField.getText());
+        // Display Success Message to user
+        JOptionPane.showMessageDialog(null, "Resume Submitted Successfully !!!");
+       
+       }       
+       
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField affiliationsTextField;
@@ -449,7 +520,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     private java.awt.Checkbox checkbox1;
     private javax.swing.JTextField cityTextField;
     private javax.swing.JTextField contactNoTextField;
-    private javax.swing.JTextField countryTextField;
+    private javax.swing.JComboBox<String> countryTextField;
     private javax.swing.JTextField degreeDate1TextField;
     private javax.swing.JTextField degreeDate2TextField;
     private javax.swing.JTextField degreeDate3textField;
@@ -499,7 +570,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField streetLine1TextField;
     private javax.swing.JTextField streetLine2TextField;
     private javax.swing.JButton submitBtn;
-    private javax.swing.JTextField workExperienceTextField;
+    private javax.swing.JComboBox<String> workExperienceTextField;
     private javax.swing.JTextField zipCodeTextField;
     // End of variables declaration//GEN-END:variables
 }
