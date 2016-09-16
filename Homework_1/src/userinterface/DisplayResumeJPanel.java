@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interface;
-import Business.Resume;                         //Importing Business Package
+package userinterface;
+import business.Resume;                         //Importing Business Package
 import javax.swing.ImageIcon;
 
 /**
@@ -162,7 +162,7 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("View Resume");
+        jLabel1.setText("Display Resume");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 24, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -379,7 +379,7 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         careerObjectiveTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane1.setViewportView(careerObjectiveTextField);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 529, 312, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 310, -1));
 
         programmingLangTextField.setEditable(false);
         programmingLangTextField.setColumns(20);
@@ -388,7 +388,7 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         programmingLangTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane2.setViewportView(programmingLangTextField);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 870, 309, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 870, 310, -1));
 
         picLabel.setPreferredSize(new java.awt.Dimension(120, 120));
         jPanel1.add(picLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 130, 148, 176));

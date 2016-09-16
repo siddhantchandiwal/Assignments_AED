@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business;
+package business;
 
 /**
  * @author Siddhant
  */
 public class Resume {
-    
+    //Setting all the attributes
     private String firstName;
     private String lastName;
     private String contactNo;

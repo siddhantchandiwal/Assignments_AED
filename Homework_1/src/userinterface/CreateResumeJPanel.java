@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interface;
+package userinterface;
 
-import Business.Resume;
+import business.Resume;
 import java.awt.Image;
 import java.io.File;
 import javax.swing.ImageIcon;
@@ -148,7 +148,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 firstNameTextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(firstNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 312, -1));
+        jPanel1.add(firstNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 312, 20));
 
         lastNameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lastNameTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -356,18 +356,57 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
 
         workExperienceTextField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0-2 Years", "2-4 Years", "4-7 Years", "7 Years and Above" }));
         workExperienceTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(workExperienceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 830, 140, -1));
+        jPanel1.add(workExperienceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 830, 300, -1));
 
         jScrollPane3.setViewportView(jPanel1);
 
         add(jScrollPane3, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
+    public int validateJFieldText(){                     //Method created to check if any field is empty
+           
+           // Accepting all the text fields in an array of size
+        JTextField jField[]=new JTextField[18];
+        jField[0]=firstNameTextField;
+        jField[1]=lastNameTextField;
+        jField[2]=contactNoTextField;
+        jField[3]=emailIdTextField;
+        jField[4]=streetLine1TextField;
+        jField[5]=streetLine2TextField;
+        jField[6]=cityTextField;
+        jField[7]=zipCodeTextField;
+        jField[8]=affiliationsTextField;
+        //jTextField[9]=careerObjectiveTextField;
+        jField[9]=degreeName1TextField;
+        jField[10]=degreeDate1TextField;
+        jField[11]=gpa1TextField;
+        jField[12]=degreeName2TextField;
+        jField[13]=degreeDate2TextField;
+        jField[14]=gpa2TextField;
+        jField[15]=degreeName3TextField;
+        jField[16]=degreeDate3textField;
+        jField[17]=gpa3TextField;
+        //jTextField[18]=programmingLangTextField;
+        
+        int flag = 1;                 
+        for (int i = 0; i < jField.length; i++) {                 // Traversing across the array length
+            if (jField[i].getText().trim().isEmpty()) {
+                //If any field is empty throw message
+                JOptionPane.showMessageDialog(null, "All fields are mandatory");
+                flag = 0;
+                break;
+            } else {
+                flag = 1;
+            }
+        }
+        return flag;
+    } 
+    
     private void picBrowseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_picBrowseBtnActionPerformed
         // TODO add your handling code here:
         //Choosing image from JFile Chooser
         JFileChooser chooseimage = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg files", "jpg");   // Restricting filter for only jpg images
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg files", "jpg");   // Restricting filter for jpg images
         chooseimage.setFileFilter(filter);
         int returnVal=chooseimage.showOpenDialog(null);
         if (returnVal == JFileChooser.APPROVE_OPTION){
@@ -414,7 +453,31 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // If Validate Field turns true then Call Set Text Method
         if (validateJFieldText()==1) {
-            setTextFields();
+           // setTextFields();
+        resume.setFirstName(firstNameTextField.getText());
+        resume.setLastName(lastNameTextField.getText());
+        resume.setContactNo(contactNoTextField.getText());
+        resume.setEmailId(emailIdTextField.getText());
+        resume.setStreetLn1(streetLine1TextField.getText());
+        resume.setStreetLn2(streetLine2TextField.getText());
+        resume.setCity(cityTextField.getText());
+        resume.setZipCode(zipCodeTextField.getText());
+        resume.setCountry(countryTextField.getSelectedItem().toString());
+        resume.setAffiliations(affiliationsTextField.getText());
+        resume.setCareerObjective(careerObjectiveTextField.getText());
+        resume.setDegreeName1(degreeName1TextField.getText());
+        resume.setDegreeDate1(degreeDate1TextField.getText());
+        resume.setGpa1(gpa1TextField.getText());
+        resume.setDegreeName2(degreeName2TextField.getText());
+        resume.setDegreeDate2(degreeDate2TextField.getText());
+        resume.setGpa2(gpa2TextField.getText());
+        resume.setDegreeName3(degreeName3TextField.getText());
+        resume.setDegreeDate3(degreeDate3textField.getText());
+        resume.setGpa3(gpa3TextField.getText());
+        resume.setWorkExperience(workExperienceTextField.getSelectedItem().toString());
+        resume.setProgrammingLang(programmingLangTextField.getText());
+        // Display Success Message to user
+        JOptionPane.showMessageDialog(null, "Resume Submitted Successfully");
             //JOptionPane.showMessageDialog(null,"");
         }
     }//GEN-LAST:event_submitBtnActionPerformed
@@ -450,72 +513,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_picPathTextFieldActionPerformed
 
-       public int validateJFieldText(){                     //Method created to check if any field is empty
-           
-           // Accepting all the text fields in an array of size
-        JTextField jField[]=new JTextField[18];
-        jField[0]=firstNameTextField;
-        jField[1]=lastNameTextField;
-        jField[2]=contactNoTextField;
-        jField[3]=emailIdTextField;
-        jField[4]=streetLine1TextField;
-        jField[5]=streetLine2TextField;
-        jField[6]=cityTextField;
-        jField[7]=zipCodeTextField;
-        jField[8]=affiliationsTextField;
-        //jTextField[9]=careerObjectiveTextField;
-        jField[9]=degreeName1TextField;
-        jField[10]=degreeDate1TextField;
-        jField[11]=gpa1TextField;
-        jField[12]=degreeName2TextField;
-        jField[13]=degreeDate2TextField;
-        jField[14]=gpa2TextField;
-        jField[15]=degreeName3TextField;
-        jField[16]=degreeDate3textField;
-        jField[17]=gpa3TextField;
-        //jTextField[18]=programmingLangTextField;
-        
-        int flag = 1;                 
-        for (int i = 0; i < jField.length; i++) {                 // Traversing across the array length
-            if (jField[i].getText().trim().isEmpty()) {
-                //If any field is empty throw message
-                JOptionPane.showMessageDialog(null, "All fields are mandatory");
-                flag = 0;
-                break;
-            } else {
-                flag = 1;
-            }
-        }
-        return flag;
-    }
-       
-       public void setTextFields(){
-           // Setting all the attributes
-        resume.setFirstName(firstNameTextField.getText());
-        resume.setLastName(lastNameTextField.getText());
-        resume.setContactNo(contactNoTextField.getText());
-        resume.setEmailId(emailIdTextField.getText());
-        resume.setStreetLn1(streetLine1TextField.getText());
-        resume.setStreetLn2(streetLine2TextField.getText());
-        resume.setCity(cityTextField.getText());
-        resume.setZipCode(zipCodeTextField.getText());
-        resume.setCountry(countryTextField.getSelectedItem().toString());
-        resume.setAffiliations(affiliationsTextField.getText());
-        resume.setCareerObjective(careerObjectiveTextField.getText());
-        resume.setDegreeName1(degreeName1TextField.getText());
-        resume.setDegreeDate1(degreeDate1TextField.getText());
-        resume.setGpa1(gpa1TextField.getText());
-        resume.setDegreeName2(degreeName2TextField.getText());
-        resume.setDegreeDate2(degreeDate2TextField.getText());
-        resume.setGpa2(gpa2TextField.getText());
-        resume.setDegreeName3(degreeName3TextField.getText());
-        resume.setDegreeDate3(degreeDate3textField.getText());
-        resume.setGpa3(gpa3TextField.getText());
-        resume.setWorkExperience(workExperienceTextField.getSelectedItem().toString());
-        resume.setProgrammingLang(programmingLangTextField.getText());
-        // Display Success Message to user
-        JOptionPane.showMessageDialog(null, "Resume Submitted Successfully");
-       }       
+            
        
  
 

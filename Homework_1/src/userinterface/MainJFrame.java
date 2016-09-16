@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interface;
-import Business.Resume;
+package userinterface;
+import business.Resume;
 
 /**
  * @author Siddhant
@@ -39,6 +39,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         controlJPanel.setBackground(new java.awt.Color(204, 204, 255));
 
+        createBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         createBtn.setText("Create");
         createBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -46,6 +47,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        displayBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         displayBtn.setText("Display");
         displayBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,7 +64,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(controlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(displayBtn)
                     .addComponent(createBtn))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         controlJPanelLayout.setVerticalGroup(
             controlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,7 +88,7 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         displayJPanelLayout.setVerticalGroup(
             displayJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+            .addGap(0, 310, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(displayJPanel);
@@ -111,7 +113,7 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
