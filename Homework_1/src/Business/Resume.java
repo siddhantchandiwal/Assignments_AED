@@ -168,8 +168,8 @@ public class Resume {
         return degreeDate2;
     }
 
-    public void setDegreeDate2(String degreeDate1) {
-        this.degreeDate1 = degreeDate1;
+    public void setDegreeDate2(String degreeDate2) {
+        this.degreeDate2 = degreeDate2;
     }
 
     public String getGpa2() {

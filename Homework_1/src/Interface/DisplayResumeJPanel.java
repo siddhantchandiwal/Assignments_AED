@@ -72,9 +72,7 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         
         String ResumeDegreeDate2=resume.getDegreeDate2();
         degreeDate2TextField.setText(ResumeDegreeDate2);
-       // String ResumeDegreeDate2=resume.getDegreeDate2();
-       // degreeDate2TextField.setText(ResumeDegreeDate2);
-        
+               
         String ResumeGpa2=resume.getGpa2();
         gpa2TextField.setText(ResumeGpa2);
         
@@ -160,6 +158,7 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -201,6 +200,7 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         jLabel8.setPreferredSize(new java.awt.Dimension(143, 22));
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 329, -1, -1));
 
+        firstNameTextField.setEditable(false);
         firstNameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         firstNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,6 +209,7 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(firstNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 85, 312, -1));
 
+        lastNameTextField.setEditable(false);
         lastNameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lastNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,15 +218,19 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(lastNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 125, 312, -1));
 
+        contactNoTextField.setEditable(false);
         contactNoTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(contactNoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 165, 312, -1));
 
+        emailIdTextField.setEditable(false);
         emailIdTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(emailIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 205, 312, -1));
 
+        streetLine1TextField.setEditable(false);
         streetLine1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(streetLine1TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 285, 312, -1));
 
+        streetLine2TextField.setEditable(false);
         streetLine2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(streetLine2TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 325, 312, -1));
 
@@ -249,21 +254,25 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         jLabel12.setPreferredSize(new java.awt.Dimension(143, 22));
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 489, -1, -1));
 
+        cityTextField.setEditable(false);
         cityTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(cityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 369, 312, -1));
 
+        zipCodeTextField.setEditable(false);
         zipCodeTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(zipCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 409, 312, -1));
 
+        countryTextField.setEditable(false);
         countryTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(countryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 449, 312, -1));
 
+        affiliationsTextField.setEditable(false);
         affiliationsTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(affiliationsTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 489, 312, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel13.setText("Career Objectives:");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 529, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 590, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel14.setText("Education Qualifications");
@@ -281,6 +290,7 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         jLabel17.setText("GPA");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 701, -1, -1));
 
+        degreeName1TextField.setEditable(false);
         degreeName1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         degreeName1TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -289,9 +299,11 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(degreeName1TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 703, 187, -1));
 
+        degreeDate1TextField.setEditable(false);
         degreeDate1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(degreeDate1TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 703, 242, -1));
 
+        gpa1TextField.setEditable(false);
         gpa1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         gpa1TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -324,21 +336,27 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         jLabel23.setText("GPA");
         jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 785, -1, -1));
 
+        degreeName2TextField.setEditable(false);
         degreeName2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(degreeName2TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 745, 187, -1));
 
+        degreeDate2TextField.setEditable(false);
         degreeDate2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(degreeDate2TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 745, 242, -1));
 
+        gpa2TextField.setEditable(false);
         gpa2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(gpa2TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 745, 45, -1));
 
+        gpa3TextField.setEditable(false);
         gpa3TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(gpa3TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 787, 45, -1));
 
+        degreeDate3TextField.setEditable(false);
         degreeDate3TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(degreeDate3TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 787, 242, -1));
 
+        degreeName3TextField.setEditable(false);
         degreeName3TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(degreeName3TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 787, 187, -1));
 
@@ -346,13 +364,15 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         jLabel24.setText("Work Experience:");
         jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 827, -1, -1));
 
+        workExperienceTextField.setEditable(false);
         workExperienceTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(workExperienceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 830, 309, -1));
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel25.setText("Languages Known:");
-        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 869, -1, -1));
+        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 940, -1, -1));
 
+        careerObjectiveTextField.setEditable(false);
         careerObjectiveTextField.setColumns(20);
         careerObjectiveTextField.setLineWrap(true);
         careerObjectiveTextField.setRows(5);
@@ -361,6 +381,7 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 529, 312, -1));
 
+        programmingLangTextField.setEditable(false);
         programmingLangTextField.setColumns(20);
         programmingLangTextField.setLineWrap(true);
         programmingLangTextField.setRows(5);
@@ -393,7 +414,6 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
     private void gpa1TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gpa1TextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_gpa1TextFieldActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField affiliationsTextField;

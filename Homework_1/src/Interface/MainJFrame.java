@@ -37,6 +37,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        controlJPanel.setBackground(new java.awt.Color(204, 204, 255));
+
         createBtn.setText("Create");
         createBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +75,8 @@ public class MainJFrame extends javax.swing.JFrame {
         );
 
         splitPane.setLeftComponent(controlJPanel);
+
+        displayJPanel.setBackground(new java.awt.Color(204, 204, 255));
 
         javax.swing.GroupLayout displayJPanelLayout = new javax.swing.GroupLayout(displayJPanel);
         displayJPanel.setLayout(displayJPanelLayout);

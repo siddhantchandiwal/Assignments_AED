@@ -95,12 +95,12 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         resetBtn = new javax.swing.JButton();
         picBrowseBtn = new javax.swing.JButton();
         picPathTextField = new javax.swing.JTextField();
-        picLabel = new javax.swing.JLabel();
         countryTextField = new javax.swing.JComboBox<>();
         workExperienceTextField = new javax.swing.JComboBox<>();
 
         setLayout(new java.awt.BorderLayout());
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -148,7 +148,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 firstNameTextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(firstNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 85, 312, -1));
+        jPanel1.add(firstNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 312, -1));
 
         lastNameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lastNameTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -156,13 +156,13 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 lastNameTextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(lastNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 125, 312, -1));
+        jPanel1.add(lastNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 312, -1));
 
         contactNoTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(contactNoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 165, 312, -1));
+        jPanel1.add(contactNoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 312, -1));
 
         emailIdTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(emailIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 205, 312, -1));
+        jPanel1.add(emailIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 312, -1));
 
         streetLine1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(streetLine1TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 285, 312, -1));
@@ -197,7 +197,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         jPanel1.add(zipCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 312, -1));
 
         affiliationsTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(affiliationsTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 489, 312, -1));
+        jPanel1.add(affiliationsTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 312, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel13.setText("Career Objectives:");
@@ -341,12 +341,14 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(picBrowseBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 410, -1, -1));
 
+        picPathTextField.setEditable(false);
         picPathTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        picPathTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                picPathTextFieldActionPerformed(evt);
+            }
+        });
         jPanel1.add(picPathTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 370, 238, -1));
-
-        picLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        picLabel.setPreferredSize(new java.awt.Dimension(120, 120));
-        jPanel1.add(picLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 130, 148, 176));
 
         countryTextField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USA", "India", "China", "United Kingdom" }));
         countryTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -354,7 +356,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
 
         workExperienceTextField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0-2 Years", "2-4 Years", "4-7 Years", "7 Years and Above" }));
         workExperienceTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(workExperienceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 830, 140, -1));
+        jPanel1.add(workExperienceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 830, 140, -1));
 
         jScrollPane3.setViewportView(jPanel1);
 
@@ -374,8 +376,8 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
             picPathTextField.setText(filename);
             ImageIcon icon=new ImageIcon(filename);
             resume.setImage(filename);
-            picLabel.setIcon(new ImageIcon(icon.getImage().getScaledInstance(830, 130, Image.SCALE_DEFAULT)));
-            picLabel.setIcon(icon);
+  //        picLabel.setIcon(new ImageIcon(icon.getImage().getScaledInstance(830, 130, Image.SCALE_DEFAULT)));
+  //        picLabel.setIcon(icon);
         }
     }//GEN-LAST:event_picBrowseBtnActionPerformed
 
@@ -444,6 +446,10 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_firstNameTextFieldActionPerformed
 
+    private void picPathTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_picPathTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_picPathTextFieldActionPerformed
+
        public int validateJFieldText(){                     //Method created to check if any field is empty
            
            // Accepting all the text fields in an array of size
@@ -469,18 +475,18 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         jField[17]=gpa3TextField;
         //jTextField[18]=programmingLangTextField;
         
-        int isValidationSuccessfull = 1;                 
+        int flag = 1;                 
         for (int i = 0; i < jField.length; i++) {                 // Traversing across the array length
             if (jField[i].getText().trim().isEmpty()) {
                 //If any field is empty throw message
                 JOptionPane.showMessageDialog(null, "All fields are mandatory");
-                isValidationSuccessfull = 0;
+                flag = 0;
                 break;
             } else {
-                isValidationSuccessfull = 1;
+                flag = 1;
             }
         }
-        return isValidationSuccessfull;
+        return flag;
     }
        
        public void setTextFields(){
@@ -508,8 +514,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         resume.setWorkExperience(workExperienceTextField.getSelectedItem().toString());
         resume.setProgrammingLang(programmingLangTextField.getText());
         // Display Success Message to user
-        JOptionPane.showMessageDialog(null, "Resume Submitted Successfully !!!");
-       
+        JOptionPane.showMessageDialog(null, "Resume Submitted Successfully");
        }       
        
  
@@ -563,7 +568,6 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField lastNameTextField;
     private javax.swing.JButton picBrowseBtn;
-    private javax.swing.JLabel picLabel;
     private javax.swing.JTextField picPathTextField;
     private javax.swing.JTextArea programmingLangTextField;
     private javax.swing.JButton resetBtn;
