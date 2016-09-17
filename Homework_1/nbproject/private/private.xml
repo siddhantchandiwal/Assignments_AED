@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/AED/AED_Lab/chandiwal_siddhant_001286480/Homework_1/src/Interface/CreateResumeJPanel.java</file>
-            <file>file:/E:/AED/AED_Lab/chandiwal_siddhant_001286480/Homework_1/src/Interface/MainJFrame.java</file>
-            <file>file:/E:/AED/AED_Lab/chandiwal_siddhant_001286480/Homework_1/src/Business/Resume.java</file>
-            <file>file:/E:/AED/AED_Lab/chandiwal_siddhant_001286480/Homework_1/src/Interface/DisplayResumeJPanel.java</file>
+            <file>file:/E:/AED/AED_Lab/chandiwal_siddhant_001286480/Homework_1/src/userinterface/MainJFrame.java</file>
+            <file>file:/E:/AED/AED_Lab/chandiwal_siddhant_001286480/Homework_1/src/userinterface/DisplayResumeJPanel.java</file>
+            <file>file:/E:/AED/AED_Lab/chandiwal_siddhant_001286480/Homework_1/src/business/Resume.java</file>
+            <file>file:/E:/AED/AED_Lab/chandiwal_siddhant_001286480/Homework_1/src/userinterface/CreateResumeJPanel.java</file>
         </group>
     </open-files>
 </project-private>
