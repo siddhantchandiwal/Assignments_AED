@@ -59,9 +59,12 @@ public class ViewVitalsJPanel extends javax.swing.JPanel {
         lblPulse = new javax.swing.JLabel();
         txtPulse = new javax.swing.JTextField();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 102, 102));
         jLabel1.setText("View Vital Signs");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 49, -1, -1));
 
         tblVitalSigns.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -81,12 +84,15 @@ public class ViewVitalsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblVitalSigns);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 118, 470, 161));
+
         btnViewDetails.setText("View Details");
         btnViewDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewDetailsActionPerformed(evt);
             }
         });
+        add(btnViewDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 319, -1, -1));
 
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -94,100 +100,39 @@ public class ViewVitalsJPanel extends javax.swing.JPanel {
                 btnDeleteActionPerformed(evt);
             }
         });
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 319, -1, -1));
 
         lblDate.setText("Date");
+        add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 571, -1, -1));
 
         txtDate.setEnabled(false);
+        add(txtDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 560, 202, 38));
 
         lblTemp.setText("Temperature");
+        add(lblTemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 403, -1, -1));
 
         txtTemperature.setEnabled(false);
+        add(txtTemperature, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 392, 202, 38));
 
         lblBloodPressure.setText("Blood Pressure");
+        add(lblBloodPressure, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 459, -1, -1));
 
         txtBloodPressure.setEnabled(false);
+        add(txtBloodPressure, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 448, 202, 38));
 
         lblPulse.setText("Pulse");
+        add(lblPulse, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 515, -1, -1));
 
         txtPulse.setEnabled(false);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnViewDetails)
-                        .addGap(49, 49, 49)
-                        .addComponent(btnDelete))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(258, 258, 258)
-                            .addComponent(jLabel1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(104, 104, 104)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(208, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(146, 146, 146)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblPulse)
-                        .addGap(93, 93, 93)
-                        .addComponent(txtPulse, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblBloodPressure)
-                        .addGap(93, 93, 93)
-                        .addComponent(txtBloodPressure, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblTemp)
-                        .addGap(93, 93, 93)
-                        .addComponent(txtTemperature, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblDate)
-                        .addGap(93, 93, 93)
-                        .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jLabel1)
-                .addGap(40, 40, 40)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnViewDetails)
-                    .addComponent(btnDelete))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTemp)
-                    .addComponent(txtTemperature, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblBloodPressure)
-                    .addComponent(txtBloodPressure, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPulse)
-                    .addComponent(txtPulse, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDate)
-                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(124, Short.MAX_VALUE))
-        );
+        add(txtPulse, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 504, 202, 38));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsActionPerformed
         // TODO add your handling code here:
-        int selectedrow=tblVitalSigns.getSelectedRow();
+        int selectedRow=tblVitalSigns.getSelectedRow();
         
-        if (selectedrow>=0){
-            VitalSigns vs=(VitalSigns)tblVitalSigns.getValueAt(selectedrow, 0);
+        if (selectedRow>=0){
+            VitalSigns vs=(VitalSigns)tblVitalSigns.getValueAt(selectedRow, 0);
             txtBloodPressure.setText(String.valueOf(vs.getBloodPressure()));
             txtTemperature.setText(String.valueOf(vs.getTemperature()));
             txtPulse.setText( String.valueOf(vs.getPulse()));
@@ -199,17 +144,21 @@ public class ViewVitalsJPanel extends javax.swing.JPanel {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-        int selectedrow=tblVitalSigns.getSelectedRow();
+        int selectedRow=tblVitalSigns.getSelectedRow();
         
-        if (selectedrow>=0){
+        if (selectedRow>=0){
             int dialogButton = JOptionPane.YES_NO_OPTION;
-            int dialogResult = JOptionPane.showConfirmDialog(this, "Are you you want to delete selected vitals??", "Confirm deletion", dialogButton);
-            if(dialogResult == 0)
+            int dialogResult = JOptionPane.showConfirmDialog(this, "You want to delete selected Vitals", "Confirm deletion", dialogButton);
+            if(dialogResult == JOptionPane.YES_OPTION)
             {
-            VitalSigns vs=(VitalSigns)tblVitalSigns.getValueAt(selectedrow, 0);
+            VitalSigns vs=(VitalSigns)tblVitalSigns.getValueAt(selectedRow, 0);
             vsh.deleteVitals(vs);
             JOptionPane.showMessageDialog(null, "Vital Sign has been deleted");
             populateTable();
+            txtBloodPressure.setText("");
+            txtTemperature.setText("");
+            txtPulse.setText("");
+            txtDate.setText("");
             }
         }
         else
