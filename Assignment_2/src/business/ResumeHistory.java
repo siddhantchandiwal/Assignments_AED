@@ -9,9 +9,24 @@ import java.util.ArrayList;
  *
  * @author Siddhant
  */
+    // Getters and Setters 
 public class ResumeHistory {
-    private ArrayList<Resume> resumeHistory;
     
+    
+
+    /*public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }*/
+    private ArrayList<Resume> resumeHistory;
+    private boolean gender=false;
+    private boolean nationality=false;
+    private boolean graduated=false;
+
+       
     public ResumeHistory(){
         resumeHistory=new ArrayList<Resume>();
     }
@@ -33,9 +48,28 @@ public class ResumeHistory {
     public void deleteResume(Resume r){
          resumeHistory.remove(r);
     } 
-
-    public void setImage(String filename) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public void setButtonGender(boolean gender){
+        this.gender=gender;
     }
     
+    public boolean getButtonGender(){
+        return gender;
+    } 
+    
+    public boolean getButtonGraduated() {
+        return graduated;
+    }
+
+    public void setButtonGraduated(boolean graduated) {
+        this.graduated = graduated;
+    }
+    
+    public boolean getButtonNationality() {
+        return nationality;
+    }
+
+    public void setButtonNationality(boolean nationality) {
+        this.nationality = nationality;
+    }
 }

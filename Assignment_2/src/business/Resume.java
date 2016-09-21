@@ -33,6 +33,7 @@ public class Resume {
     private String programmingLang;
     private String image;
 
+
     // Getters and Setters
 
     public String getFirstName() {
@@ -211,5 +212,9 @@ public class Resume {
         this.image = image;
     }
     
+    @Override
+    public String toString(){
+       return this.firstName; 
+    }
      
 }
