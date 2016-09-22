@@ -66,6 +66,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(createBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
+
+        controlJPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {createBtn, displayBtn});
+
         controlJPanelLayout.setVerticalGroup(
             controlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlJPanelLayout.createSequentialGroup()
@@ -75,6 +78,8 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(displayBtn)
                 .addContainerGap(206, Short.MAX_VALUE))
         );
+
+        controlJPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {createBtn, displayBtn});
 
         splitPane.setLeftComponent(controlJPanel);
 

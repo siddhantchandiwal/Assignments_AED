@@ -26,13 +26,25 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateJPanel
      */
+    ButtonGroup gender=new ButtonGroup();
+    ButtonGroup nationality=new ButtonGroup();
+    ButtonGroup graduated=new ButtonGroup();
     private ResumeHistory rsh;
     private Resume res;
-    String path;
-   // private boolean gender;
-   // private boolean nationality;
-   // private boolean graduated;
-    CreateResumeJPanel(ResumeHistory rsh) {                  //Parameterised Constructor
+    public String path;
+    private String gen;
+    private String nat;
+    private String grad;
+    
+    public String Java="";
+    public String Python="";
+    public String SQL="";
+    public String Cpp="";
+    public String Php="";
+    public String Matlab="";
+    
+         
+    public CreateResumeJPanel(ResumeHistory rsh) {                  //Parameterised Constructor
         initComponents();
         this.rsh=rsh;
     }
@@ -341,21 +353,51 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
 
         checkBoxJava.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         checkBoxJava.setText("Java");
+        checkBoxJava.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                checkBoxJavaStateChanged(evt);
+            }
+        });
 
         checkBoxPython.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         checkBoxPython.setText("Python");
+        checkBoxPython.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                checkBoxPythonStateChanged(evt);
+            }
+        });
 
         checkBoxCpp.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         checkBoxCpp.setText("C++");
+        checkBoxCpp.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                checkBoxCppStateChanged(evt);
+            }
+        });
 
         checkBoxSQL.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         checkBoxSQL.setText("SQL");
+        checkBoxSQL.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                checkBoxSQLStateChanged(evt);
+            }
+        });
 
         checkBoxMatlab.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         checkBoxMatlab.setText("MATLAB");
+        checkBoxMatlab.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                checkBoxMatlabStateChanged(evt);
+            }
+        });
 
         checkBoxPhp.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         checkBoxPhp.setText("PHP");
+        checkBoxPhp.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                checkBoxPhpStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -488,6 +530,8 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {degreeName1TextField, degreeName2TextField, jScrollPane1});
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {emailIdTextField, picPathTextField});
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {resetBtn, submitBtn});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -638,14 +682,15 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {checkBoxCpp, checkBoxJava, checkBoxMatlab, checkBoxPhp, checkBoxPython, checkBoxSQL, lblLanguagesKnown});
 
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {resetBtn, submitBtn});
+
         jScrollPane3.setViewportView(jPanel1);
 
         add(jScrollPane3, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     public int validateJFieldText(){                     //Method created to check if any field is empty
-           
-           // Accepting all the text fields in an array of size
+         // Accepting all the text fields in an array of size
         JTextField jField[]=new JTextField[18];
         jField[0]=firstNameTextField;
         jField[1]=lastNameTextField;
@@ -677,32 +722,6 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         return flag;
     } 
     
-    /* public int IsIntegerValueOfTextField(JTextField textFiled, String textfield) {
-        int flag=1;
-        try {
-            int intvalue = Integer.parseInt(textFiled.getText());
-            if ((intvalue < 0)) {
-                flag = 0;
-                JOptionPane.showMessageDialog(null, "Zero or Negative value are not allowed");
-            } else {
-                flag = 1;
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Please enter number in " + textfield);
-            flag = 0;
-        }
-        return flag;
-    }*/
-
-    /*public void GenderValidation(){
-        boolean Gender =true;
-        if (btnMale.isSelected()){
-            btnFemale.setVisible(Gender);
-        }
-        else{
-            btnFemale.setVisible(Gender);
-        }
-    }*/
     private void picBrowseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_picBrowseBtnActionPerformed
         // TODO add your handling code here:
         //Choosing image from JFile Chooser
@@ -724,8 +743,8 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
 
     public boolean IsEmailValidation() {
         boolean isEmailCorrectlyFormatted = true;
-        String regex = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-        Pattern pattern = Pattern.compile(regex);
+        String email = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        Pattern pattern = Pattern.compile(email);
         Matcher matcher = pattern.matcher(emailIdTextField.getText());
         if (!matcher.matches()) {
             isEmailCorrectlyFormatted = false;
@@ -736,9 +755,13 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         }
         return isEmailCorrectlyFormatted;
     }
-    private void resetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetBtnActionPerformed
-        // TODO add your handling code here:
-        //Making all the spaces blank in order to reset the fields
+    
+    public boolean IsFormatValidation(){
+        boolean isFormat=true;
+        return isFormat;
+    }
+    
+    public void resetFields(){
         firstNameTextField.setText("");
         lastNameTextField.setText("");
         contactNoTextField.setText("");
@@ -758,14 +781,26 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         gpa2TextField.setText("");
         workExperienceTextField.setSelectedItem("0-2 Years");
         picPathTextField.setText("");
+        gender.clearSelection();
+        nationality.clearSelection();
+        graduated.clearSelection();
+        checkBoxJava.setSelected(false);
+        checkBoxPython.setSelected(false);
+        checkBoxSQL.setSelected(false);
+        checkBoxCpp.setSelected(false);
+        checkBoxPhp.setSelected(false);
+        checkBoxMatlab.setSelected(false);
+        checkbox1.setState(false);
+    }
+    private void resetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetBtnActionPerformed
+        //Making all the spaces blank in order to reset the fields
+        resetFields();
+        
     }//GEN-LAST:event_resetBtnActionPerformed
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // If Validate Field turns true then Call Set Text Method
-      //  IsEmailValidation();
-      //GenderValidation();
-      
-       if (!IsEmailValidation()) {
+      if (!IsEmailValidation()) {
            // JOptionPane.showMessageDialog(null, "Email Address not correctly formated.");
         
         if (validateJFieldText()==1) {
@@ -790,22 +825,17 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
            double gpa2=Double.parseDouble(gpa2TextField.getText());
            String workExperience=workExperienceTextField.getSelectedItem().toString();
            
-           
-           //For Gender Button
-           ButtonGroup gender=new ButtonGroup();
+                    
            gender.add(btnMale);
            gender.add(btnFemale);
-           
-           //For Nationality Button
-           ButtonGroup nationality=new ButtonGroup();
+    
            nationality.add(btnUSA);
            nationality.add(btnInternational);
            
-           ButtonGroup graduated=new ButtonGroup();
            graduated.add(btnGraduatedYes);
            graduated.add(btnGraduatedNo);
            
-           
+           ///////////////////////////////////////
            Resume r=rsh.addResume();
            r.setFirstName(firstName);
            r.setLastName(lastName);
@@ -826,50 +856,49 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
            r.setGpa2(gpa2);
            r.setWorkExperience(workExperience);
            r.setImage(path);
+           r.setGender(gen);
+           r.setNationality(nat);
+           r.setGraduated(grad);
+           r.setProgrammingLang(checkboxformat());
            // Display Success Message to user
-        JOptionPane.showMessageDialog(null, "Resume Submitted Successfully");
+           JOptionPane.showMessageDialog(null, "Resume Submitted Successfully");
+            resetFields();
         
-        firstNameTextField.setText("");
-        lastNameTextField.setText("");
-        contactNoTextField.setText("");
-        emailIdTextField.setText("");
-        streetLine1TextField.setText("");
-        streetLine2TextField.setText("");
-        cityTextField.setText("");
-        zipCodeTextField.setText("");
-        countryTextField.setSelectedItem("US");
-        affiliationsTextField.setText("");
-        careerObjectiveTextField.setText("");
-        degreeName1TextField.setText("");
-        degreeDate1TextField.setText("");
-        gpa1TextField.setText("");
-        degreeName2TextField.setText("");
-        degreeDate2TextField.setText("");
-        gpa2TextField.setText("");
-        workExperienceTextField.setSelectedItem("0-2 Years");
-        picPathTextField.setText("");
         ImageIcon icon=new ImageIcon();
        // lblHeading.setIcon(icon);
-        
-        //For buttons
-        btnMale.setSelected(false);
-        btnFemale.setSelected(false);
-            //JOptionPane.showMessageDialog(null,"");
-         //For buttons
-        btnUSA.setSelected(false);
-        btnInternational.setSelected(false);   
-        
-        btnGraduatedYes.setSelected(false);
-        btnGraduatedNo.setSelected(false);
-        }
+              }
     }//GEN-LAST:event_submitBtnActionPerformed
+    }
+    private String checkboxformat(){
+        StringBuffer buffer=new StringBuffer();
+        if(Java!=""){
+            buffer=buffer.append(Java);
+        }
+        if(Python!=""){
+            buffer.append(Python);
+        }
+        if(SQL!=""){
+            buffer.append(SQL);
+        }
+        if(Cpp!=""){
+            buffer.append(Cpp);
+        }
+        if(Php!=""){
+            buffer.append(Php);
+        }
+        if(Matlab!=""){
+            buffer.append(Matlab);
+        }
+        buffer=buffer.deleteCharAt(0);
+        return buffer.toString();
     }
     
     private void btnMaleStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_btnMaleStateChanged
         // TODO add your handling code here:
         if(btnMale.isSelected())
         {
-            rsh.setButtonGender(true);
+            //rsh.setButtonGender(true);
+            gen="Male";
             btnFemale.setSelected(false);
         }
         else
@@ -882,7 +911,8 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
            if(btnFemale.isSelected())
         {
-            rsh.setButtonGender(false);
+            //rsh.setButtonGender(false);
+            gen="Female";
             btnMale.setSelected(false);
         }
         else
@@ -895,7 +925,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         if(btnUSA.isSelected())
         {
-            rsh.setButtonNationality(true);
+            nat="International";
             btnInternational.setSelected(false);
         }
         else
@@ -908,7 +938,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         if(btnInternational.isSelected())
         {
-            rsh.setButtonNationality(false);
+            nat="USA";
             btnUSA.setSelected(false);
         }
         else
@@ -921,7 +951,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         if(btnGraduatedYes.isSelected())
         {
-            rsh.setButtonGraduated(true);
+            grad="Yes";
             btnGraduatedNo.setSelected(false);
         }
         else
@@ -934,7 +964,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         if(btnGraduatedNo.isSelected())
         {
-            rsh.setButtonGraduated(false);
+           grad="No";
             btnGraduatedYes.setSelected(false);
         }
         else
@@ -942,6 +972,61 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
           //rsh.setButtonGender(true);
         }
     }//GEN-LAST:event_btnGraduatedNoStateChanged
+
+    private void checkBoxJavaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxJavaStateChanged
+        // TODO add your handling code here:
+        if(checkBoxJava.isSelected()){
+            Java="& Java ";
+        }else{
+            Java="";
+        }
+    }//GEN-LAST:event_checkBoxJavaStateChanged
+
+    private void checkBoxPythonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxPythonStateChanged
+        // TODO add your handling code here:
+        if(checkBoxPython.isSelected()){
+            Python="& Python ";
+        }else{
+            Python="";
+        }
+    }//GEN-LAST:event_checkBoxPythonStateChanged
+
+    private void checkBoxSQLStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxSQLStateChanged
+        // TODO add your handling code here:
+        if(checkBoxSQL.isSelected()){
+            SQL="& SQL ";
+        }else{
+            SQL="";
+        }
+    }//GEN-LAST:event_checkBoxSQLStateChanged
+
+    private void checkBoxCppStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxCppStateChanged
+        // TODO add your handling code here:
+        if(checkBoxCpp.isSelected()){
+            Cpp="& Cpp ";
+        }else{
+            Cpp="";
+        }
+    }//GEN-LAST:event_checkBoxCppStateChanged
+
+    private void checkBoxPhpStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxPhpStateChanged
+        // TODO add your handling code here:
+        if(checkBoxPhp.isSelected()){
+            Php="& Php ";
+        }else{
+            Php="";
+        }
+    }//GEN-LAST:event_checkBoxPhpStateChanged
+
+    private void checkBoxMatlabStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxMatlabStateChanged
+        // TODO add your handling code here:
+        if(checkBoxMatlab.isSelected()){
+            Matlab="& Matlab ";
+        }else{
+            Matlab="";
+        }
+        
+    }//GEN-LAST:event_checkBoxMatlabStateChanged
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

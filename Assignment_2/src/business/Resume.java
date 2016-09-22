@@ -32,9 +32,22 @@ public class Resume {
     private String workExperience;
     private String programmingLang;
     private String image;
+    
+    //for Radio buttons
+    
+    private String graduated;
 
+    public String getGraduated() {
+        return graduated;
+    }
 
-    // Getters and Setters
+    public void setGraduated(String graduated) {
+        this.graduated = graduated;
+    }
+   
+    
+    
+        // Getters and Setters
 
     public String getFirstName() {
         return firstName;

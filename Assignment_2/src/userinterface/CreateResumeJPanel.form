@@ -38,9 +38,9 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="294" pref="294" max="-2" attributes="0"/>
-                              <Component id="submitBtn" min="-2" max="-2" attributes="0"/>
+                              <Component id="submitBtn" linkSize="20" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="110" pref="110" max="-2" attributes="0"/>
-                              <Component id="resetBtn" min="-2" max="-2" attributes="0"/>
+                              <Component id="resetBtn" linkSize="20" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
@@ -328,8 +328,8 @@
                       <Component id="checkbox1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="submitBtn" min="-2" max="-2" attributes="0"/>
-                          <Component id="resetBtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="submitBtn" linkSize="21" min="-2" max="-2" attributes="0"/>
+                          <Component id="resetBtn" linkSize="21" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="33" max="32767" attributes="0"/>
                   </Group>
@@ -951,6 +951,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Java"/>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="checkBoxJavaStateChanged"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="checkBoxPython">
               <Properties>
@@ -959,6 +962,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Python"/>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="checkBoxPythonStateChanged"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="checkBoxCpp">
               <Properties>
@@ -967,6 +973,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="C++"/>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="checkBoxCppStateChanged"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="checkBoxSQL">
               <Properties>
@@ -975,6 +984,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="SQL"/>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="checkBoxSQLStateChanged"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="checkBoxMatlab">
               <Properties>
@@ -983,6 +995,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="MATLAB"/>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="checkBoxMatlabStateChanged"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="checkBoxPhp">
               <Properties>
@@ -991,6 +1006,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="PHP"/>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="checkBoxPhpStateChanged"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

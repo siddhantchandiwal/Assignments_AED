@@ -22,9 +22,9 @@ public class ResumeHistory {
         this.image = image;
     }*/
     private ArrayList<Resume> resumeHistory;
-    private boolean gender=false;
-    private boolean nationality=false;
-    private boolean graduated=false;
+   // private boolean gender=false;
+   //private boolean nationality=false;
+   // private boolean graduated=false;
 
        
     public ResumeHistory(){
@@ -49,7 +49,7 @@ public class ResumeHistory {
          resumeHistory.remove(r);
     } 
     
-    public void setButtonGender(boolean gender){
+   /* public void setButtonGender(boolean gender){
         this.gender=gender;
     }
     
@@ -71,5 +71,5 @@ public class ResumeHistory {
 
     public void setButtonNationality(boolean nationality) {
         this.nationality = nationality;
-    }
+    }*/
 }
