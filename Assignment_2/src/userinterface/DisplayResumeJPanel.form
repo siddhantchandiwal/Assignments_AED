@@ -11,7 +11,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,6,73,0,0,4,45"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,5,-32,0,0,4,45"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
@@ -34,258 +34,316 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace min="248" pref="248" max="-2" attributes="0"/>
+                      <Component id="lblHeading" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="jScrollPane5" min="-2" pref="677" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="249" pref="249" max="-2" attributes="0"/>
+                      <Component id="btnViewDetails" min="-2" pref="150" max="-2" attributes="0"/>
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="btnDeleteDetails" min="-2" pref="150" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="lblEducationalQualifications" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblFirstName" alignment="0" min="-2" pref="219" max="-2" attributes="0"/>
-                                  <Component id="lblLastName" alignment="0" min="-2" pref="219" max="-2" attributes="0"/>
-                                  <Component id="lblGender" alignment="0" min="-2" pref="219" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="lblHighSchool" max="32767" attributes="0"/>
-                                          <Component id="lblUnderGradSchool" alignment="0" pref="219" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="degreeName2TextField" min="-2" pref="200" max="-2" attributes="0"/>
-                                          <Component id="degreeName1TextField" min="-2" pref="200" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblDate1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblDate2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="degreeDate1TextField" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                                          <Component id="degreeDate2TextField" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lblGpa2" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="gpa2TextField" min="-2" pref="50" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lblGpa1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="gpa1TextField" min="-2" pref="50" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="lblAddress" alignment="0" pref="219" max="32767" attributes="0"/>
-                                              <Component id="lblCareerObjectives" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="lblAffiliations" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="lblCountry" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="lblZipCode" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="lblEmailId" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Component id="lblCity" alignment="0" min="-2" pref="219" max="-2" attributes="0"/>
-                                          <Component id="lblStreetLine2" alignment="0" min="-2" pref="219" max="-2" attributes="0"/>
-                                          <Component id="lblSteetLine1" alignment="0" min="-2" pref="219" max="-2" attributes="0"/>
-                                          <Component id="lblNationality" alignment="1" min="-2" pref="219" max="-2" attributes="0"/>
-                                          <Component id="lblContactNo" alignment="1" min="-2" pref="219" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="btnViewDetails" min="-2" pref="150" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                              <Component id="btnDeleteDetails" min="-2" pref="150" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="emailIdTextField" alignment="0" min="-2" pref="312" max="-2" attributes="0"/>
-                                          <Component id="streetLine1TextField" alignment="0" min="-2" pref="312" max="-2" attributes="0"/>
-                                          <Component id="streetLine2TextField" alignment="0" min="-2" pref="312" max="-2" attributes="0"/>
-                                          <Component id="cityTextField" alignment="0" min="-2" pref="312" max="-2" attributes="0"/>
-                                          <Component id="zipCodeTextField" alignment="0" min="-2" pref="312" max="-2" attributes="0"/>
-                                          <Component id="countryTextField" alignment="0" min="-2" pref="312" max="-2" attributes="0"/>
-                                          <Component id="affiliationsTextField" linkSize="9" alignment="0" min="-2" pref="312" max="-2" attributes="0"/>
-                                          <Component id="jScrollPane1" alignment="0" min="-2" pref="312" max="-2" attributes="0"/>
-                                          <Component id="contactNoTextField" alignment="0" min="-2" pref="312" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="lastNameTextField" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="firstNameTextField" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="genderTextField" linkSize="8" alignment="0" pref="312" max="32767" attributes="0"/>
-                                                  <Component id="nationalityTextField" linkSize="8" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
-                                              <Component id="picLabel" min="-2" pref="148" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <Component id="jScrollPane5" alignment="0" min="-2" pref="677" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="lblLanguages" min="-2" pref="219" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="languagesTextField" linkSize="9" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblWorkExp" min="-2" pref="219" max="-2" attributes="0"/>
-                                          <Component id="lblHaveYouGrad" alignment="0" min="-2" pref="219" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="graduatedTextField" linkSize="9" max="32767" attributes="0"/>
-                                          <Component id="workExperienceTextField" min="-2" pref="312" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
-                              <Component id="lblHeading" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="lblFirstName" min="-2" pref="219" max="-2" attributes="0"/>
+                          <Component id="lblLastName" min="-2" pref="219" max="-2" attributes="0"/>
+                          <Component id="lblGender" min="-2" pref="219" max="-2" attributes="0"/>
+                          <Component id="lblNationality" min="-2" pref="219" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="591" max="32767" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="firstNameTextField" min="-2" pref="312" max="-2" attributes="0"/>
+                          <Component id="lastNameTextField" min="-2" pref="312" max="-2" attributes="0"/>
+                          <Component id="genderTextField" min="-2" pref="312" max="-2" attributes="0"/>
+                          <Component id="nationalityTextField" min="-2" pref="312" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="152" pref="152" max="-2" attributes="0"/>
+                      <Component id="picLabel" min="-2" pref="148" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblContactNo" min="-2" pref="219" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="contactNoTextField" min="-2" pref="312" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblEmailId" min="-2" pref="219" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="emailIdTextField" min="-2" pref="312" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblAddress" min="-2" pref="219" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblSteetLine1" min="-2" pref="219" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="streetLine1TextField" min="-2" pref="312" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblStreetLine2" min="-2" pref="219" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="streetLine2TextField" min="-2" pref="312" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblCity" min="-2" pref="219" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="cityTextField" min="-2" pref="312" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblZipCode" min="-2" pref="219" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="zipCodeTextField" min="-2" pref="312" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblCountry" min="-2" pref="219" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="countryTextField" min="-2" pref="312" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblAffiliations" min="-2" pref="219" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="affiliationsTextField" min="-2" pref="312" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblCareerObjectives" min="-2" pref="219" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="312" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblEducationalQualifications" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblHighSchool" min="-2" pref="219" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="degreeName1TextField" min="-2" pref="200" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="lblDate1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="degreeDate1TextField" min="-2" pref="150" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="lblGpa1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="gpa1TextField" min="-2" pref="50" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblUnderGradSchool" min="-2" pref="219" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="degreeName2TextField" min="-2" pref="200" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="lblDate2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="degreeDate2TextField" min="-2" pref="150" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="lblGpa2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="gpa2TextField" min="-2" pref="50" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblHaveYouGrad" min="-2" pref="219" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="graduatedTextField" min="-2" pref="312" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblWorkExp" min="-2" pref="219" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="workExperienceTextField" min="-2" pref="312" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblLanguages" min="-2" pref="219" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="languagesTextField" min="-2" pref="312" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="29" pref="29" max="-2" attributes="0"/>
                       <Component id="lblHeading" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace min="29" pref="29" max="-2" attributes="0"/>
                       <Component id="jScrollPane5" min="-2" pref="234" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnViewDetails" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnDeleteDetails" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="93" max="32767" attributes="0"/>
+                      <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="firstNameTextField" linkSize="4" min="-2" pref="26" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="lastNameTextField" linkSize="4" min="-2" pref="26" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="picLabel" alignment="1" min="-2" pref="166" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="contactNoTextField" linkSize="3" min="-2" pref="26" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="emailIdTextField" linkSize="3" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="lblEmailId" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Component id="btnViewDetails" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDeleteDetails" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="93" pref="93" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="lblFirstName" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                              <Component id="lblLastName" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                              <Component id="lblGender" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
+                              <Component id="lblNationality" min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblFirstName" linkSize="4" min="-2" pref="26" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="lblLastName" linkSize="4" min="-2" pref="28" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblGender" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="genderTextField" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="nationalityTextField" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblNationality" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="lblContactNo" linkSize="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="firstNameTextField" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                              <Component id="lastNameTextField" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
+                              <Component id="genderTextField" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
+                              <Component id="nationalityTextField" min="-2" pref="28" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="picLabel" min="-2" pref="166" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="lblContactNo" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="contactNoTextField" min="-2" pref="26" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblEmailId" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="emailIdTextField" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="34" pref="34" max="-2" attributes="0"/>
                       <Component id="lblAddress" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="streetLine1TextField" linkSize="2" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="lblSteetLine1" linkSize="2" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="streetLine2TextField" linkSize="2" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="lblStreetLine2" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cityTextField" linkSize="2" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="lblCity" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="zipCodeTextField" linkSize="2" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="lblZipCode" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="countryTextField" linkSize="2" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="lblCountry" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="affiliationsTextField" linkSize="2" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="lblAffiliations" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblCareerObjectives" linkSize="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblSteetLine1" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="streetLine1TextField" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblStreetLine2" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="streetLine2TextField" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblCity" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="cityTextField" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblZipCode" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="zipCodeTextField" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblCountry" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="countryTextField" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblAffiliations" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="affiliationsTextField" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblCareerObjectives" min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                       <Component id="lblEducationalQualifications" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="lblHighSchool" linkSize="6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="lblUnderGradSchool" linkSize="7" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                              <Component id="lblHighSchool" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="degreeName1TextField" linkSize="6" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="lblDate1" linkSize="7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="degreeDate1TextField" linkSize="7" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="lblGpa1" linkSize="7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="gpa1TextField" linkSize="7" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="degreeName2TextField" linkSize="7" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="lblDate2" linkSize="7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="degreeDate2TextField" linkSize="7" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="lblGpa2" linkSize="7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="gpa2TextField" linkSize="7" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="degreeName1TextField" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lblDate1" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="degreeDate1TextField" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lblGpa1" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="gpa1TextField" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblDate2" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="lblGpa2" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblUnderGradSchool" min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Component id="degreeName2TextField" min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Component id="degreeDate2TextField" min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Component id="gpa2TextField" min="-2" pref="26" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="graduatedTextField" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblHaveYouGrad" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="lblHaveYouGrad" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="graduatedTextField" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblWorkExp" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="workExperienceTextField" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="lblWorkExp" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="workExperienceTextField" min="-2" pref="27" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblLanguages" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="languagesTextField" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="lblLanguages" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="languagesTextField" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="153" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -747,7 +805,6 @@
                     <LineBorder/>
                   </Border>
                 </Property>
-                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -774,7 +831,6 @@
                     <LineBorder/>
                   </Border>
                 </Property>
-                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -921,9 +977,6 @@
             <Component class="javax.swing.JTextField" name="languagesTextField">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="f0" green="f0" red="f0" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="16" style="0"/>
                 </Property>

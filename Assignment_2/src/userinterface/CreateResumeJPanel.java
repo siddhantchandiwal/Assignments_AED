@@ -7,7 +7,7 @@ package userinterface;
 
 import business.Resume;
 import business.ResumeHistory;
-import java.awt.Image;
+//import java.awt.Image;
 import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,7 +15,6 @@ import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -481,7 +480,6 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
             path = filename;
         }
     }//GEN-LAST:event_picBrowseBtnActionPerformed
-
     // Method to reset all the fields
     public void resetFields() {
         firstNameTextField.setText("");
@@ -492,7 +490,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         streetLine2TextField.setText("");
         cityTextField.setText("");
         zipCodeTextField.setText("");
-        countryTextField.setSelectedItem("US");
+        countryTextField.setSelectedItem("USA");
         affiliationsTextField.setText("");
         careerObjectiveTextField.setText("");
         degreeName1TextField.setText("");
@@ -546,6 +544,21 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         graduated.add(btnGraduatedNo);
 
         // Float variable Validations
+        // To check if any field is empty or starts with blank space
+        if ((firstName.isEmpty()) || (firstName.startsWith(" ")) || (lastName.isEmpty()) || (lastName.startsWith(" "))
+                || (contactNo.isEmpty()) || (contactNo.startsWith(" ")) || (emailId.isEmpty()) || (emailId.startsWith(" "))
+                || (streetLine1.isEmpty()) || (streetLine1.startsWith(" ")) || (streetLine2.isEmpty()) || (streetLine2.startsWith(" "))
+                || (city.isEmpty()) || (city.startsWith(" ")) || (zipcode.isEmpty()) || (zipcode.startsWith(" ")) || (affiliations.isEmpty() || (affiliations.startsWith(" "))
+                || (careerObjective.isEmpty())) || (careerObjective.startsWith(" ")) || (degreeName1.isEmpty()) || (degreeName1.startsWith(" "))
+                || (degreeName2.isEmpty()) || (degreeName2.startsWith(" ")) || (degreeDate2.isEmpty()) || (degreeDate2.startsWith(" "))
+                || (!(btnMale.isSelected() || (btnFemale.isSelected())))
+                || (!(btnUSA.isSelected() || (btnInternational.isSelected())))
+                || (!(btnGraduatedYes.isSelected() || (btnGraduatedNo.isSelected())))) {
+            JOptionPane.showMessageDialog(this, "Please fill all the details", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // Gpa field validation
         double gpa1;
         double gpa2;
         try {
@@ -581,17 +594,15 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
             return;
         }
 
-        // To check if any field is empty or starts with blank space
-        if ((firstName.isEmpty()) || (firstName.startsWith(" ")) || (lastName.isEmpty()) || (lastName.startsWith(" "))
-                || (contactNo.isEmpty()) || (contactNo.startsWith(" ")) || (emailId.isEmpty()) || (emailId.startsWith(" "))
-                || (streetLine1.isEmpty()) || (streetLine1.startsWith(" ")) || (streetLine2.isEmpty()) || (streetLine2.startsWith(" "))
-                || (city.isEmpty()) || (city.startsWith(" ")) || (zipcode.isEmpty()) || (zipcode.startsWith(" ")) || (affiliations.isEmpty() || (affiliations.startsWith(" "))
-                || (careerObjective.isEmpty())) || (careerObjective.startsWith(" ")) || (degreeName1.isEmpty()) || (degreeName1.startsWith(" "))
-                || (degreeName2.isEmpty()) || (degreeName2.startsWith(" ")) || (degreeDate2.isEmpty()) || (degreeDate2.startsWith(" "))
-                || (!(btnMale.isSelected() || (btnFemale.isSelected())))
-                || (!(btnUSA.isSelected() || (btnInternational.isSelected())))
-                || (!(btnGraduatedYes.isSelected() || (btnGraduatedNo.isSelected())))) {
-            JOptionPane.showMessageDialog(this, "Please fill all the details", "Warning", JOptionPane.WARNING_MESSAGE);
+        // To validate First Name, Last Name, City fields
+        if (!(Pattern.matches("^[a-zA-Z]+$", firstNameTextField.getText().trim())) || (!(Pattern.matches("^[a-zA-Z]+$", lastNameTextField.getText().trim())))
+                || !(Pattern.matches("^[a-zA-Z]+$", cityTextField.getText().trim()))) {
+            JOptionPane.showMessageDialog(this, "Please enter only alphabets", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        // To validate Zip Code field
+        if (!(Pattern.matches("^[0-9]+$", zipCodeTextField.getText().trim()))) {
+            JOptionPane.showMessageDialog(this, "Please enter only numbers in Zip Code Field", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
