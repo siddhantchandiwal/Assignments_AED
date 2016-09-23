@@ -689,7 +689,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         add(jScrollPane3, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    public int validateJFieldText(){                     //Method created to check if any field is empty
+   /* public int validateJFieldText(){                     //Method created to check if any field is empty
          // Accepting all the text fields in an array of size
         JTextField jField[]=new JTextField[18];
         jField[0]=firstNameTextField;
@@ -707,7 +707,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         jField[12]=degreeName2TextField;
         jField[13]=degreeDate2TextField;
         jField[14]=gpa2TextField;
-                
+                        
         int flag = 1;                 
         for (int i = 0; i < 15; i++) {                 // Traversing across the array length
             if (jField[i].getText().trim().isEmpty()) {
@@ -718,9 +718,28 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
             } else {
                 flag = 1;
             }
+            
         }
-        return flag;
-    } 
+        
+        double gpa1;
+        double gpa2;
+        try{
+            gpa1=Double.parseDouble(gpa1TextField.getText());
+            gpa2=Double.parseDouble(gpa2TextField.getText());
+            
+            if((gpa1<=0) && (gpa2<=0) && (gpa1>4) && (gpa2>4)){
+                JOptionPane.showMessageDialog(null,"Please enter GPA value less than 4");
+               // System.out.println("Please enter GPA value less than 4");
+            }
+        }catch(Exception e){
+           // JOptionPane.showMessageDialog(null, "Please enter appropriate values");
+            System.out.println("Please enter appropriate values");
+        }
+        
+        
+       return flag; 
+    } */
+       
     
     private void picBrowseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_picBrowseBtnActionPerformed
         // TODO add your handling code here:
@@ -741,7 +760,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_picBrowseBtnActionPerformed
 
-    public boolean IsEmailValidation() {
+   /* public boolean isEmailValidation() {
         boolean isEmailCorrectlyFormatted = true;
         String email = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
         Pattern pattern = Pattern.compile(email);
@@ -754,13 +773,8 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
             isEmailCorrectlyFormatted = true;
         }
         return isEmailCorrectlyFormatted;
-    }
-    
-    public boolean IsFormatValidation(){
-        boolean isFormat=true;
-        return isFormat;
-    }
-    
+    }*/
+         
     public void resetFields(){
         firstNameTextField.setText("");
         lastNameTextField.setText("");
@@ -795,17 +809,17 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     private void resetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetBtnActionPerformed
         //Making all the spaces blank in order to reset the fields
         resetFields();
-        
+    
     }//GEN-LAST:event_resetBtnActionPerformed
 
+   
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // If Validate Field turns true then Call Set Text Method
-      if (!IsEmailValidation()) {
+        
            // JOptionPane.showMessageDialog(null, "Email Address not correctly formated.");
         
-        if (validateJFieldText()==1) {
-            
-           // setTextFields();
+        //if (validateJFieldText()==1) {
+           
            String firstName=firstNameTextField.getText();
            String lastName=lastNameTextField.getText();
            String contactNo=contactNoTextField.getText();
@@ -819,10 +833,10 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
            String careerObjective=careerObjectiveTextField.getText();
            String degreeName1=degreeName1TextField.getText();
            String degreeDate1=degreeDate1TextField.getText();
-           double gpa1=Double.parseDouble(gpa1TextField.getText());
+          
            String degreeName2=degreeName2TextField.getText();
            String degreeDate2=degreeDate2TextField.getText();
-           double gpa2=Double.parseDouble(gpa2TextField.getText());
+           
            String workExperience=workExperienceTextField.getSelectedItem().toString();
            
                     
@@ -834,6 +848,57 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
            
            graduated.add(btnGraduatedYes);
            graduated.add(btnGraduatedNo);
+           double gpa1;
+           double gpa2;
+           try{
+                gpa1=Double.parseDouble(gpa1TextField.getText());
+               gpa2=Double.parseDouble(gpa2TextField.getText());
+               if((gpa1<=0) || (gpa1>4) || (gpa2<=0) || (gpa2>4)){
+                   JOptionPane.showMessageDialog(this, "Please enter proper GPA");
+                   return;
+               }
+           }
+               catch(Exception e){
+                       JOptionPane.showMessageDialog(this, "Please add appropriate values");
+                       return;
+                       }
+           
+                      boolean isEmailCorrectlyFormatted = true;
+                      String email;
+                      try {
+             isEmailCorrectlyFormatted = true;
+             email = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+            Pattern pattern = Pattern.compile(email);
+            Matcher matcher = pattern.matcher(emailIdTextField.getText());
+            if (!matcher.matches()) {
+                isEmailCorrectlyFormatted = false;
+                JOptionPane.showMessageDialog(null, "Please enter Email Id in proper format");
+                return;
+            } else {
+                isEmailCorrectlyFormatted = true;
+            }
+            
+
+        } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Please add appropriate values");
+                       return;
+        }
+           
+           if((firstName.isEmpty()) || (firstName.startsWith(" ")) || (lastName.isEmpty()) || (lastName.startsWith(" ")) || 
+                   (contactNo.isEmpty()) || (contactNo.startsWith(" ")) ||(emailId.isEmpty()) || (emailId.startsWith(" ")) ||
+                   (streetLine1.isEmpty()) || (streetLine1.startsWith(" ")) || (streetLine2.isEmpty()) || (streetLine2.startsWith(" ")) ||
+                   (city.isEmpty()) || (city.startsWith(" ")) || (zipcode.isEmpty()) || (zipcode.startsWith(" ")) || (affiliations.isEmpty() || (affiliations.startsWith(" "))
+                   || (careerObjective.isEmpty())) || (careerObjective.startsWith(" ")) || (degreeName1.isEmpty()) || (degreeName1.startsWith(" ")) || 
+                   (degreeName2.isEmpty()) || (degreeName2.startsWith(" ")) || (degreeDate2.isEmpty()) || (degreeDate2.startsWith(" ")) || 
+                   (!(btnMale.isSelected()) || (btnFemale.isSelected())) || 
+                   (!(btnUSA.isSelected()) || (btnInternational.isSelected())) || 
+                   (!(btnGraduatedYes.isSelected()) || (btnGraduatedNo.isSelected()))) {
+               JOptionPane.showMessageDialog(null, "Please fill all the details");
+               return;
+           }
+           
+           
+           
            
            ///////////////////////////////////////
            Resume r=rsh.addResume();
@@ -866,9 +931,8 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         
         ImageIcon icon=new ImageIcon();
        // lblHeading.setIcon(icon);
-              }
+              
     }//GEN-LAST:event_submitBtnActionPerformed
-    }
     private String checkboxformat(){
         StringBuffer buffer=new StringBuffer();
         if(Java!=""){
@@ -889,9 +953,12 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         if(Matlab!=""){
             buffer.append(Matlab);
         }
+        if(buffer.length()!=0){
         buffer=buffer.deleteCharAt(0);
-        return buffer.toString();
-    }
+        
+        }
+    return buffer.toString();}
+    
     
     private void btnMaleStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_btnMaleStateChanged
         // TODO add your handling code here:
@@ -976,7 +1043,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     private void checkBoxJavaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxJavaStateChanged
         // TODO add your handling code here:
         if(checkBoxJava.isSelected()){
-            Java="& Java ";
+            Java=", Java ";
         }else{
             Java="";
         }
@@ -985,7 +1052,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     private void checkBoxPythonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxPythonStateChanged
         // TODO add your handling code here:
         if(checkBoxPython.isSelected()){
-            Python="& Python ";
+            Python=", Python ";
         }else{
             Python="";
         }
@@ -994,7 +1061,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     private void checkBoxSQLStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxSQLStateChanged
         // TODO add your handling code here:
         if(checkBoxSQL.isSelected()){
-            SQL="& SQL ";
+            SQL=", SQL ";
         }else{
             SQL="";
         }
@@ -1003,7 +1070,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     private void checkBoxCppStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxCppStateChanged
         // TODO add your handling code here:
         if(checkBoxCpp.isSelected()){
-            Cpp="& Cpp ";
+            Cpp=", Cpp ";
         }else{
             Cpp="";
         }
@@ -1012,7 +1079,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     private void checkBoxPhpStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxPhpStateChanged
         // TODO add your handling code here:
         if(checkBoxPhp.isSelected()){
-            Php="& Php ";
+            Php=", Php ";
         }else{
             Php="";
         }
@@ -1021,7 +1088,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     private void checkBoxMatlabStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxMatlabStateChanged
         // TODO add your handling code here:
         if(checkBoxMatlab.isSelected()){
-            Matlab="& Matlab ";
+            Matlab=", Matlab ";
         }else{
             Matlab="";
         }
