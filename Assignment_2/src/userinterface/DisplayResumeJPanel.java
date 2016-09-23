@@ -5,9 +5,9 @@
  */
 package userinterface;
 
-import userinterface.CreateResumeJPanel;
 import business.Resume;                         //Importing Business Package
 import business.ResumeHistory;
+import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -21,11 +21,11 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
      * Creates new form NewJPanel
      */
     private ResumeHistory rsh;
-    private Resume res;
 
     public DisplayResumeJPanel(ResumeHistory rsh) {     //Passing Parameters to constructors
         initComponents();
         this.rsh = rsh;
+        tblResume.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 20));
         populateTable();
     }
 
@@ -54,50 +54,50 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
 
         jScrollPane4 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lblHeading = new javax.swing.JLabel();
+        lblFirstName = new javax.swing.JLabel();
+        lblLastName = new javax.swing.JLabel();
+        lblContactNo = new javax.swing.JLabel();
+        lblEmailId = new javax.swing.JLabel();
+        lblAddress = new javax.swing.JLabel();
+        lblSteetLine1 = new javax.swing.JLabel();
+        lblStreetLine2 = new javax.swing.JLabel();
         firstNameTextField = new javax.swing.JTextField();
         lastNameTextField = new javax.swing.JTextField();
         contactNoTextField = new javax.swing.JTextField();
         emailIdTextField = new javax.swing.JTextField();
         streetLine1TextField = new javax.swing.JTextField();
         streetLine2TextField = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        lblCity = new javax.swing.JLabel();
+        lblCountry = new javax.swing.JLabel();
+        lblZipCode = new javax.swing.JLabel();
+        lblAffiliations = new javax.swing.JLabel();
         cityTextField = new javax.swing.JTextField();
         zipCodeTextField = new javax.swing.JTextField();
         affiliationsTextField = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        lblCareerObjectives = new javax.swing.JLabel();
+        lblEducationalQualifications = new javax.swing.JLabel();
+        lblHighSchool = new javax.swing.JLabel();
+        lblDate1 = new javax.swing.JLabel();
+        lblGpa1 = new javax.swing.JLabel();
         degreeName1TextField = new javax.swing.JTextField();
         degreeDate1TextField = new javax.swing.JTextField();
         gpa1TextField = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        lblUnderGradSchool = new javax.swing.JLabel();
+        lblDate2 = new javax.swing.JLabel();
+        lblGpa2 = new javax.swing.JLabel();
         degreeName2TextField = new javax.swing.JTextField();
         degreeDate2TextField = new javax.swing.JTextField();
         gpa2TextField = new javax.swing.JTextField();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
+        lblWorkExp = new javax.swing.JLabel();
+        lblLanguages = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         careerObjectiveTextField = new javax.swing.JTextArea();
         countryTextField = new javax.swing.JComboBox<>();
         workExperienceTextField = new javax.swing.JComboBox<>();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        lblGender = new javax.swing.JLabel();
+        lblNationality = new javax.swing.JLabel();
+        lblHaveYouGrad = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         tblResume = new javax.swing.JTable();
         btnViewDetails = new javax.swing.JButton();
@@ -112,143 +112,143 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
 
         jPanel2.setEnabled(false);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("View Resume");
+        lblHeading.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblHeading.setText("View Resume");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("First Name:");
-        jLabel2.setPreferredSize(new java.awt.Dimension(143, 18));
+        lblFirstName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblFirstName.setText("First Name:");
+        lblFirstName.setPreferredSize(new java.awt.Dimension(143, 18));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("Last Name:");
-        jLabel3.setPreferredSize(new java.awt.Dimension(143, 18));
+        lblLastName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblLastName.setText("Last Name:");
+        lblLastName.setPreferredSize(new java.awt.Dimension(143, 18));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("Contact No:");
-        jLabel4.setPreferredSize(new java.awt.Dimension(143, 22));
+        lblContactNo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblContactNo.setText("Contact No:");
+        lblContactNo.setPreferredSize(new java.awt.Dimension(143, 22));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel5.setText("Email id:");
-        jLabel5.setPreferredSize(new java.awt.Dimension(143, 22));
+        lblEmailId.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblEmailId.setText("Email id:");
+        lblEmailId.setPreferredSize(new java.awt.Dimension(143, 22));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setText("Address");
-        jLabel6.setPreferredSize(new java.awt.Dimension(143, 22));
+        lblAddress.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblAddress.setText("Address");
+        lblAddress.setPreferredSize(new java.awt.Dimension(143, 22));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel7.setText("Street Line 1:");
-        jLabel7.setPreferredSize(new java.awt.Dimension(143, 22));
+        lblSteetLine1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblSteetLine1.setText("Street Line 1:");
+        lblSteetLine1.setPreferredSize(new java.awt.Dimension(143, 22));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel8.setText("Street Line 2:");
-        jLabel8.setPreferredSize(new java.awt.Dimension(143, 22));
+        lblStreetLine2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblStreetLine2.setText("Street Line 2:");
+        lblStreetLine2.setPreferredSize(new java.awt.Dimension(143, 22));
 
+        firstNameTextField.setEditable(false);
         firstNameTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         firstNameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        firstNameTextField.setEnabled(false);
 
+        lastNameTextField.setEditable(false);
         lastNameTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         lastNameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lastNameTextField.setEnabled(false);
 
+        contactNoTextField.setEditable(false);
         contactNoTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         contactNoTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        contactNoTextField.setEnabled(false);
 
+        emailIdTextField.setEditable(false);
         emailIdTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         emailIdTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        emailIdTextField.setEnabled(false);
 
+        streetLine1TextField.setEditable(false);
         streetLine1TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         streetLine1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        streetLine1TextField.setEnabled(false);
 
+        streetLine2TextField.setEditable(false);
         streetLine2TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         streetLine2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        streetLine2TextField.setEnabled(false);
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel9.setText("City:");
-        jLabel9.setPreferredSize(new java.awt.Dimension(143, 22));
+        lblCity.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblCity.setText("City:");
+        lblCity.setPreferredSize(new java.awt.Dimension(143, 22));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel11.setText("Country:");
-        jLabel11.setPreferredSize(new java.awt.Dimension(143, 22));
+        lblCountry.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblCountry.setText("Country:");
+        lblCountry.setPreferredSize(new java.awt.Dimension(143, 22));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel10.setText("Zip Code:");
-        jLabel10.setPreferredSize(new java.awt.Dimension(143, 22));
+        lblZipCode.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblZipCode.setText("Zip Code:");
+        lblZipCode.setPreferredSize(new java.awt.Dimension(143, 22));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel12.setText("Affiliations:");
-        jLabel12.setPreferredSize(new java.awt.Dimension(143, 22));
+        lblAffiliations.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblAffiliations.setText("Affiliations:");
+        lblAffiliations.setPreferredSize(new java.awt.Dimension(143, 22));
 
+        cityTextField.setEditable(false);
         cityTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         cityTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        cityTextField.setEnabled(false);
 
+        zipCodeTextField.setEditable(false);
         zipCodeTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         zipCodeTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        zipCodeTextField.setEnabled(false);
 
+        affiliationsTextField.setEditable(false);
         affiliationsTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         affiliationsTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        affiliationsTextField.setEnabled(false);
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel13.setText("Career Objectives:");
-        jLabel13.setMaximumSize(new java.awt.Dimension(188, 22));
+        lblCareerObjectives.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblCareerObjectives.setText("Career Objectives:");
+        lblCareerObjectives.setMaximumSize(new java.awt.Dimension(188, 22));
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel14.setText("Education Qualifications");
+        lblEducationalQualifications.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblEducationalQualifications.setText("Education Qualifications");
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel15.setText("High School:");
+        lblHighSchool.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblHighSchool.setText("High School:");
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel16.setText("Date");
+        lblDate1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblDate1.setText("Date");
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel17.setText("GPA");
+        lblGpa1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblGpa1.setText("GPA");
 
+        degreeName1TextField.setEditable(false);
         degreeName1TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         degreeName1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        degreeName1TextField.setEnabled(false);
 
+        degreeDate1TextField.setEditable(false);
         degreeDate1TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         degreeDate1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        degreeDate1TextField.setEnabled(false);
 
+        gpa1TextField.setEditable(false);
         gpa1TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         gpa1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        gpa1TextField.setEnabled(false);
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel18.setText("Under Graduate School:");
+        lblUnderGradSchool.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblUnderGradSchool.setText("Under Graduate School:");
 
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel19.setText("Date");
+        lblDate2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblDate2.setText("Date");
 
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel20.setText("GPA");
+        lblGpa2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblGpa2.setText("GPA");
 
+        degreeName2TextField.setEditable(false);
         degreeName2TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         degreeName2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        degreeName2TextField.setEnabled(false);
 
+        degreeDate2TextField.setEditable(false);
         degreeDate2TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         degreeDate2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        degreeDate2TextField.setEnabled(false);
 
+        gpa2TextField.setEditable(false);
         gpa2TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         gpa2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        gpa2TextField.setEnabled(false);
 
-        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel24.setText("Work Experience:");
+        lblWorkExp.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblWorkExp.setText("Work Experience:");
 
-        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel25.setText("Languages Known:");
+        lblLanguages.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblLanguages.setText("Languages Known:");
 
         careerObjectiveTextField.setEditable(false);
         careerObjectiveTextField.setBackground(new java.awt.Color(240, 240, 240));
@@ -257,7 +257,6 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         careerObjectiveTextField.setLineWrap(true);
         careerObjectiveTextField.setRows(5);
         careerObjectiveTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        careerObjectiveTextField.setEnabled(false);
         jScrollPane1.setViewportView(careerObjectiveTextField);
 
         countryTextField.setBackground(new java.awt.Color(240, 240, 240));
@@ -272,14 +271,14 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         workExperienceTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         workExperienceTextField.setEnabled(false);
 
-        jLabel26.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel26.setText("Gender:");
+        lblGender.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblGender.setText("Gender:");
 
-        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel27.setText("Nationality:");
+        lblNationality.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblNationality.setText("Nationality:");
 
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel21.setText("Have you Graduated:");
+        lblHaveYouGrad.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblHaveYouGrad.setText("Have you Graduated:");
 
         tblResume.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         tblResume.setModel(new javax.swing.table.DefaultTableModel(
@@ -298,6 +297,7 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblResume.setRowHeight(20);
         jScrollPane5.setViewportView(tblResume);
         if (tblResume.getColumnModel().getColumnCount() > 0) {
             tblResume.getColumnModel().getColumn(2).setResizable(false);
@@ -321,22 +321,22 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
 
         picLabel.setPreferredSize(new java.awt.Dimension(120, 120));
 
+        genderTextField.setEditable(false);
         genderTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         genderTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        genderTextField.setEnabled(false);
 
+        nationalityTextField.setEditable(false);
         nationalityTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         nationalityTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        nationalityTextField.setEnabled(false);
 
+        graduatedTextField.setEditable(false);
         graduatedTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         graduatedTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        graduatedTextField.setEnabled(false);
 
+        languagesTextField.setEditable(false);
         languagesTextField.setBackground(new java.awt.Color(240, 240, 240));
         languagesTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         languagesTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        languagesTextField.setEnabled(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -345,29 +345,26 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(320, 320, 320)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel14))
+                        .addComponent(lblEducationalQualifications))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblGender, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
+                                    .addComponent(lblHighSchool, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblUnderGradSchool, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(degreeName2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(degreeName1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel19))
+                                    .addComponent(lblDate1)
+                                    .addComponent(lblDate2))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(degreeDate1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -375,27 +372,27 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel20)
+                                        .addComponent(lblGpa2)
                                         .addGap(18, 18, 18)
                                         .addComponent(gpa2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel17)
+                                        .addComponent(lblGpa1)
                                         .addGap(18, 18, 18)
                                         .addComponent(gpa1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                                        .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(lblAddress, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                                        .addComponent(lblCareerObjectives, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblAffiliations, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblCountry, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblZipCode, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblEmailId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(lblCity, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblStreetLine2, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblSteetLine1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblNationality, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblContactNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -424,17 +421,20 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblLanguages, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(languagesTextField))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lblWorkExp, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblHaveYouGrad, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(graduatedTextField)
-                                    .addComponent(workExperienceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(workExperienceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(248, 248, 248)
+                        .addComponent(lblHeading)))
                 .addContainerGap(591, Short.MAX_VALUE))
         );
 
@@ -445,9 +445,9 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1)
-                .addGap(34, 34, 34)
+                .addGap(29, 29, 29)
+                .addComponent(lblHeading)
+                .addGap(29, 29, 29)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -468,97 +468,97 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(emailIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblEmailId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel26)
+                            .addComponent(lblGender)
                             .addComponent(genderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nationalityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel27))
+                            .addComponent(lblNationality))
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblContactNo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(streetLine1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblSteetLine1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(streetLine2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblStreetLine2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(zipCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblZipCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(countryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(affiliationsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                    .addComponent(lblAffiliations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCareerObjectives, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel14)
+                .addComponent(lblEducationalQualifications)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
+                        .addComponent(lblHighSchool)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel18))
+                        .addComponent(lblUnderGradSchool))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(degreeName1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16)
+                            .addComponent(lblDate1)
                             .addComponent(degreeDate1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel17)
+                            .addComponent(lblGpa1)
                             .addComponent(gpa1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(degreeName2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel19)
+                            .addComponent(lblDate2)
                             .addComponent(degreeDate2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel20)
+                            .addComponent(lblGpa2)
                             .addComponent(gpa2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(graduatedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel21))
+                    .addComponent(lblHaveYouGrad))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
+                    .addComponent(lblWorkExp)
                     .addComponent(workExperienceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
+                    .addComponent(lblLanguages)
                     .addComponent(languagesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(153, Short.MAX_VALUE))
         );
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {affiliationsTextField, cityTextField, countryTextField, graduatedTextField, jLabel10, jLabel11, jLabel12, jLabel13, jLabel7, jLabel8, jLabel9, languagesTextField, streetLine1TextField, streetLine2TextField, zipCodeTextField});
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {affiliationsTextField, cityTextField, countryTextField, graduatedTextField, languagesTextField, lblAffiliations, lblCareerObjectives, lblCity, lblCountry, lblSteetLine1, lblStreetLine2, lblZipCode, streetLine1TextField, streetLine2TextField, zipCodeTextField});
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {contactNoTextField, emailIdTextField, jLabel4, jLabel5});
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {contactNoTextField, emailIdTextField, lblContactNo, lblEmailId});
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {firstNameTextField, genderTextField, jLabel2, jLabel26, jLabel27, jLabel3, lastNameTextField, nationalityTextField});
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {firstNameTextField, genderTextField, lastNameTextField, lblFirstName, lblGender, lblLastName, lblNationality, nationalityTextField});
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {degreeName1TextField, jLabel15});
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {degreeName1TextField, lblHighSchool});
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {degreeDate1TextField, degreeDate2TextField, degreeName2TextField, gpa1TextField, gpa2TextField, jLabel16, jLabel17, jLabel18, jLabel19, jLabel20});
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {degreeDate1TextField, degreeDate2TextField, degreeName2TextField, gpa1TextField, gpa2TextField, lblDate1, lblDate2, lblGpa1, lblGpa2, lblUnderGradSchool});
 
         jScrollPane4.setViewportView(jPanel2);
 
@@ -595,7 +595,7 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
             graduatedTextField.setText(rs.getGraduated());
             languagesTextField.setText(rs.getProgrammingLang());
         } else {
-            JOptionPane.showMessageDialog(null, "Please select any row");
+            JOptionPane.showMessageDialog(this, "Please select any row", "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnViewDetailsActionPerformed
 
@@ -609,7 +609,7 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
             if (dialogResult == JOptionPane.YES_OPTION) {
                 Resume rs = (Resume) tblResume.getValueAt(selectedRow, 0);
                 rsh.deleteResume(rs);
-                JOptionPane.showMessageDialog(null, "Resume has been deleted");
+                JOptionPane.showMessageDialog(this, "Resume has been deleted", "Success", JOptionPane.INFORMATION_MESSAGE);
                 populateTable();
                 firstNameTextField.setText("");
                 lastNameTextField.setText("");
@@ -637,7 +637,7 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
                 graduatedTextField.setText("");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Please select any row");
+            JOptionPane.showMessageDialog(this, "Please select any row", "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnDeleteDetailsActionPerformed
 
@@ -659,37 +659,37 @@ public class DisplayResumeJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField gpa1TextField;
     private javax.swing.JTextField gpa2TextField;
     private javax.swing.JTextField graduatedTextField;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextField languagesTextField;
     private javax.swing.JTextField lastNameTextField;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblAffiliations;
+    private javax.swing.JLabel lblCareerObjectives;
+    private javax.swing.JLabel lblCity;
+    private javax.swing.JLabel lblContactNo;
+    private javax.swing.JLabel lblCountry;
+    private javax.swing.JLabel lblDate1;
+    private javax.swing.JLabel lblDate2;
+    private javax.swing.JLabel lblEducationalQualifications;
+    private javax.swing.JLabel lblEmailId;
+    private javax.swing.JLabel lblFirstName;
+    private javax.swing.JLabel lblGender;
+    private javax.swing.JLabel lblGpa1;
+    private javax.swing.JLabel lblGpa2;
+    private javax.swing.JLabel lblHaveYouGrad;
+    private javax.swing.JLabel lblHeading;
+    private javax.swing.JLabel lblHighSchool;
+    private javax.swing.JLabel lblLanguages;
+    private javax.swing.JLabel lblLastName;
+    private javax.swing.JLabel lblNationality;
+    private javax.swing.JLabel lblSteetLine1;
+    private javax.swing.JLabel lblStreetLine2;
+    private javax.swing.JLabel lblUnderGradSchool;
+    private javax.swing.JLabel lblWorkExp;
+    private javax.swing.JLabel lblZipCode;
     private javax.swing.JTextField nationalityTextField;
     private javax.swing.JLabel picLabel;
     private javax.swing.JTextField streetLine1TextField;

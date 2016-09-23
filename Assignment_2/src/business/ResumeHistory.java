@@ -14,17 +14,7 @@ import java.util.ArrayList;
 // Getters and Setters 
 public class ResumeHistory {
 
-    /*public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }*/
     private ArrayList<Resume> resumeHistory;
-    // private boolean gender=false;
-    //private boolean nationality=false;
-    // private boolean graduated=false;
 
     public ResumeHistory() {
         resumeHistory = new ArrayList<Resume>();

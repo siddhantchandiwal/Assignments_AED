@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package userinterface;
+
 import business.ResumeHistory;
 
 /**
@@ -15,9 +16,10 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     private ResumeHistory rsh;
+
     public MainJFrame() {        // Default Constructor
         initComponents();
-        rsh=new ResumeHistory();
+        rsh = new ResumeHistory();
     }
 
     /**
@@ -34,6 +36,7 @@ public class MainJFrame extends javax.swing.JFrame {
         createBtn = new javax.swing.JButton();
         displayBtn = new javax.swing.JButton();
         displayJPanel = new javax.swing.JPanel();
+        lblHeader = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,22 +79,31 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(createBtn)
                 .addGap(52, 52, 52)
                 .addComponent(displayBtn)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         controlJPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {createBtn, displayBtn});
 
         splitPane.setLeftComponent(controlJPanel);
 
+        lblHeader.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblHeader.setText("Lets Create and Display Multiple Resumes !!!");
+
         javax.swing.GroupLayout displayJPanelLayout = new javax.swing.GroupLayout(displayJPanel);
         displayJPanel.setLayout(displayJPanelLayout);
         displayJPanelLayout.setHorizontalGroup(
             displayJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 593, Short.MAX_VALUE)
+            .addGroup(displayJPanelLayout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addComponent(lblHeader)
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         displayJPanelLayout.setVerticalGroup(
             displayJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 495, Short.MAX_VALUE)
+            .addGroup(displayJPanelLayout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(lblHeader)
+                .addContainerGap(393, Short.MAX_VALUE))
         );
 
         splitPane.setRightComponent(displayJPanel);
@@ -103,20 +115,20 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
         // TODO add your handling code here:
-        CreateResumeJPanel createPanel =new CreateResumeJPanel(rsh);
+        CreateResumeJPanel createPanel = new CreateResumeJPanel(rsh);
         splitPane.setRightComponent(createPanel);       //Passing all the fields to the right side
     }//GEN-LAST:event_createBtnActionPerformed
 
     private void displayBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayBtnActionPerformed
         // TODO add your handling code here:
-         DisplayResumeJPanel displayPanel=new DisplayResumeJPanel(rsh);
+        DisplayResumeJPanel displayPanel = new DisplayResumeJPanel(rsh);
         splitPane.setRightComponent(displayPanel);       //Passing all the fields to the right side
     }//GEN-LAST:event_displayBtnActionPerformed
 
     /**
      * @param args the command line arguments
      */
-     public static void main(String args[]) {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -153,6 +165,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton createBtn;
     private javax.swing.JButton displayBtn;
     private javax.swing.JPanel displayJPanel;
+    private javax.swing.JLabel lblHeader;
     private javax.swing.JSplitPane splitPane;
     // End of variables declaration//GEN-END:variables
 }

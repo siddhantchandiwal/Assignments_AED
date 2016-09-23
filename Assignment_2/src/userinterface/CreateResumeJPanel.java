@@ -26,27 +26,26 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateJPanel
      */
-    ButtonGroup gender=new ButtonGroup();
-    ButtonGroup nationality=new ButtonGroup();
-    ButtonGroup graduated=new ButtonGroup();
+    ButtonGroup gender = new ButtonGroup();
+    ButtonGroup nationality = new ButtonGroup();
+    ButtonGroup graduated = new ButtonGroup();
     private ResumeHistory rsh;
-    private Resume res;
+    //private Resume res;
     public String path;
     private String gen;
     private String nat;
     private String grad;
-    
-    public String Java="";
-    public String Python="";
-    public String SQL="";
-    public String Cpp="";
-    public String Php="";
-    public String Matlab="";
-    
-         
+    // For Radio Buttons
+    public String Java = "";
+    public String Python = "";
+    public String SQL = "";
+    public String Cpp = "";
+    public String Php = "";
+    public String Matlab = "";
+
     public CreateResumeJPanel(ResumeHistory rsh) {                  //Parameterised Constructor
         initComponents();
-        this.rsh=rsh;
+        this.rsh = rsh;
     }
 
     /**
@@ -124,129 +123,168 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         lblHeading.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblHeading.setText("Create a Resume");
+        jPanel1.add(lblHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 24, -1, -1));
 
         lblFirstName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblFirstName.setText("First Name:");
         lblFirstName.setPreferredSize(new java.awt.Dimension(143, 18));
+        jPanel1.add(lblFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 91, 219, 26));
 
         lblLastName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblLastName.setText("Last Name:");
         lblLastName.setPreferredSize(new java.awt.Dimension(143, 18));
+        jPanel1.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 136, 219, 26));
 
         lblContactNo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblContactNo.setText("Contact No:");
         lblContactNo.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(lblContactNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 275, 219, 26));
 
         lblEmailId.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblEmailId.setText("Email id:");
         lblEmailId.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(lblEmailId, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 320, 219, 26));
 
         lblAddress.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblAddress.setText("Address");
         lblAddress.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 365, 219, 26));
 
         lblStreetLine1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblStreetLine1.setText("Street Line 1:");
         lblStreetLine1.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(lblStreetLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 414, 219, 26));
 
         lblStreetLine2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblStreetLine2.setText("Street Line 2:");
         lblStreetLine2.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(lblStreetLine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 459, 219, 26));
 
         firstNameTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         firstNameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(firstNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 92, 312, 26));
 
         lastNameTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         lastNameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(lastNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 137, 312, 26));
 
         contactNoTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         contactNoTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(contactNoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 276, 312, 26));
 
         emailIdTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         emailIdTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(emailIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 321, 312, 26));
 
         streetLine1TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         streetLine1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(streetLine1TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 415, 312, 26));
 
         streetLine2TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         streetLine2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(streetLine2TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 460, 312, 26));
 
         lblCity.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblCity.setText("City:");
         lblCity.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 504, 219, 26));
 
         lblZipCode.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblZipCode.setText("Zip Code:");
         lblZipCode.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(lblZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 549, 219, 26));
 
         lblCountry.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblCountry.setText("Country:");
         lblCountry.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(lblCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 594, 219, 26));
 
         lblAffiliations.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblAffiliations.setText("Affiliations:");
         lblAffiliations.setPreferredSize(new java.awt.Dimension(143, 22));
+        jPanel1.add(lblAffiliations, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 640, 219, 26));
 
         cityTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         cityTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(cityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 505, 312, 26));
 
         zipCodeTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         zipCodeTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(zipCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 550, 312, 26));
 
         affiliationsTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         affiliationsTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(affiliationsTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 641, 312, 26));
 
         lblcareerObjective.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblcareerObjective.setText("Career Objectives:");
         lblcareerObjective.setMaximumSize(new java.awt.Dimension(188, 22));
         lblcareerObjective.setPreferredSize(new java.awt.Dimension(219, 22));
+        jPanel1.add(lblcareerObjective, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 685, -1, 26));
 
         lblEducationalQualifications.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblEducationalQualifications.setText("Education Qualifications");
+        jPanel1.add(lblEducationalQualifications, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 807, -1, -1));
 
         lblHighSchool.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblHighSchool.setText("High School:");
+        jPanel1.add(lblHighSchool, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 847, 219, 26));
 
         lblDate1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblDate1.setText("Date");
+        jPanel1.add(lblDate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 847, -1, 26));
 
         lblGpa1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblGpa1.setText("GPA");
+        jPanel1.add(lblGpa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(801, 847, -1, 26));
 
         degreeName1TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         degreeName1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(degreeName1TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 848, 312, 26));
 
         degreeDate1TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         degreeDate1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(degreeDate1TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 848, 150, 26));
 
         gpa1TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         gpa1TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(gpa1TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(852, 848, 50, 26));
 
         lblUnderGrdaduateSchool.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblUnderGrdaduateSchool.setText("Under Graduate School:");
+        jPanel1.add(lblUnderGrdaduateSchool, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 892, 219, 29));
 
         lblDate2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblDate2.setText("Date");
+        jPanel1.add(lblDate2, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 892, -1, 29));
 
         lblGpa2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblGpa2.setText("GPA");
+        jPanel1.add(lblGpa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(801, 892, -1, 29));
 
         degreeName2TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         degreeName2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(degreeName2TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 893, 312, 29));
 
         degreeDate2TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         degreeDate2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(degreeDate2TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 893, 150, 29));
 
         gpa2TextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         gpa2TextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(gpa2TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(852, 893, 50, 29));
 
         lblWokExperience.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblWokExperience.setText("Work Experience:");
+        jPanel1.add(lblWokExperience, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 987, 219, 27));
 
         lblLanguagesKnown.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblLanguagesKnown.setText("Languages Known:");
+        jPanel1.add(lblLanguagesKnown, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 1034, 219, 29));
 
         careerObjectiveTextField.setColumns(20);
         careerObjectiveTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -255,9 +293,12 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
         careerObjectiveTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane1.setViewportView(careerObjectiveTextField);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 685, 312, -1));
+
         checkbox1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         checkbox1.setLabel("All the above information is true and correct to the best of my knowledge.");
         checkbox1.setName(""); // NOI18N
+        jPanel1.add(checkbox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 1186, -1, -1));
 
         submitBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         submitBtn.setText("Submit");
@@ -266,6 +307,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 submitBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(submitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 1251, -1, -1));
 
         resetBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         resetBtn.setText("Reset");
@@ -275,6 +317,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 resetBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(resetBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(491, 1251, -1, -1));
 
         picBrowseBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         picBrowseBtn.setText("Browse Image");
@@ -283,19 +326,24 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 picBrowseBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(picBrowseBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(686, 365, -1, -1));
 
         picPathTextField.setEditable(false);
         picPathTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         picPathTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(picPathTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 321, 312, 26));
 
         countryTextField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USA", "India", "China", "United Kingdom" }));
         countryTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(countryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 596, 312, 26));
 
         workExperienceTextField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0-2 Years", "2-4 Years", "4-7 Years", "7 Years and Above" }));
         workExperienceTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(workExperienceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 989, 312, 27));
 
         lblGender.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblGender.setText("Gender:");
+        jPanel1.add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 181, 219, 29));
 
         btnMale.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         btnMale.setText("Male");
@@ -304,6 +352,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 btnMaleStateChanged(evt);
             }
         });
+        jPanel1.add(btnMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 182, 150, -1));
 
         btnFemale.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         btnFemale.setText("Female");
@@ -312,9 +361,11 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 btnFemaleStateChanged(evt);
             }
         });
+        jPanel1.add(btnFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 182, 150, -1));
 
         lblNationality.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblNationality.setText("Nationality:");
+        jPanel1.add(lblNationality, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 228, 219, 29));
 
         btnUSA.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         btnUSA.setText("USA");
@@ -323,6 +374,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 btnUSAStateChanged(evt);
             }
         });
+        jPanel1.add(btnUSA, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 228, 150, -1));
 
         btnInternational.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         btnInternational.setText("International");
@@ -331,9 +383,11 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 btnInternationalStateChanged(evt);
             }
         });
+        jPanel1.add(btnInternational, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 228, 150, -1));
 
         lblHaveYouGraduated.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblHaveYouGraduated.setText("Have you Graduated:");
+        jPanel1.add(lblHaveYouGraduated, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 940, 219, 29));
 
         btnGraduatedYes.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         btnGraduatedYes.setText("Yes");
@@ -342,6 +396,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 btnGraduatedYesStateChanged(evt);
             }
         });
+        jPanel1.add(btnGraduatedYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 940, 150, -1));
 
         btnGraduatedNo.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         btnGraduatedNo.setText("No");
@@ -350,6 +405,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 btnGraduatedNoStateChanged(evt);
             }
         });
+        jPanel1.add(btnGraduatedNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 940, 150, -1));
 
         checkBoxJava.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         checkBoxJava.setText("Java");
@@ -358,6 +414,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 checkBoxJavaStateChanged(evt);
             }
         });
+        jPanel1.add(checkBoxJava, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 1035, 150, -1));
 
         checkBoxPython.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         checkBoxPython.setText("Python");
@@ -366,14 +423,16 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 checkBoxPythonStateChanged(evt);
             }
         });
+        jPanel1.add(checkBoxPython, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 1035, 150, -1));
 
         checkBoxCpp.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        checkBoxCpp.setText("C++");
+        checkBoxCpp.setText("Cpp");
         checkBoxCpp.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 checkBoxCppStateChanged(evt);
             }
         });
+        jPanel1.add(checkBoxCpp, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 1082, 150, -1));
 
         checkBoxSQL.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         checkBoxSQL.setText("SQL");
@@ -382,6 +441,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 checkBoxSQLStateChanged(evt);
             }
         });
+        jPanel1.add(checkBoxSQL, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 1082, 150, -1));
 
         checkBoxMatlab.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         checkBoxMatlab.setText("MATLAB");
@@ -390,6 +450,7 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 checkBoxMatlabStateChanged(evt);
             }
         });
+        jPanel1.add(checkBoxMatlab, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 1129, 150, -1));
 
         checkBoxPhp.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         checkBoxPhp.setText("PHP");
@@ -398,384 +459,31 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
                 checkBoxPhpStateChanged(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(320, 320, 320)
-                        .addComponent(lblHeading))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(294, 294, 294)
-                        .addComponent(submitBtn)
-                        .addGap(110, 110, 110)
-                        .addComponent(resetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblEducationalQualifications))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(checkBoxSQL, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(lblLanguagesKnown, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                                    .addComponent(lblWokExperience, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addComponent(checkBoxJava, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(checkBoxPhp, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblHaveYouGraduated, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(workExperienceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btnGraduatedYes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(12, 12, 12)
-                                        .addComponent(btnGraduatedNo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(checkbox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(checkBoxPython, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(checkBoxMatlab, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(checkBoxCpp, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblStreetLine1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblStreetLine2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblCity, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblZipCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblAffiliations, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblcareerObjective, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblContactNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblNationality)
-                                    .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblGender))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(emailIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(72, 72, 72)
-                                        .addComponent(picPathTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(streetLine1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(streetLine2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(zipCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(countryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(affiliationsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btnMale, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(12, 12, 12)
-                                        .addComponent(btnFemale, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(contactNoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btnUSA, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(12, 12, 12)
-                                        .addComponent(btnInternational, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(picBrowseBtn)
-                                        .addGap(114, 114, 114))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(lblUnderGrdaduateSchool)
-                                                .addGap(18, 18, Short.MAX_VALUE)
-                                                .addComponent(degreeName2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(lblHighSchool)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(degreeName1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblDate1)
-                                            .addComponent(lblDate2)))
-                                    .addComponent(lblEmailId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(degreeDate1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(degreeDate2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(lblGpa2)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(gpa2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(lblGpa1)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(gpa1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(325, Short.MAX_VALUE))))
-        );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblAddress, lblAffiliations, lblCity, lblContactNo, lblCountry, lblEducationalQualifications, lblEmailId, lblFirstName, lblGender, lblHighSchool, lblLastName, lblNationality, lblStreetLine1, lblStreetLine2, lblUnderGrdaduateSchool, lblZipCode, lblcareerObjective});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {degreeName1TextField, degreeName2TextField, jScrollPane1});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {emailIdTextField, picPathTextField});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {resetBtn, submitBtn});
-
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(lblHeading)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblNationality, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(91, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnMale)
-                            .addComponent(btnFemale)
-                            .addComponent(lblGender, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnUSA)
-                            .addComponent(btnInternational))))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contactNoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblContactNo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblEmailId, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(picPathTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(picBrowseBtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(streetLine1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblStreetLine1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(streetLine2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblStreetLine2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCity, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(zipCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblZipCode, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(countryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCountry, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(affiliationsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAffiliations, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblcareerObjective, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(lblEducationalQualifications)
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(degreeName1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblHighSchool, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(degreeDate1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblGpa1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gpa1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(degreeName2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUnderGrdaduateSchool, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDate2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(degreeDate2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblGpa2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gpa2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblHaveYouGraduated)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblWokExperience)
-                            .addComponent(workExperienceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnGraduatedYes)
-                        .addComponent(btnGraduatedNo)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblLanguagesKnown)
-                    .addComponent(checkBoxJava)
-                    .addComponent(checkBoxPython))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(checkBoxCpp)
-                    .addComponent(checkBoxSQL))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(checkBoxMatlab)
-                    .addComponent(checkBoxPhp))
-                .addGap(28, 28, 28)
-                .addComponent(checkbox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(submitBtn)
-                    .addComponent(resetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnGraduatedNo, btnGraduatedYes, degreeDate2TextField, degreeName2TextField, gpa2TextField, lblDate2, lblGpa2, lblHaveYouGraduated, lblUnderGrdaduateSchool});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {firstNameTextField, lblFirstName});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lastNameTextField, lblLastName});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnFemale, btnMale, lblGender});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnInternational, btnUSA, lblNationality});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {emailIdTextField, lblEmailId});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblStreetLine1, streetLine1TextField});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblStreetLine2, streetLine2TextField});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {cityTextField, lblCity});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblZipCode, zipCodeTextField});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {countryTextField, lblCountry});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {affiliationsTextField, lblAffiliations});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {degreeDate1TextField, degreeName1TextField, gpa1TextField, lblDate1, lblGpa1, lblHighSchool});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblWokExperience, workExperienceTextField});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {checkBoxCpp, checkBoxJava, checkBoxMatlab, checkBoxPhp, checkBoxPython, checkBoxSQL, lblLanguagesKnown});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {resetBtn, submitBtn});
+        jPanel1.add(checkBoxPhp, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 1129, 150, -1));
 
         jScrollPane3.setViewportView(jPanel1);
 
         add(jScrollPane3, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-   /* public int validateJFieldText(){                     //Method created to check if any field is empty
-         // Accepting all the text fields in an array of size
-        JTextField jField[]=new JTextField[18];
-        jField[0]=firstNameTextField;
-        jField[1]=lastNameTextField;
-        jField[2]=contactNoTextField;
-        jField[3]=emailIdTextField;
-        jField[4]=streetLine1TextField;
-        jField[5]=streetLine2TextField;
-        jField[6]=cityTextField;
-        jField[7]=zipCodeTextField;
-        jField[8]=affiliationsTextField;
-        jField[9]=degreeName1TextField;
-        jField[10]=degreeDate1TextField;
-        jField[11]=gpa1TextField;
-        jField[12]=degreeName2TextField;
-        jField[13]=degreeDate2TextField;
-        jField[14]=gpa2TextField;
-                        
-        int flag = 1;                 
-        for (int i = 0; i < 15; i++) {                 // Traversing across the array length
-            if (jField[i].getText().trim().isEmpty()) {
-                //If any field is empty throw message
-                JOptionPane.showMessageDialog(null, "All fields are mandatory");
-                flag = 0;
-                break;
-            } else {
-                flag = 1;
-            }
-            
-        }
-        
-        double gpa1;
-        double gpa2;
-        try{
-            gpa1=Double.parseDouble(gpa1TextField.getText());
-            gpa2=Double.parseDouble(gpa2TextField.getText());
-            
-            if((gpa1<=0) && (gpa2<=0) && (gpa1>4) && (gpa2>4)){
-                JOptionPane.showMessageDialog(null,"Please enter GPA value less than 4");
-               // System.out.println("Please enter GPA value less than 4");
-            }
-        }catch(Exception e){
-           // JOptionPane.showMessageDialog(null, "Please enter appropriate values");
-            System.out.println("Please enter appropriate values");
-        }
-        
-        
-       return flag; 
-    } */
-       
-    
     private void picBrowseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_picBrowseBtnActionPerformed
         // TODO add your handling code here:
         //Choosing image from JFile Chooser
-        
         JFileChooser chooseimage = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg files", "jpg");   // Restricting filter for jpg images
         chooseimage.setFileFilter(filter);
-        int returnVal=chooseimage.showOpenDialog(null);
-        if (returnVal == JFileChooser.APPROVE_OPTION){
-            File f=chooseimage.getSelectedFile();
-            String filename=f.getAbsolutePath();
+        int returnVal = chooseimage.showOpenDialog(null);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File f = chooseimage.getSelectedFile();
+            String filename = f.getAbsolutePath();
             picPathTextField.setText(filename);
-            ImageIcon icon=new ImageIcon(filename);
-            path=filename;
-  //        picLabel.setIcon(new ImageIcon(icon.getImage().getScaledInstance(830, 130, Image.SCALE_DEFAULT)));
-  //        picLabel.setIcon(icon);
+            ImageIcon icon = new ImageIcon(filename);
+            path = filename;
         }
     }//GEN-LAST:event_picBrowseBtnActionPerformed
 
-   /* public boolean isEmailValidation() {
-        boolean isEmailCorrectlyFormatted = true;
-        String email = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-        Pattern pattern = Pattern.compile(email);
-        Matcher matcher = pattern.matcher(emailIdTextField.getText());
-        if (!matcher.matches()) {
-            isEmailCorrectlyFormatted = false;
-            JOptionPane.showMessageDialog(null, "Please enter Email Id in proper format");
-        } else {
-           
-            isEmailCorrectlyFormatted = true;
-        }
-        return isEmailCorrectlyFormatted;
-    }*/
-         
-    public void resetFields(){
+    // Method to reset all the fields
+    public void resetFields() {
         firstNameTextField.setText("");
         lastNameTextField.setText("");
         contactNoTextField.setText("");
@@ -809,293 +517,261 @@ public class CreateResumeJPanel extends javax.swing.JPanel {
     private void resetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetBtnActionPerformed
         //Making all the spaces blank in order to reset the fields
         resetFields();
-    
     }//GEN-LAST:event_resetBtnActionPerformed
 
-   
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         // If Validate Field turns true then Call Set Text Method
-        
-           // JOptionPane.showMessageDialog(null, "Email Address not correctly formated.");
-        
-        //if (validateJFieldText()==1) {
-           
-           String firstName=firstNameTextField.getText();
-           String lastName=lastNameTextField.getText();
-           String contactNo=contactNoTextField.getText();
-           String emailId=emailIdTextField.getText();
-           String streetLine1=streetLine1TextField.getText();
-           String streetLine2=streetLine2TextField.getText();
-           String city=cityTextField.getText();
-           String zipcode=zipCodeTextField.getText();
-           String country=countryTextField.getSelectedItem().toString();
-           String affiliations=affiliationsTextField.getText();
-           String careerObjective=careerObjectiveTextField.getText();
-           String degreeName1=degreeName1TextField.getText();
-           String degreeDate1=degreeDate1TextField.getText();
-          
-           String degreeName2=degreeName2TextField.getText();
-           String degreeDate2=degreeDate2TextField.getText();
-           
-           String workExperience=workExperienceTextField.getSelectedItem().toString();
-           
-                    
-           gender.add(btnMale);
-           gender.add(btnFemale);
-    
-           nationality.add(btnUSA);
-           nationality.add(btnInternational);
-           
-           graduated.add(btnGraduatedYes);
-           graduated.add(btnGraduatedNo);
-           double gpa1;
-           double gpa2;
-           try{
-                gpa1=Double.parseDouble(gpa1TextField.getText());
-               gpa2=Double.parseDouble(gpa2TextField.getText());
-               if((gpa1<=0) || (gpa1>4) || (gpa2<=0) || (gpa2>4)){
-                   JOptionPane.showMessageDialog(this, "Please enter proper GPA");
-                   return;
-               }
-           }
-               catch(Exception e){
-                       JOptionPane.showMessageDialog(this, "Please add appropriate values");
-                       return;
-                       }
-           
-                      boolean isEmailCorrectlyFormatted = true;
-                      String email;
-                      try {
-             isEmailCorrectlyFormatted = true;
-             email = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+        String firstName = firstNameTextField.getText();
+        String lastName = lastNameTextField.getText();
+        String contactNo = contactNoTextField.getText();
+        String emailId = emailIdTextField.getText();
+        String streetLine1 = streetLine1TextField.getText();
+        String streetLine2 = streetLine2TextField.getText();
+        String city = cityTextField.getText();
+        String zipcode = zipCodeTextField.getText();
+        String country = countryTextField.getSelectedItem().toString();
+        String affiliations = affiliationsTextField.getText();
+        String careerObjective = careerObjectiveTextField.getText();
+        String degreeName1 = degreeName1TextField.getText();
+        String degreeDate1 = degreeDate1TextField.getText();
+        String degreeName2 = degreeName2TextField.getText();
+        String degreeDate2 = degreeDate2TextField.getText();
+        String workExperience = workExperienceTextField.getSelectedItem().toString();
+        gender.add(btnMale);
+        gender.add(btnFemale);
+        nationality.add(btnUSA);
+        nationality.add(btnInternational);
+        graduated.add(btnGraduatedYes);
+        graduated.add(btnGraduatedNo);
+
+        // Float variable Validations
+        double gpa1;
+        double gpa2;
+        try {
+            gpa1 = Double.parseDouble(gpa1TextField.getText());
+            gpa2 = Double.parseDouble(gpa2TextField.getText());
+            if ((gpa1 <= 0) || (gpa1 > 4) || (gpa2 <= 0) || (gpa2 > 4)) {
+                JOptionPane.showMessageDialog(this, "Please enter proper GPA", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please add appropriate values", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Email id Field Validation
+        boolean isEmailCorrectlyFormatted = true;
+        String email;
+        try {
+            isEmailCorrectlyFormatted = true;
+            email = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
             Pattern pattern = Pattern.compile(email);
             Matcher matcher = pattern.matcher(emailIdTextField.getText());
             if (!matcher.matches()) {
                 isEmailCorrectlyFormatted = false;
-                JOptionPane.showMessageDialog(null, "Please enter Email Id in proper format");
+                JOptionPane.showMessageDialog(this, "Please enter Email Id in proper format", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             } else {
                 isEmailCorrectlyFormatted = true;
             }
-            
 
         } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "Please add appropriate values");
-                       return;
+            JOptionPane.showMessageDialog(this, "Please add appropriate values", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-           
-           if((firstName.isEmpty()) || (firstName.startsWith(" ")) || (lastName.isEmpty()) || (lastName.startsWith(" ")) || 
-                   (contactNo.isEmpty()) || (contactNo.startsWith(" ")) ||(emailId.isEmpty()) || (emailId.startsWith(" ")) ||
-                   (streetLine1.isEmpty()) || (streetLine1.startsWith(" ")) || (streetLine2.isEmpty()) || (streetLine2.startsWith(" ")) ||
-                   (city.isEmpty()) || (city.startsWith(" ")) || (zipcode.isEmpty()) || (zipcode.startsWith(" ")) || (affiliations.isEmpty() || (affiliations.startsWith(" "))
-                   || (careerObjective.isEmpty())) || (careerObjective.startsWith(" ")) || (degreeName1.isEmpty()) || (degreeName1.startsWith(" ")) || 
-                   (degreeName2.isEmpty()) || (degreeName2.startsWith(" ")) || (degreeDate2.isEmpty()) || (degreeDate2.startsWith(" ")) || 
-                   (!(btnMale.isSelected()) || (btnFemale.isSelected())) || 
-                   (!(btnUSA.isSelected()) || (btnInternational.isSelected())) || 
-                   (!(btnGraduatedYes.isSelected()) || (btnGraduatedNo.isSelected()))) {
-               JOptionPane.showMessageDialog(null, "Please fill all the details");
-               return;
-           }
-           
-           
-           
-           
-           ///////////////////////////////////////
-           Resume r=rsh.addResume();
-           r.setFirstName(firstName);
-           r.setLastName(lastName);
-           r.setContactNo(contactNo);
-           r.setEmailId(emailId);
-           r.setStreetLn1(streetLine1);
-           r.setStreetLn2(streetLine2);
-           r.setCity(city);
-           r.setZipCode(zipcode);
-           r.setCountry(country);
-           r.setAffiliations(affiliations);
-           r.setCareerObjective(careerObjective);
-           r.setDegreeName1(degreeName1);
-           r.setDegreeDate1(degreeDate1);
-           r.setGpa1(gpa1);
-           r.setDegreeName2(degreeName2);
-           r.setDegreeDate2(degreeDate2);
-           r.setGpa2(gpa2);
-           r.setWorkExperience(workExperience);
-           r.setImage(path);
-           r.setGender(gen);
-           r.setNationality(nat);
-           r.setGraduated(grad);
-           r.setProgrammingLang(checkboxformat());
-           // Display Success Message to user
-           JOptionPane.showMessageDialog(null, "Resume Submitted Successfully");
-            resetFields();
-        
-        ImageIcon icon=new ImageIcon();
-       // lblHeading.setIcon(icon);
-              
+
+        // To check if any field is empty or starts with blank space
+        if ((firstName.isEmpty()) || (firstName.startsWith(" ")) || (lastName.isEmpty()) || (lastName.startsWith(" "))
+                || (contactNo.isEmpty()) || (contactNo.startsWith(" ")) || (emailId.isEmpty()) || (emailId.startsWith(" "))
+                || (streetLine1.isEmpty()) || (streetLine1.startsWith(" ")) || (streetLine2.isEmpty()) || (streetLine2.startsWith(" "))
+                || (city.isEmpty()) || (city.startsWith(" ")) || (zipcode.isEmpty()) || (zipcode.startsWith(" ")) || (affiliations.isEmpty() || (affiliations.startsWith(" "))
+                || (careerObjective.isEmpty())) || (careerObjective.startsWith(" ")) || (degreeName1.isEmpty()) || (degreeName1.startsWith(" "))
+                || (degreeName2.isEmpty()) || (degreeName2.startsWith(" ")) || (degreeDate2.isEmpty()) || (degreeDate2.startsWith(" "))
+                || (!(btnMale.isSelected() || (btnFemale.isSelected())))
+                || (!(btnUSA.isSelected() || (btnInternational.isSelected())))
+                || (!(btnGraduatedYes.isSelected() || (btnGraduatedNo.isSelected())))) {
+            JOptionPane.showMessageDialog(this, "Please fill all the details", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        Resume r = rsh.addResume();
+        r.setFirstName(firstName);
+        r.setLastName(lastName);
+        r.setContactNo(contactNo);
+        r.setEmailId(emailId);
+        r.setStreetLn1(streetLine1);
+        r.setStreetLn2(streetLine2);
+        r.setCity(city);
+        r.setZipCode(zipcode);
+        r.setCountry(country);
+        r.setAffiliations(affiliations);
+        r.setCareerObjective(careerObjective);
+        r.setDegreeName1(degreeName1);
+        r.setDegreeDate1(degreeDate1);
+        r.setGpa1(gpa1);
+        r.setDegreeName2(degreeName2);
+        r.setDegreeDate2(degreeDate2);
+        r.setGpa2(gpa2);
+        r.setWorkExperience(workExperience);
+        r.setImage(path);
+        r.setGender(gen);
+        r.setNationality(nat);
+        r.setGraduated(grad);
+        r.setProgrammingLang(checkboxformat());
+        // Display Success Message to user
+        JOptionPane.showMessageDialog(this, "Resume Submitted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+        resetFields();
+
+        ImageIcon icon = new ImageIcon();
+
     }//GEN-LAST:event_submitBtnActionPerformed
-    private String checkboxformat(){
-        StringBuffer buffer=new StringBuffer();
-        if(Java!=""){
-            buffer=buffer.append(Java);
+    private String checkboxformat() {
+        StringBuffer buffer = new StringBuffer();
+        if (Java != "") {
+            buffer = buffer.append(Java);
         }
-        if(Python!=""){
+        if (Python != "") {
             buffer.append(Python);
         }
-        if(SQL!=""){
+        if (SQL != "") {
             buffer.append(SQL);
         }
-        if(Cpp!=""){
+        if (Cpp != "") {
             buffer.append(Cpp);
         }
-        if(Php!=""){
+        if (Php != "") {
             buffer.append(Php);
         }
-        if(Matlab!=""){
+        if (Matlab != "") {
             buffer.append(Matlab);
         }
-        if(buffer.length()!=0){
-        buffer=buffer.deleteCharAt(0);
-        
+        if (buffer.length() != 0) {
+            buffer = buffer.deleteCharAt(0);
+
         }
-    return buffer.toString();}
-    
-    
+        return buffer.toString();
+    }
+
+
     private void btnMaleStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_btnMaleStateChanged
         // TODO add your handling code here:
-        if(btnMale.isSelected())
-        {
+        if (btnMale.isSelected()) {
             //rsh.setButtonGender(true);
-            gen="Male";
+            gen = "Male";
             btnFemale.setSelected(false);
-        }
-        else
-        {
-         // rsh.setButtonGender(false);
+        } else {
+            // rsh.setButtonGender(false);
         }
     }//GEN-LAST:event_btnMaleStateChanged
 
     private void btnFemaleStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_btnFemaleStateChanged
         // TODO add your handling code here:
-           if(btnFemale.isSelected())
-        {
+        if (btnFemale.isSelected()) {
             //rsh.setButtonGender(false);
-            gen="Female";
+            gen = "Female";
             btnMale.setSelected(false);
-        }
-        else
-        {
-          //rsh.setButtonGender(true);
+        } else {
+            //rsh.setButtonGender(true);
         }
     }//GEN-LAST:event_btnFemaleStateChanged
 
     private void btnUSAStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_btnUSAStateChanged
         // TODO add your handling code here:
-        if(btnUSA.isSelected())
-        {
-            nat="International";
+        if (btnUSA.isSelected()) {
+            nat = "International";
             btnInternational.setSelected(false);
-        }
-        else
-        {
-          //rsh.setButtonGender(true);
+        } else {
+            //rsh.setButtonGender(true);
         }
     }//GEN-LAST:event_btnUSAStateChanged
 
     private void btnInternationalStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_btnInternationalStateChanged
         // TODO add your handling code here:
-        if(btnInternational.isSelected())
-        {
-            nat="USA";
+        if (btnInternational.isSelected()) {
+            nat = "USA";
             btnUSA.setSelected(false);
-        }
-        else
-        {
-          //rsh.setButtonGender(true);
+        } else {
+            //rsh.setButtonGender(true);
         }
     }//GEN-LAST:event_btnInternationalStateChanged
 
     private void btnGraduatedYesStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_btnGraduatedYesStateChanged
         // TODO add your handling code here:
-        if(btnGraduatedYes.isSelected())
-        {
-            grad="Yes";
+        if (btnGraduatedYes.isSelected()) {
+            grad = "Yes";
             btnGraduatedNo.setSelected(false);
-        }
-        else
-        {
-         // rsh.setButtonGender(false);
+        } else {
+            // rsh.setButtonGender(false);
         }
     }//GEN-LAST:event_btnGraduatedYesStateChanged
 
     private void btnGraduatedNoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_btnGraduatedNoStateChanged
         // TODO add your handling code here:
-        if(btnGraduatedNo.isSelected())
-        {
-           grad="No";
+        if (btnGraduatedNo.isSelected()) {
+            grad = "No";
             btnGraduatedYes.setSelected(false);
-        }
-        else
-        {
-          //rsh.setButtonGender(true);
+        } else {
+            //rsh.setButtonGender(true);
         }
     }//GEN-LAST:event_btnGraduatedNoStateChanged
 
     private void checkBoxJavaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxJavaStateChanged
         // TODO add your handling code here:
-        if(checkBoxJava.isSelected()){
-            Java=", Java ";
-        }else{
-            Java="";
+        if (checkBoxJava.isSelected()) {
+            Java = ", Java ";
+        } else {
+            Java = "";
         }
     }//GEN-LAST:event_checkBoxJavaStateChanged
 
     private void checkBoxPythonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxPythonStateChanged
         // TODO add your handling code here:
-        if(checkBoxPython.isSelected()){
-            Python=", Python ";
-        }else{
-            Python="";
+        if (checkBoxPython.isSelected()) {
+            Python = ", Python ";
+        } else {
+            Python = "";
         }
     }//GEN-LAST:event_checkBoxPythonStateChanged
 
     private void checkBoxSQLStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxSQLStateChanged
         // TODO add your handling code here:
-        if(checkBoxSQL.isSelected()){
-            SQL=", SQL ";
-        }else{
-            SQL="";
+        if (checkBoxSQL.isSelected()) {
+            SQL = ", SQL ";
+        } else {
+            SQL = "";
         }
     }//GEN-LAST:event_checkBoxSQLStateChanged
 
     private void checkBoxCppStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxCppStateChanged
         // TODO add your handling code here:
-        if(checkBoxCpp.isSelected()){
-            Cpp=", Cpp ";
-        }else{
-            Cpp="";
+        if (checkBoxCpp.isSelected()) {
+            Cpp = ", Cpp ";
+        } else {
+            Cpp = "";
         }
     }//GEN-LAST:event_checkBoxCppStateChanged
 
     private void checkBoxPhpStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxPhpStateChanged
         // TODO add your handling code here:
-        if(checkBoxPhp.isSelected()){
-            Php=", Php ";
-        }else{
-            Php="";
+        if (checkBoxPhp.isSelected()) {
+            Php = ", Php ";
+        } else {
+            Php = "";
         }
     }//GEN-LAST:event_checkBoxPhpStateChanged
 
     private void checkBoxMatlabStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxMatlabStateChanged
         // TODO add your handling code here:
-        if(checkBoxMatlab.isSelected()){
-            Matlab=", Matlab ";
-        }else{
-            Matlab="";
+        if (checkBoxMatlab.isSelected()) {
+            Matlab = ", Matlab ";
+        } else {
+            Matlab = "";
         }
-        
+
     }//GEN-LAST:event_checkBoxMatlabStateChanged
 
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField affiliationsTextField;
     private javax.swing.JRadioButton btnFemale;

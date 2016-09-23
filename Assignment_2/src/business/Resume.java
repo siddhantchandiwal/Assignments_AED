@@ -9,6 +9,7 @@ package business;
  * @author Siddhant
  */
 public class Resume {
+
     //Setting all the attributes
     private String firstName;
     private String lastName;
@@ -32,11 +33,11 @@ public class Resume {
     private String workExperience;
     private String programmingLang;
     private String image;
-    
+
     //for Radio buttons
-    
     private String graduated;
 
+    //Getters and Setters
     public String getGraduated() {
         return graduated;
     }
@@ -44,11 +45,8 @@ public class Resume {
     public void setGraduated(String graduated) {
         this.graduated = graduated;
     }
-   
-    
-    
-        // Getters and Setters
 
+    // Getters and Setters
     public String getFirstName() {
         return firstName;
     }
@@ -224,10 +222,10 @@ public class Resume {
     public void setImage(String image) {
         this.image = image;
     }
-    
+
     @Override
-    public String toString(){
-       return this.firstName; 
+    public String toString() {
+        return this.firstName;
     }
-     
+
 }
