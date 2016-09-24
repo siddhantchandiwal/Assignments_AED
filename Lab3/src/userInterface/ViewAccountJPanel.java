@@ -7,6 +7,7 @@ package userInterface;
 
 import business.Account;
 import java.awt.CardLayout;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -21,17 +22,17 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
      */
     private JPanel userProcessContainer;
     private Account account;
-  
+
     ViewAccountJPanel(JPanel userProcessContainer, Account account) {
         initComponents();
-        this.userProcessContainer=userProcessContainer;
-        this.account=account;
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
         populateAccountDetails();
         btnSave.setEnabled(false);
         btnUpdate.setEnabled(true);
     }
-    
-    private void populateAccountDetails(){
+
+    private void populateAccountDetails() {
         txtRoutingNumber.setText(account.getRoutingNumber());
         txtAccountNumber.setText(account.getAccountNumber());
         txtBankName.setText(account.getBankName());
@@ -168,7 +169,7 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
-        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
@@ -183,13 +184,33 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+
+        String routingNumber = txtRoutingNumber.getText();
+        String accountNumber = txtAccountNumber.getText();
+        String bankName = txtBankName.getText();
+
+        if ((routingNumber.isEmpty()) || (routingNumber.startsWith(" ")) || (accountNumber.isEmpty()) || (accountNumber.startsWith(" "))
+                || (bankName.isEmpty()) || (bankName.startsWith(" "))) {
+            JOptionPane.showMessageDialog(this, "Please fill all the details", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        if (!(Pattern.matches("^[a-zA-Z]+$", txtBankName.getText().trim()))) {
+            JOptionPane.showMessageDialog(this, "Please enter proper Bank Name", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        // To validate fields
+        if (!(Pattern.matches("^[0-9]+$", txtRoutingNumber.getText().trim())) || !(Pattern.matches("^[0-9]+$", txtAccountNumber.getText().trim()))) {
+            JOptionPane.showMessageDialog(this, "Please enter only Numbers", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         account.setRoutingNumber(txtRoutingNumber.getText());
         account.setAccountNumber(txtAccountNumber.getText());
         account.setBankName(txtBankName.getText());
-        
+
         btnSave.setEnabled(false);
         btnUpdate.setEnabled(true);
-        
+
         JOptionPane.showMessageDialog(this, "Account updated Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnSaveActionPerformed
 

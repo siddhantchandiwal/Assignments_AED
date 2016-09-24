@@ -8,12 +8,13 @@ package userInterface;
 import business.Account;
 import business.AccountDirectory;
 import java.awt.CardLayout;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
  *
- * @author chand
+ * @author Siddhant
  */
 public class CreateAccountJPanel extends javax.swing.JPanel {
 
@@ -24,9 +25,9 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
     private AccountDirectory accountDirectory;
 
     CreateAccountJPanel(JPanel userProcessContainer, AccountDirectory accountDirectory) {
-       initComponents(); 
-       this.userProcessContainer=userProcessContainer;
-       this.accountDirectory=accountDirectory;
+        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.accountDirectory = accountDirectory;
     }
 
     /**
@@ -170,32 +171,53 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        
-        String routingNumber=txtRoutingNumber.getText();
-        String accountNumber=txtAccountNumber.getText();
-        String bankName=txtBankName.getText();
-        int balance=Integer.parseInt(txtBalance.getText());
-        
-        
-        /*if ((routingNumber.isEmpty()) || (routingNumber.startsWith(" ")) || (accountNumber.isEmpty()) || (accountNumber.startsWith(" "))
+
+        String routingNumber = txtRoutingNumber.getText();
+        String accountNumber = txtAccountNumber.getText();
+        String bankName = txtBankName.getText();
+        int balance;
+
+        if ((routingNumber.isEmpty()) || (routingNumber.startsWith(" ")) || (accountNumber.isEmpty()) || (accountNumber.startsWith(" "))
                 || (bankName.isEmpty()) || (bankName.startsWith(" "))) {
-            JOptionPane.showMessageDialog(this, "Please fill all the details", "Warning", JOptionPane.WARNING_MESSAGE);*/
-            
-            
-        Account account=accountDirectory.addAccount();
+            JOptionPane.showMessageDialog(this, "Please fill all the details", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        if (!(Pattern.matches("^[a-zA-Z]+$", txtBankName.getText().trim()))) {
+            JOptionPane.showMessageDialog(this, "Please enter proper Bank Name", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        // To validate fields
+        if (!(Pattern.matches("^[0-9]+$", txtRoutingNumber.getText().trim())) || !(Pattern.matches("^[0-9]+$", txtAccountNumber.getText().trim()))) {
+            JOptionPane.showMessageDialog(this, "Please enter only Numbers", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        try {
+            balance = Integer.parseInt(txtBalance.getText());
+            if (balance <= 0) {
+                JOptionPane.showMessageDialog(this, "Negative Values not allowed", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please enter in proper format!!", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        Account account = accountDirectory.addAccount();
         account.setRoutingNumber(routingNumber);
         account.setAccountNumber(accountNumber);
         account.setBankName(bankName);
         account.setBalance(balance);
-        
+
         JOptionPane.showMessageDialog(null, "Account Successfully created");
-        
+
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
-        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 

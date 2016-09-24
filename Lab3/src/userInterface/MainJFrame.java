@@ -10,18 +10,19 @@ import java.awt.CardLayout;
 
 /**
  *
- * @author chand
+ * @author Siddhant
  */
 public class MainJFrame extends javax.swing.JFrame {
 
     private AccountDirectory accountDirectory;
+
     /**
      * Creates new form MainJFrame
      */
-    
+
     public MainJFrame() {
         initComponents();
-        this.accountDirectory=new AccountDirectory();
+        this.accountDirectory = new AccountDirectory();
     }
 
     /**
@@ -42,7 +43,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        btnAccountMng.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnAccountMng.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnAccountMng.setText("Account Manager");
         btnAccountMng.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,16 +56,16 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(699, Short.MAX_VALUE)
-                .addComponent(btnAccountMng, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(646, Short.MAX_VALUE)
+                .addComponent(btnAccountMng, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(btnAccountMng, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addComponent(btnAccountMng, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jSplitPane1.setTopComponent(jPanel1);
@@ -90,9 +91,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnAccountMngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountMngActionPerformed
         // TODO add your handling code here:
-        AccountMngWorkAreaJPanel panel=new AccountMngWorkAreaJPanel(userProcessContainer, accountDirectory);
+        AccountMngWorkAreaJPanel panel = new AccountMngWorkAreaJPanel(userProcessContainer, accountDirectory);
         userProcessContainer.add("AccountMngWorkAreaJPanel", panel);
-        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnAccountMngActionPerformed
 

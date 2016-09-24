@@ -8,6 +8,7 @@ package userInterface;
 import business.Account;
 import business.AccountDirectory;
 import java.awt.CardLayout;
+import java.awt.Font;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -25,24 +26,26 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
     private AccountDirectory accountDirectory;
 
     ManageAccountJPanel(JPanel userProcessContainer, AccountDirectory accountDirectory) {
-        initComponents(); 
-       this.userProcessContainer=userProcessContainer;
-       this.accountDirectory=accountDirectory;
-       populateTable();
+        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.accountDirectory = accountDirectory;
+        tblAccounts.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 18));
+        populateTable();
     }
- private void populateTable(){
-     DefaultTableModel dtm=(DefaultTableModel)tblAccounts.getModel();
-     dtm.setRowCount(0);
-     for(Account account: accountDirectory.getAccountList()){
-         Object[] row=new Object[4];
-         row[0]=account;
-         row[1]=account.getRoutingNumber();
-         row[2]=account.getAccountNumber();
-         row[3]=account.getBalance();
-         
-         dtm.addRow(row);
-     }
- }
+
+    private void populateTable() {
+        DefaultTableModel dtm = (DefaultTableModel) tblAccounts.getModel();
+        dtm.setRowCount(0);
+        for (Account account : accountDirectory.getAccountList()) {
+            Object[] row = new Object[4];
+            row[0] = account;
+            row[1] = account.getRoutingNumber();
+            row[2] = account.getAccountNumber();
+            row[3] = account.getBalance();
+            dtm.addRow(row);
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -84,13 +87,15 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
             tblAccounts.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        btnSearch.setText("Search");
+        btnSearch.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        btnSearch.setText("Search (Account number)");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
             }
         });
 
+        btnDeleteAccount.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnDeleteAccount.setText("Delete Account");
         btnDeleteAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +103,7 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnViewDetails.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnViewDetails.setText("View Details");
         btnViewDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +111,7 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnBack.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnBack.setText("< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,15 +127,15 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
                 .addGap(44, 44, 44)
                 .addComponent(btnBack)
                 .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnDeleteAccount)
                     .addComponent(btnViewDetails)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSearch)
                         .addGap(18, 18, 18)
-                        .addComponent(txtAccountNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(274, Short.MAX_VALUE))
+                        .addComponent(txtAccountNumber))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(218, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnDeleteAccount, btnSearch, btnViewDetails});
@@ -148,61 +155,65 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
                 .addComponent(btnViewDetails)
                 .addGap(18, 18, 18)
                 .addComponent(btnDeleteAccount)
-                .addContainerGap(276, Short.MAX_VALUE))
+                .addContainerGap(264, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
-        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnDeleteAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAccountActionPerformed
         // TODO add your handling code here:
-        int selectedRow=tblAccounts.getSelectedRow();
-        if(selectedRow>=0){
-            int dialogbutton=JOptionPane.YES_NO_OPTION;
-            int dialogResult=JOptionPane.showConfirmDialog(this, "Would you like to delete selected account", "Warning", dialogbutton);
-           if(dialogResult == JOptionPane.YES_OPTION){
-                    Account account=(Account) tblAccounts.getValueAt(selectedRow, 0);
-                    accountDirectory.deleteAccount(account);
-                    populateTable();
-           }
-        }
-        else{
-            JOptionPane.showMessageDialog(this, "Please select any row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
+        int selectedRow = tblAccounts.getSelectedRow();
+        if (selectedRow >= 0) {
+            int dialogbutton = JOptionPane.YES_NO_OPTION;
+            int dialogResult = JOptionPane.showConfirmDialog(this, "Would you like to delete selected account", "Warning", dialogbutton);
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                Account account = (Account) tblAccounts.getValueAt(selectedRow, 0);
+                accountDirectory.deleteAccount(account);
+                populateTable();
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select any row", "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnDeleteAccountActionPerformed
 
     private void btnViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsActionPerformed
         // TODO add your handling code here:
-        int selectedRow=tblAccounts.getSelectedRow();
-         if(selectedRow<0){
-            JOptionPane.showMessageDialog(this, "Please select any row from table first", "Warning", JOptionPane.WARNING_MESSAGE); 
-         }
-         else{
-            Account account=(Account)tblAccounts.getValueAt(selectedRow, 0);
-            ViewAccountJPanel panel=new ViewAccountJPanel(userProcessContainer, account);
+        int selectedRow = tblAccounts.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select any row", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else {
+            Account account = (Account) tblAccounts.getValueAt(selectedRow, 0);
+            ViewAccountJPanel panel = new ViewAccountJPanel(userProcessContainer, account);
             userProcessContainer.add("ViewAccountJPanel", panel);
-            CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
-         }
+        }
     }//GEN-LAST:event_btnViewDetailsActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-        Account result=accountDirectory.searchAccount(txtAccountNumber.getText());
-        if(result==null){
-           JOptionPane.showMessageDialog(this, "Account Number does not exist", "Information", JOptionPane.INFORMATION_MESSAGE); 
+
+        String accountNumber = txtAccountNumber.getText();
+        if ((accountNumber.isEmpty()) || (accountNumber.startsWith(" "))) {
+            JOptionPane.showMessageDialog(this, "Please enter Account Number", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
         }
-        else{
-           ViewAccountJPanel panel=new ViewAccountJPanel(userProcessContainer, result);
+
+        Account result = accountDirectory.searchAccount(txtAccountNumber.getText());
+        if (result == null) {
+            JOptionPane.showMessageDialog(this, "Account Number does not exist", "Information", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            ViewAccountJPanel panel = new ViewAccountJPanel(userProcessContainer, result);
             userProcessContainer.add("ViewAccountJPanel", panel);
-            CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
-            
+
         }
     }//GEN-LAST:event_btnSearchActionPerformed
 

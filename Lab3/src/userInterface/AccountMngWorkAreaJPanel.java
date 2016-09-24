@@ -11,19 +11,20 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author chand
+ * @author Siddhant
  */
 public class AccountMngWorkAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private AccountDirectory accountDirectory;
+
     /**
      * Creates new form AccountMngWorkAreaJPanel
      */
-       AccountMngWorkAreaJPanel(JPanel userProcessContainer, AccountDirectory accountDirectory) {
-       initComponents();
-       this.userProcessContainer=userProcessContainer;
-       this.accountDirectory=accountDirectory;
+    AccountMngWorkAreaJPanel(JPanel userProcessContainer, AccountDirectory accountDirectory) {
+        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.accountDirectory = accountDirectory;
     }
 
     /**
@@ -40,6 +41,7 @@ public class AccountMngWorkAreaJPanel extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(900, 600));
 
+        btnManageAccount.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnManageAccount.setText("Manage Account");
         btnManageAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,6 +49,7 @@ public class AccountMngWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnCreateAccount.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnCreateAccount.setText("Create Account");
         btnCreateAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,20 +87,20 @@ public class AccountMngWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnCreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAccountActionPerformed
         // TODO add your handling code here:
-        CreateAccountJPanel panel=new CreateAccountJPanel(userProcessContainer, accountDirectory);
+        CreateAccountJPanel panel = new CreateAccountJPanel(userProcessContainer, accountDirectory);
         userProcessContainer.add("CreateAccountJPanel", panel);
-        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-        
+
     }//GEN-LAST:event_btnCreateAccountActionPerformed
 
     private void btnManageAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAccountActionPerformed
         // TODO add your handling code here:
-        ManageAccountJPanel panel= new ManageAccountJPanel(userProcessContainer, accountDirectory);
-         userProcessContainer.add("ManageAccountJPanel", panel);
-        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+        ManageAccountJPanel panel = new ManageAccountJPanel(userProcessContainer, accountDirectory);
+        userProcessContainer.add("ManageAccountJPanel", panel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-        
+
     }//GEN-LAST:event_btnManageAccountActionPerformed
 
 
