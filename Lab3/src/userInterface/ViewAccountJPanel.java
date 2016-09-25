@@ -7,6 +7,7 @@ package userInterface;
 
 import business.Account;
 import java.awt.CardLayout;
+import java.awt.Component;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -169,6 +170,11 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        //  ManageAccountJPanel manageAccountJPanel = (ManageAccountJPanel) component;
+        ManageAccountJPanel manageAccountJPanel = (ManageAccountJPanel) component;
+        manageAccountJPanel.populateTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
@@ -182,6 +188,16 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
         btnUpdate.setEnabled(false);
     }//GEN-LAST:event_btnUpdateActionPerformed
 
+    /*private void backAction(){
+        userProcessContainer.remove(this);
+       Component[] componentArray = userProcessContainer.getComponents();
+       Component component = componentArray[componentArray.length - 1];
+     //  ManageAccountJPanel manageAccountJPanel = (ManageAccountJPanel) component;
+       ManageAccountJPanel manageAccountJPanel = (ManageAccountJPanel) component;
+       manageAccountJPanel.populateTable();
+       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+       layout.previous(userProcessContainer);
+    }*/
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
 

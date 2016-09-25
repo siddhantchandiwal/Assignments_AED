@@ -29,11 +29,11 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.accountDirectory = accountDirectory;
-        tblAccounts.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 18));
+        tblAccounts.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 16));
         populateTable();
     }
 
-    private void populateTable() {
+    public void populateTable() {
         DefaultTableModel dtm = (DefaultTableModel) tblAccounts.getModel();
         dtm.setRowCount(0);
         for (Account account : accountDirectory.getAccountList()) {
