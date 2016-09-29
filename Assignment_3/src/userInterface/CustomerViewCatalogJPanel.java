@@ -5,6 +5,10 @@
  */
 package userInterface;
 
+import business.Catalog;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Siddhant
@@ -14,9 +18,27 @@ public class CustomerViewCatalogJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CustomerViewCatalogJPanel
      */
-    public CustomerViewCatalogJPanel() {
+   private JPanel userProcessContainer;
+   private Catalog catalog;
+
+    CustomerViewCatalogJPanel(JPanel userProcessContainer, Catalog catalog) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.catalog = catalog;
+        populateCatalogDetails();
     }
+    
+    private void populateCatalogDetails() {
+        txtProductName.setText(catalog.getProductName());
+        txtModelNumber.setText(catalog.getModelNumber());
+        txtVendorName.setText(catalog.getVendorName());
+        txtDescription.setText(catalog.getProductDescription());
+        txtBasePrice.setText(String.valueOf(catalog.getProdBasePrice()));
+        txtCeilingPrice.setText(String.valueOf(catalog.getProdCeilingPrice()));
+        txtFloorPrice.setText(String.valueOf(catalog.getProdFloorPrice()));
+        txtFeature.setText(catalog.getProdFeature());
+        txtBenefits.setText(catalog.getBenefits());
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,19 +49,253 @@ public class CustomerViewCatalogJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblHeader = new javax.swing.JLabel();
+        lblProductName = new javax.swing.JLabel();
+        txtProductName = new javax.swing.JTextField();
+        txtModelNumber = new javax.swing.JTextField();
+        txtVendorName = new javax.swing.JTextField();
+        lblVendorName = new javax.swing.JLabel();
+        lblModelNumber = new javax.swing.JLabel();
+        lblProductDescription = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtDescription = new javax.swing.JTextArea();
+        lblBasePrice = new javax.swing.JLabel();
+        txtBasePrice = new javax.swing.JTextField();
+        txtCeilingPrice = new javax.swing.JTextField();
+        lblCeilingPrice = new javax.swing.JLabel();
+        lblFloorPrice = new javax.swing.JLabel();
+        txtFloorPrice = new javax.swing.JTextField();
+        lblProdFeature = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtFeature = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtBenefits = new javax.swing.JTextArea();
+        lblProdBenefits = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+
+        lblHeader.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblHeader.setText("View Catalog");
+
+        lblProductName.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblProductName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblProductName.setText("Product Name:");
+        lblProductName.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        txtProductName.setEditable(false);
+        txtProductName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        txtModelNumber.setEditable(false);
+        txtModelNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        txtVendorName.setEditable(false);
+        txtVendorName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblVendorName.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblVendorName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblVendorName.setText("Vendor Name:");
+        lblVendorName.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        lblModelNumber.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblModelNumber.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblModelNumber.setText("Model Number:");
+        lblModelNumber.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        lblProductDescription.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblProductDescription.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblProductDescription.setText("Description:");
+        lblProductDescription.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        txtDescription.setEditable(false);
+        txtDescription.setColumns(20);
+        txtDescription.setRows(5);
+        txtDescription.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane3.setViewportView(txtDescription);
+
+        lblBasePrice.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblBasePrice.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblBasePrice.setText("Base Price:");
+        lblBasePrice.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        txtBasePrice.setEditable(false);
+        txtBasePrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtBasePrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBasePriceActionPerformed(evt);
+            }
+        });
+
+        txtCeilingPrice.setEditable(false);
+        txtCeilingPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblCeilingPrice.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblCeilingPrice.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCeilingPrice.setText("Ceiling Price:");
+        lblCeilingPrice.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        lblFloorPrice.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblFloorPrice.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblFloorPrice.setText("Floor Price:");
+
+        txtFloorPrice.setEditable(false);
+        txtFloorPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblProdFeature.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblProdFeature.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblProdFeature.setText("Features:");
+        lblProdFeature.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        txtFeature.setEditable(false);
+        txtFeature.setColumns(20);
+        txtFeature.setRows(5);
+        txtFeature.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane1.setViewportView(txtFeature);
+
+        txtBenefits.setEditable(false);
+        txtBenefits.setColumns(20);
+        txtBenefits.setRows(5);
+        txtBenefits.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane2.setViewportView(txtBenefits);
+
+        lblProdBenefits.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblProdBenefits.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblProdBenefits.setText("Benefits:");
+        lblProdBenefits.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        btnBack.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        btnBack.setText("< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 939, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(195, 195, 195)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(183, 183, 183)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtProductName)
+                                    .addComponent(lblHeader)
+                                    .addComponent(txtModelNumber)
+                                    .addComponent(txtVendorName)
+                                    .addComponent(jScrollPane3)
+                                    .addComponent(txtBasePrice)
+                                    .addComponent(txtCeilingPrice)
+                                    .addComponent(txtFloorPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBack)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblModelNumber)
+                    .addComponent(lblProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(lblProdFeature, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblVendorName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblProductDescription, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblBasePrice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblCeilingPrice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblFloorPrice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(lblProdBenefits, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(285, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 812, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(lblHeader)
+                .addGap(76, 76, 76)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtProductName))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(lblModelNumber))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(txtModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtVendorName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblVendorName))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblProductDescription)
+                        .addGap(87, 87, 87))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblBasePrice)
+                    .addComponent(txtBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCeilingPrice)
+                    .addComponent(txtCeilingPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFloorPrice)
+                    .addComponent(txtFloorPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblProdFeature, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblProdBenefits))
+                .addGap(33, 33, 33)
+                .addComponent(btnBack)
+                .addGap(46, 46, 46))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtBasePriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBasePriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBasePriceActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel lblBasePrice;
+    private javax.swing.JLabel lblCeilingPrice;
+    private javax.swing.JLabel lblFloorPrice;
+    private javax.swing.JLabel lblHeader;
+    private javax.swing.JLabel lblModelNumber;
+    private javax.swing.JLabel lblProdBenefits;
+    private javax.swing.JLabel lblProdFeature;
+    private javax.swing.JLabel lblProductDescription;
+    private javax.swing.JLabel lblProductName;
+    private javax.swing.JLabel lblVendorName;
+    private javax.swing.JTextField txtBasePrice;
+    private javax.swing.JTextArea txtBenefits;
+    private javax.swing.JTextField txtCeilingPrice;
+    private javax.swing.JTextArea txtDescription;
+    private javax.swing.JTextArea txtFeature;
+    private javax.swing.JTextField txtFloorPrice;
+    private javax.swing.JTextField txtModelNumber;
+    private javax.swing.JTextField txtProductName;
+    private javax.swing.JTextField txtVendorName;
     // End of variables declaration//GEN-END:variables
 }

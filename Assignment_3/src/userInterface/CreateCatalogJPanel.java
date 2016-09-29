@@ -52,7 +52,7 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
         txtModelNumber = new javax.swing.JTextField();
         txtVendorName = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtFeature = new javax.swing.JTextArea();
         txtBasePrice = new javax.swing.JTextField();
         txtCeilingPrice = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -115,10 +115,10 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
 
         txtVendorName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane1.setViewportView(jTextArea1);
+        txtFeature.setColumns(20);
+        txtFeature.setRows(5);
+        txtFeature.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane1.setViewportView(txtFeature);
 
         txtBasePrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -161,6 +161,11 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnReset.setText("Reset");
         btnReset.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Fields marked with Asterisk (*) are mandatory");
@@ -280,6 +285,18 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
 
     }// </editor-fold>//GEN-END:initComponents
 
+    public void resetField(){
+        txtProductName.setText("");
+        txtModelNumber.setText("");
+        txtVendorName.setText("");
+        txtDescription.setText("");
+        txtBasePrice.setText("");
+        txtCeilingPrice.setText("");
+        txtFloorPrice.setText("");
+        txtFeature.setText("");
+        txtBenefits.setText("");
+        
+    }
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
@@ -332,9 +349,16 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
         catalog.setProdFeature(feature);
         catalog.setBenefits(benefits);
         
-        JOptionPane.showMessageDialog(null, "Account Successfully created");
+        JOptionPane.showMessageDialog(this, "Catalog Created Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+        
+        resetField();
         
     }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // TODO add your handling code here:
+        resetField();
+    }//GEN-LAST:event_btnResetActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -345,7 +369,6 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblBasePrice;
     private javax.swing.JLabel lblCeilingPrice;
     private javax.swing.JLabel lblFloorPrice;
@@ -360,6 +383,7 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
     private javax.swing.JTextArea txtBenefits;
     private javax.swing.JTextField txtCeilingPrice;
     private javax.swing.JTextArea txtDescription;
+    private javax.swing.JTextArea txtFeature;
     private javax.swing.JTextField txtFloorPrice;
     private javax.swing.JTextField txtModelNumber;
     private javax.swing.JTextField txtProductName;

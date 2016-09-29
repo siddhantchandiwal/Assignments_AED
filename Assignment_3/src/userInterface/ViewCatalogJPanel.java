@@ -119,11 +119,6 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         lblBasePrice.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         txtBasePrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txtBasePrice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBasePriceActionPerformed(evt);
-            }
-        });
 
         lblCeilingPrice.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblCeilingPrice.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -288,18 +283,14 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtBasePriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBasePriceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBasePriceActionPerformed
-
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        
-        ManageCatalogJPanel manageCatalogJPanel = (ManageCatalogJPanel) component;
-        manageCatalogJPanel.populateTable();
+        //  ManageAccountJPanel manageAccountJPanel = (ManageAccountJPanel) component;
+        ManageCatalogJPanel manageAccountJPanel = (ManageCatalogJPanel) component;
+        manageAccountJPanel.populateTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
