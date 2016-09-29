@@ -100,7 +100,6 @@ public class AccountMngWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add("ManageAccountJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-
     }//GEN-LAST:event_btnManageAccountActionPerformed
 
 
