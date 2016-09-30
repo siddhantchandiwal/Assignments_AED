@@ -48,48 +48,62 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnCatalogManager" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnCustomer" min="-2" pref="171" max="-2" attributes="0"/>
+                          <Component id="btnCustomer" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnVendor" min="-2" pref="119" max="-2" attributes="0"/>
+                          <Component id="btnManager" min="-2" pref="119" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="35" max="32767" attributes="0"/>
+                      <EmptySpace pref="36" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="btnManager" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="btnVendor" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       <Component id="btnCustomer" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                      <Component id="btnCatalogManager" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="351" max="32767" attributes="0"/>
+                      <EmptySpace pref="287" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btnCatalogManager">
+            <Component class="javax.swing.JButton" name="btnVendor">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="16" style="1"/>
+                  <Font name="Tahoma" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Catalog Manager"/>
+                <Property name="text" type="java.lang.String" value="Vendor"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCatalogManagerActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVendorActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnCustomer">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="16" style="1"/>
+                  <Font name="Tahoma" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Customer"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCustomerActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnManager">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Manager"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManagerActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

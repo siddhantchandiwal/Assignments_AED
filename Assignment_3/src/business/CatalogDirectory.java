@@ -32,9 +32,7 @@ public class CatalogDirectory {
         return catalog;
     }
     
-    public void deleteCatalog(Catalog catalog) {
-        cataloglist.remove(catalog);
-    }
+    
     
     public Catalog searchCatalog(String productName) {
         for (Catalog catalog : cataloglist) {
@@ -44,6 +42,11 @@ public class CatalogDirectory {
         }
         return null;
     }
-    
+
+    public void deleteCatalog(Catalog catalog) {
+        cataloglist.remove(catalog);
+    }
+
+     
     
 }

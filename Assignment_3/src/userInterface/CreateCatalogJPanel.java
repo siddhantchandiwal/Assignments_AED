@@ -23,12 +23,14 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
      */
     private JPanel userProcessContainer;
     private CatalogDirectory catalogDirectory;
+    String select;
 
-    CreateCatalogJPanel(JPanel userProcessContainer, CatalogDirectory catalogDirectory) {
+   public CreateCatalogJPanel(JPanel userProcessContainer, CatalogDirectory catalogDirectory, String select) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.catalogDirectory = catalogDirectory;
-    }
+        this.select=select;
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,7 +44,6 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
         lblHeader = new javax.swing.JLabel();
         lblProductName = new javax.swing.JLabel();
         lblModelNumber = new javax.swing.JLabel();
-        lblVendorName = new javax.swing.JLabel();
         lblProductDescription = new javax.swing.JLabel();
         lblBasePrice = new javax.swing.JLabel();
         lblCeilingPrice = new javax.swing.JLabel();
@@ -50,7 +51,6 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
         lblProdBenefits = new javax.swing.JLabel();
         txtProductName = new javax.swing.JTextField();
         txtModelNumber = new javax.swing.JTextField();
-        txtVendorName = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtFeature = new javax.swing.JTextArea();
         txtBasePrice = new javax.swing.JTextField();
@@ -79,11 +79,6 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
         lblModelNumber.setText("*Model Number:");
         lblModelNumber.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        lblVendorName.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        lblVendorName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblVendorName.setText("*Vendor Name:");
-        lblVendorName.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
         lblProductDescription.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblProductDescription.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblProductDescription.setText("Description:");
@@ -91,12 +86,12 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
 
         lblBasePrice.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblBasePrice.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblBasePrice.setText("Base Price:");
+        lblBasePrice.setText("*Base Price:");
         lblBasePrice.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         lblCeilingPrice.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblCeilingPrice.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblCeilingPrice.setText("Ceiling Price:");
+        lblCeilingPrice.setText("*Ceiling Price:");
         lblCeilingPrice.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         lblProdFeature.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -109,35 +104,44 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
         lblProdBenefits.setText("Benefits:");
         lblProdBenefits.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        txtProductName.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         txtProductName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        txtModelNumber.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         txtModelNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtVendorName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
         txtFeature.setColumns(20);
+        txtFeature.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtFeature.setLineWrap(true);
         txtFeature.setRows(5);
         txtFeature.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane1.setViewportView(txtFeature);
 
+        txtBasePrice.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         txtBasePrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        txtCeilingPrice.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         txtCeilingPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txtBenefits.setColumns(20);
+        txtBenefits.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtBenefits.setLineWrap(true);
         txtBenefits.setRows(5);
         txtBenefits.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane2.setViewportView(txtBenefits);
 
         txtDescription.setColumns(20);
+        txtDescription.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtDescription.setLineWrap(true);
         txtDescription.setRows(5);
         txtDescription.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane3.setViewportView(txtDescription);
 
         lblFloorPrice.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblFloorPrice.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblFloorPrice.setText("Floor Price:");
+        lblFloorPrice.setText("*Floor Price:");
 
+        txtFloorPrice.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         txtFloorPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnSubmit.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -180,34 +184,33 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
                         .addGap(344, 344, 344)
                         .addComponent(lblHeader))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblModelNumber)
-                                        .addGap(18, 18, 18)
+                                        .addGap(30, 30, 30)
                                         .addComponent(txtModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(30, 30, 30)
+                                        .addComponent(txtProductName))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(lblVendorName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(lblProductDescription, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(lblBasePrice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(lblCeilingPrice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(lblFloorPrice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addComponent(lblProdFeature, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(lblProdBenefits, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(18, 18, 18)
+                                        .addGap(30, 30, 30)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addGroup(layout.createSequentialGroup()
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                     .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                     .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -215,16 +218,15 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
                                                 .addComponent(txtBasePrice)
                                                 .addComponent(txtCeilingPrice)
                                                 .addComponent(jScrollPane3)
-                                                .addComponent(txtVendorName)
                                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
                                                 .addComponent(jScrollPane2)))))
                                 .addGap(18, 18, 18)))))
                 .addContainerGap(376, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblBasePrice, lblCeilingPrice, lblModelNumber, lblProdBenefits, lblProdFeature, lblProductDescription, lblProductName, lblVendorName});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblBasePrice, lblCeilingPrice, lblFloorPrice, lblModelNumber, lblProdBenefits, lblProdFeature, lblProductDescription, lblProductName});
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jScrollPane1, jScrollPane3, txtModelNumber, txtVendorName});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jScrollPane1, jScrollPane3, txtModelNumber});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,17 +236,15 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtProductName))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblModelNumber)
-                    .addComponent(txtModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(txtProductName, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblVendorName)
-                    .addComponent(txtVendorName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblModelNumber)
+                    .addComponent(txtModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -255,15 +255,15 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblBasePrice)
-                    .addComponent(txtBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCeilingPrice)
-                    .addComponent(txtCeilingPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCeilingPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFloorPrice)
-                    .addComponent(txtFloorPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFloorPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -272,23 +272,27 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblProdBenefits))
-                .addGap(18, 18, 18)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblBasePrice, lblCeilingPrice, lblFloorPrice, lblModelNumber, lblProdBenefits, lblProductDescription, lblProductName, lblVendorName, txtBasePrice, txtCeilingPrice, txtFloorPrice, txtModelNumber, txtProductName, txtVendorName});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblBasePrice, lblCeilingPrice, lblFloorPrice, lblModelNumber, lblProdBenefits, lblProdFeature, lblProductDescription, lblProductName, txtBasePrice, txtCeilingPrice, txtFloorPrice});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jScrollPane1, jScrollPane2, jScrollPane3});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtModelNumber, txtProductName});
 
     }// </editor-fold>//GEN-END:initComponents
 
     public void resetField(){
         txtProductName.setText("");
         txtModelNumber.setText("");
-        txtVendorName.setText("");
+       // txtVendorName.setText("");
         txtDescription.setText("");
         txtBasePrice.setText("");
         txtCeilingPrice.setText("");
@@ -309,21 +313,34 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
         
         String productName = txtProductName.getText();
         String modelNumber = txtModelNumber.getText();
-        String vendorName = txtVendorName.getText();
+       // String vendorName = txtVendorName.getText();
         String description=txtDescription.getText();
         String feature=txtDescription.getText();
         String benefits=txtBenefits.getText();
-       
-      if ((productName.isEmpty()) || (productName.startsWith(" ")) || (modelNumber.isEmpty()) || (modelNumber.startsWith(" "))
-                || (vendorName.isEmpty()) || (vendorName.startsWith(" "))) {
+        
+            
+      if ((productName.isEmpty()) || (productName.startsWith(" ")) || (modelNumber.isEmpty()) || (modelNumber.startsWith(" "))) {
             JOptionPane.showMessageDialog(this, "Please fill all the details", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-      float prodBasePrice;
-     float prodCeilingPrice;
-     float prodFloorPrice;
-      
+        float prodBasePrice;
+        float prodCeilingPrice;
+        float prodFloorPrice;
+     
+             String basePrice;
+             String ceilingPrice;
+             String floorPrice;
+             
+             basePrice=String.valueOf(txtBasePrice.getText());
+             ceilingPrice=String.valueOf(txtCeilingPrice.getText());
+             floorPrice=String.valueOf(txtFloorPrice.getText());
+             
+             if ((basePrice.isEmpty()) || (basePrice.startsWith(" ")) || (ceilingPrice.isEmpty()) || (ceilingPrice.startsWith(" "))
+                || (floorPrice.isEmpty()) || (floorPrice.startsWith(" "))) {
+            JOptionPane.showMessageDialog(this, "Please fill all the Price details", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         try {
              prodBasePrice=Float.parseFloat(txtBasePrice.getText());
              prodCeilingPrice=Float.parseFloat(txtCeilingPrice.getText());
@@ -338,10 +355,30 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
             return;
         }
         
+        try{
+            if (prodBasePrice>prodCeilingPrice){
+                JOptionPane.showMessageDialog(this, "Base Price cannot be greater than Ceiling Price", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Please add appropriate values", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        try{
+            if (prodBasePrice<prodFloorPrice){
+                JOptionPane.showMessageDialog(this, "Floor Price cannot be greater than Base Price", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Please add appropriate values", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         Catalog catalog = catalogDirectory.addCatalog();
         catalog.setProductName(productName);
         catalog.setModelNumber(modelNumber);
-        catalog.setVendorName(vendorName);
+        catalog.setVendorName(select);
         catalog.setProductDescription(description);
         catalog.setProdBasePrice(prodBasePrice);
         catalog.setProdCeilingPrice(prodCeilingPrice);
@@ -378,7 +415,6 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblProdFeature;
     private javax.swing.JLabel lblProductDescription;
     private javax.swing.JLabel lblProductName;
-    private javax.swing.JLabel lblVendorName;
     private javax.swing.JTextField txtBasePrice;
     private javax.swing.JTextArea txtBenefits;
     private javax.swing.JTextField txtCeilingPrice;
@@ -387,6 +423,5 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtFloorPrice;
     private javax.swing.JTextField txtModelNumber;
     private javax.swing.JTextField txtProductName;
-    private javax.swing.JTextField txtVendorName;
     // End of variables declaration//GEN-END:variables
 }

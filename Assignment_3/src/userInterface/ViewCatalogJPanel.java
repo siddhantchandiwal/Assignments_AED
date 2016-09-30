@@ -6,6 +6,7 @@
 package userInterface;
 
 import business.Catalog;
+import business.Vendor;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.regex.Pattern;
@@ -20,19 +21,28 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
     
     private JPanel userProcessContainer;
     private Catalog catalog;
+    private Vendor vendor;
 
     /**
      * Creates new form ViewCatalogJPanel
      */
-   
 
     ViewCatalogJPanel(JPanel userProcessContainer, Catalog catalog) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.catalog = catalog;
         populateCatalogDetails();
-        btnSave.setEnabled(false);
-        btnUpdate.setEnabled(true);
+       // btnSave.setEnabled(false);
+       // btnUpdate.setEnabled(true);
+        txtProductName.setEnabled(false);
+        txtModelNumber.setEnabled(false);
+        txtVendorName.setEnabled(false);
+        txtDescription.setEnabled(false);
+        txtBasePrice.setEnabled(false);
+        txtCeilingPrice.setEnabled(false);
+        txtFloorPrice.setEnabled(false);
+        txtFeature.setEnabled(false);
+        txtBenefits.setEnabled(false); 
     }
     
     private void populateCatalogDetails() {
@@ -87,6 +97,7 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         lblProductName.setText("Product Name:");
         lblProductName.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        txtProductName.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         txtProductName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblModelNumber.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -94,6 +105,7 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         lblModelNumber.setText("Model Number:");
         lblModelNumber.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        txtModelNumber.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         txtModelNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblVendorName.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -101,6 +113,8 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         lblVendorName.setText("Vendor Name:");
         lblVendorName.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        txtVendorName.setEditable(false);
+        txtVendorName.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         txtVendorName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblProductDescription.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -109,6 +123,8 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         lblProductDescription.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         txtDescription.setColumns(20);
+        txtDescription.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtDescription.setLineWrap(true);
         txtDescription.setRows(5);
         txtDescription.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane3.setViewportView(txtDescription);
@@ -118,6 +134,7 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         lblBasePrice.setText("Base Price:");
         lblBasePrice.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        txtBasePrice.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         txtBasePrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblCeilingPrice.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -125,12 +142,14 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         lblCeilingPrice.setText("Ceiling Price:");
         lblCeilingPrice.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        txtCeilingPrice.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         txtCeilingPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblFloorPrice.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblFloorPrice.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblFloorPrice.setText("Floor Price:");
 
+        txtFloorPrice.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         txtFloorPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblProdFeature.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -139,11 +158,15 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         lblProdFeature.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         txtFeature.setColumns(20);
+        txtFeature.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtFeature.setLineWrap(true);
         txtFeature.setRows(5);
         txtFeature.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane1.setViewportView(txtFeature);
 
         txtBenefits.setColumns(20);
+        txtBenefits.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtBenefits.setLineWrap(true);
         txtBenefits.setRows(5);
         txtBenefits.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane2.setViewportView(txtBenefits);
@@ -185,100 +208,92 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(398, 398, 398)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtProductName, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                                .addComponent(lblHeader)
-                                .addComponent(txtModelNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                                .addComponent(txtVendorName)
-                                .addComponent(jScrollPane3)
-                                .addComponent(txtBasePrice)
-                                .addComponent(txtCeilingPrice)
-                                .addComponent(txtFloorPrice)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addGap(398, 398, 398)
+                .addComponent(lblHeader)
+                .addContainerGap(372, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(215, 215, 215)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblModelNumber)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(lblVendorName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblProductDescription, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblBasePrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblCeilingPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblFloorPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                        .addComponent(lblModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblProdFeature, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblVendorName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblProductDescription, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblBasePrice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblCeilingPrice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblFloorPrice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(11, 11, 11)
-                            .addComponent(lblProdBenefits, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(lblProdFeature, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblProdBenefits, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtModelNumber, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtVendorName, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtBasePrice, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCeilingPrice, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtFloorPrice, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
+                    .addComponent(txtProductName))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(62, 62, 62)
                 .addComponent(lblHeader)
-                .addGap(76, 76, 76)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtProductName))
+                    .addComponent(lblProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addComponent(lblModelNumber))
+                        .addComponent(lblModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(txtModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtVendorName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblVendorName))
+                    .addComponent(txtVendorName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblVendorName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblProductDescription)
+                        .addComponent(lblProductDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(87, 87, 87))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblBasePrice)
-                    .addComponent(txtBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCeilingPrice)
-                    .addComponent(txtCeilingPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblCeilingPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCeilingPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFloorPrice)
-                    .addComponent(txtFloorPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblFloorPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFloorPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblProdFeature, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblProdFeature, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblProdBenefits))
-                .addGap(56, 56, 56)
+                    .addComponent(lblProdBenefits, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSave)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnBack))
+                    .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(121, 121, 121))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -289,8 +304,8 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         //  ManageAccountJPanel manageAccountJPanel = (ManageAccountJPanel) component;
-        ManageCatalogJPanel manageAccountJPanel = (ManageCatalogJPanel) component;
-        manageAccountJPanel.populateTable();
+        VendorCatalogJPanel vendorCatalogJPanel = (VendorCatalogJPanel) component;
+        vendorCatalogJPanel.populateTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
@@ -299,7 +314,7 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         txtProductName.setEnabled(true);
         txtModelNumber.setEnabled(true);
-        txtVendorName.setEnabled(true);
+        txtVendorName.setEnabled(false);
         txtDescription.setEnabled(true);
         txtBasePrice.setEnabled(true);
         txtCeilingPrice.setEnabled(true);
@@ -312,29 +327,42 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        
-        String productName = txtProductName.getText();
-        String ModelNumber = txtModelNumber.getText();
-        String VendorName = txtVendorName.getText();
-        String description=txtDescription.getText();
-	String feature=txtDescription.getText();
-	String benefits=txtBenefits.getText();
 
-        if ((productName.isEmpty()) || (productName.startsWith(" ")) || (ModelNumber.isEmpty()) || (ModelNumber.startsWith(" "))
-                || (VendorName.isEmpty()) || (VendorName.startsWith(" "))) {
+        String productName = txtProductName.getText();
+        String modelNumber = txtModelNumber.getText();
+        String vendorName = txtVendorName.getText();
+        String description=txtDescription.getText();
+        String feature=txtDescription.getText();
+        String benefits=txtBenefits.getText();
+
+        if ((productName.isEmpty()) || (productName.startsWith(" ")) || (modelNumber.isEmpty()) || (modelNumber.startsWith(" "))
+            || (vendorName.isEmpty()) || (vendorName.startsWith(" "))) {
             JOptionPane.showMessageDialog(this, "Please fill all the details", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         float prodBasePrice;
-     float prodCeilingPrice;
-     float prodFloorPrice;
-      
+        float prodCeilingPrice;
+        float prodFloorPrice;
+
+        String basePrice;
+        String ceilingPrice;
+        String floorPrice;
+
+        basePrice=String.valueOf(txtBasePrice.getText());
+        ceilingPrice=String.valueOf(txtCeilingPrice.getText());
+        floorPrice=String.valueOf(txtFloorPrice.getText());
+
+        if ((basePrice.isEmpty()) || (basePrice.startsWith(" ")) || (ceilingPrice.isEmpty()) || (ceilingPrice.startsWith(" "))
+            || (floorPrice.isEmpty()) || (floorPrice.startsWith(" "))) {
+            JOptionPane.showMessageDialog(this, "Please fill all the Price details", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         try {
-             prodBasePrice=Float.parseFloat(txtBasePrice.getText());
-             prodCeilingPrice=Float.parseFloat(txtCeilingPrice.getText());
-             prodFloorPrice=Float.parseFloat(txtFloorPrice.getText());
-            
+            prodBasePrice=Float.parseFloat(txtBasePrice.getText());
+            prodCeilingPrice=Float.parseFloat(txtCeilingPrice.getText());
+            prodFloorPrice=Float.parseFloat(txtFloorPrice.getText());
+
             if ((prodBasePrice < 0) || (prodCeilingPrice < 0) || (prodFloorPrice < 0)) {
                 JOptionPane.showMessageDialog(this, "No negative Values please", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
@@ -343,26 +371,55 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please add appropriate values", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
-        catalog.setProductName(txtProductName.getText());
-        catalog.setModelNumber(txtModelNumber.getText());
-        catalog.setVendorName(txtVendorName.getText());
-        catalog.setProductDescription(txtDescription.getText());
-        Float BasePrice=Float.parseFloat(txtBasePrice.getText());
-        catalog.setProdBasePrice(BasePrice);
-        Float CeilingPrice=Float.parseFloat(txtCeilingPrice.getText());
-        catalog.setProdCeilingPrice(CeilingPrice);
-        Float FloorPrice=Float.parseFloat(txtFloorPrice.getText());
-        catalog.setProdCeilingPrice(FloorPrice);
-        catalog.setProdFeature(txtFeature.getText());
-        catalog.setBenefits(txtBenefits.getText());
-        
+
+        try{
+            if (prodBasePrice>prodCeilingPrice){
+                JOptionPane.showMessageDialog(this, "Base Price cannot be greater than Ceiling Price", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Please add appropriate values", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        try{
+            if (prodBasePrice<prodFloorPrice){
+                JOptionPane.showMessageDialog(this, "Floor Price cannot be greater than Base Price", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Please add appropriate values", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Catalog catalog = catalogDirectory.addCatalog();
+        catalog.setProductName(productName);
+        catalog.setModelNumber(modelNumber);
+        catalog.setVendorName(vendorName);
+        catalog.setProductDescription(description);
+        catalog.setProdBasePrice(prodBasePrice);
+        catalog.setProdCeilingPrice(prodCeilingPrice);
+        catalog.setProdFloorPrice(prodFloorPrice);
+        catalog.setProdFeature(feature);
+        catalog.setBenefits(benefits);
+
+        JOptionPane.showMessageDialog(this, "Catalog Updated Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+
+        txtProductName.setEnabled(false);
+        txtModelNumber.setEnabled(false);
+        txtVendorName.setEnabled(false);
+        txtDescription.setEnabled(false);
+        txtBasePrice.setEnabled(false);
+        txtCeilingPrice.setEnabled(false);
+        txtFloorPrice.setEnabled(false);
+        txtFeature.setEnabled(false);
+        txtBenefits.setEnabled(false);
         btnSave.setEnabled(false);
         btnUpdate.setEnabled(true);
 
-        JOptionPane.showMessageDialog(this, "Account updated Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnSaveActionPerformed
-
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

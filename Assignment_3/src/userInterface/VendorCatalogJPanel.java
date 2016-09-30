@@ -17,31 +17,35 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Siddhant
  */
-public class ManageCatalogJPanel extends javax.swing.JPanel {
+public class VendorCatalogJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManageCatalogJPanel
+     * Creates new form VendorCatalogJPanel
      */
     private JPanel userProcessContainer;
     private CatalogDirectory catalogDirectory;
+    String select;
 
-    ManageCatalogJPanel(JPanel userProcessContainer, CatalogDirectory catalogDirectory) {
+   public VendorCatalogJPanel(JPanel userProcessContainer, CatalogDirectory catalogDirectory, String select) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.catalogDirectory = catalogDirectory;
-        tblCatalog.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 16));
+        this.select=select;
+        tblSupplier.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 16));
         populateTable();
     }
     
     public void populateTable() {
-        DefaultTableModel dtm = (DefaultTableModel) tblCatalog.getModel();
+        DefaultTableModel dtm = (DefaultTableModel) tblSupplier.getModel();
         dtm.setRowCount(0);
         for (Catalog catalog : catalogDirectory.getCataloglist()) {
+            if(catalog.getVendorName().equals(select)){
             Object[] row = new Object[3];
             row[0] = catalog;
             row[1] = catalog.getModelNumber();
             row[2] = catalog.getVendorName();
             dtm.addRow(row);
+            }
         }
     }
 
@@ -55,14 +59,14 @@ public class ManageCatalogJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblCatalog = new javax.swing.JTable();
+        tblSupplier = new javax.swing.JTable();
         btnSearchByProductName = new javax.swing.JButton();
         btnViewDetails = new javax.swing.JButton();
         txtProductName = new javax.swing.JTextField();
         btnDeleteDetails = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
 
-        tblCatalog.setModel(new javax.swing.table.DefaultTableModel(
+        tblSupplier.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -78,7 +82,7 @@ public class ManageCatalogJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblCatalog);
+        jScrollPane1.setViewportView(tblSupplier);
 
         btnSearchByProductName.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSearchByProductName.setText("Search by Product Name:");
@@ -138,15 +142,15 @@ public class ManageCatalogJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSearchByProductName)
+                    .addComponent(btnSearchByProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtProductName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnViewDetails)
+                .addComponent(btnViewDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnDeleteDetails)
+                .addComponent(btnDeleteDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnBack)
-                .addContainerGap(405, Short.MAX_VALUE))
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(402, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnSearchByProductName, txtProductName});
@@ -163,23 +167,23 @@ public class ManageCatalogJPanel extends javax.swing.JPanel {
 
         Catalog catalog = catalogDirectory.searchCatalog(txtProductName.getText());
         if (catalog == null) {
-            JOptionPane.showMessageDialog(this, "Account Number does not exist", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Product Name does not exist", "Information", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            ViewCatalogJPanel panel = new ViewCatalogJPanel(userProcessContainer, catalog);
+            /*ViewCatalogJPanel panel = new ViewCatalogJPanel(userProcessContainer, catalog);
             userProcessContainer.add("ViewAccountJPanel", panel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
+            layout.next(userProcessContainer);*/
+            } 
 
-        }
     }//GEN-LAST:event_btnSearchByProductNameActionPerformed
 
     private void btnViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tblCatalog.getSelectedRow();
+        int selectedRow = tblSupplier.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(this, "Please select any row", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
-            Catalog catalog = (Catalog) tblCatalog.getValueAt(selectedRow, 0);
+            Catalog catalog = (Catalog) tblSupplier.getValueAt(selectedRow, 0);
             ViewCatalogJPanel panel = new ViewCatalogJPanel(userProcessContainer, catalog);
             userProcessContainer.add("ViewCatalogJPanel", panel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -189,18 +193,21 @@ public class ManageCatalogJPanel extends javax.swing.JPanel {
 
     private void btnDeleteDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDetailsActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tblCatalog.getSelectedRow();
-        if (selectedRow >= 0) {
-            int dialogbutton = JOptionPane.YES_NO_OPTION;
-            int dialogResult = JOptionPane.showConfirmDialog(this, "Would you like to delete selected Catalog", "Warning", dialogbutton);
-            if (dialogResult == JOptionPane.YES_OPTION) {
-                Catalog catalog = (Catalog) tblCatalog.getValueAt(selectedRow, 0);
-                catalogDirectory.deleteCatalog(catalog);
-                populateTable();
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Please select any row", "Warning", JOptionPane.WARNING_MESSAGE);
-        }
+       int[] rows = tblSupplier.getSelectedRows();
+    
+       if (rows.length >= 0) {
+           int dialogButton = JOptionPane.YES_NO_OPTION;
+           int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete Selected Catalogs ?", "Warning", dialogButton);
+           if (dialogResult == JOptionPane.YES_OPTION) {
+              for(int k=rows.length-1;k>=0; k--){
+                   Catalog catalog = (Catalog) tblSupplier.getValueAt(rows[k], 0);
+                   catalogDirectory.deleteCatalog(catalog);
+                   populateTable();
+              }
+           }
+       } else {
+           JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
+       }
         
     }//GEN-LAST:event_btnDeleteDetailsActionPerformed
 
@@ -218,7 +225,7 @@ public class ManageCatalogJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSearchByProductName;
     private javax.swing.JButton btnViewDetails;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblCatalog;
+    private javax.swing.JTable tblSupplier;
     private javax.swing.JTextField txtProductName;
     // End of variables declaration//GEN-END:variables
 }

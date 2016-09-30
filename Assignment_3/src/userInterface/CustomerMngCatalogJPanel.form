@@ -16,65 +16,98 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnBack" min="-2" pref="110" max="-2" attributes="0"/>
-                          <Component id="btnSearchbyProductName" alignment="0" min="-2" pref="241" max="-2" attributes="0"/>
-                          <Component id="btnSearchbyModelNumber" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnSearchbyVendorName" alignment="0" min="-2" pref="241" max="-2" attributes="0"/>
-                          <Component id="btnSearchbyBasePrice" alignment="0" min="-2" pref="241" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtSearchbyBasePrice" min="-2" pref="225" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtSearchbyVendorName" alignment="1" pref="225" max="32767" attributes="0"/>
-                              <Component id="txtSearchbyModelNumber" alignment="1" max="32767" attributes="0"/>
-                              <Component id="txtSearchbyProductName" alignment="1" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="btnViewDetail" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="225" pref="225" max="-2" attributes="0"/>
+                      <Component id="btnSearchbyProductName" min="-2" pref="247" max="-2" attributes="0"/>
+                      <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                      <Component id="txtSearchbyProductName" min="-2" pref="225" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="225" pref="225" max="-2" attributes="0"/>
+                      <Component id="btnSearchbyModelNumber" min="-2" pref="247" max="-2" attributes="0"/>
+                      <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                      <Component id="txtSearchbyModelNumber" min="-2" pref="225" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="225" pref="225" max="-2" attributes="0"/>
+                      <Component id="btnSearchbyVendorName" min="-2" pref="247" max="-2" attributes="0"/>
+                      <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                      <Component id="txtSearchbyVendorName" min="-2" pref="225" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="225" pref="225" max="-2" attributes="0"/>
+                      <Component id="btnSearchbyBasePrice" min="-2" pref="247" max="-2" attributes="0"/>
+                      <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                      <Component id="txtSearchbyBasePrice" min="-2" pref="225" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="225" pref="225" max="-2" attributes="0"/>
+                      <Component id="btnSearchByKeywordDesc" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                      <Component id="txtKeyword" min="-2" pref="225" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="252" pref="252" max="-2" attributes="0"/>
+                      <Component id="btnBack" min="-2" pref="150" max="-2" attributes="0"/>
+                      <EmptySpace min="113" pref="113" max="-2" attributes="0"/>
+                      <Component id="btnViewDetail" min="-2" pref="150" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="694" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="225" max="32767" attributes="0"/>
+              <EmptySpace pref="130" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="157" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtSearchbyProductName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnSearchbyProductName" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnSearchbyProductName" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="txtSearchbyProductName" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtSearchbyModelNumber" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnSearchbyModelNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                      <Component id="btnSearchbyModelNumber" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="txtSearchbyModelNumber" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtSearchbyVendorName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnSearchbyVendorName" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                      <Component id="btnSearchbyVendorName" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="txtSearchbyVendorName" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtSearchbyBasePrice" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnSearchbyBasePrice" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                      <Component id="btnSearchbyBasePrice" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="txtSearchbyBasePrice" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnViewDetail" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnBack" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnSearchByKeywordDesc" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtKeyword" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="350" max="32767" attributes="0"/>
+              <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnBack" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="btnViewDetail" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="100" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -90,15 +123,21 @@
         <Component class="javax.swing.JTable" name="tblCustomerCatalog">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="0">
+              <Table columnCount="5" rowCount="0">
                 <Column editable="false" title="Product Name" type="java.lang.Object"/>
                 <Column editable="false" title="Model Number" type="java.lang.Object"/>
                 <Column editable="false" title="Vendor Name" type="java.lang.Object"/>
                 <Column editable="false" title="Base Price" type="java.lang.Object"/>
+                <Column editable="true" title="Description" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
@@ -129,12 +168,32 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JTextField" name="txtSearchbyProductName">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="16" style="0"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSearchbyModelNumber">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="16" style="0"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSearchbyVendorName">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="16" style="0"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSearchbyBasePrice">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="16" style="0"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnViewDetail">
       <Properties>
@@ -201,6 +260,16 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchbyBasePriceActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtKeyword">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSearchByKeywordDesc">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="16" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Search by Keword in Desc:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
