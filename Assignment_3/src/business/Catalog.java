@@ -10,7 +10,7 @@ package business;
  * @author Siddhant
  */
 public class Catalog {
-    
+
     private String productName;
     private String modelNumber;
     private String vendorName;
@@ -59,7 +59,7 @@ public class Catalog {
 
     public void setProdFeature(String prodFeature) {
         this.prodFeature = prodFeature;
-    }     
+    }
 
     public String getBenefits() {
         return benefits;
@@ -92,10 +92,10 @@ public class Catalog {
     public void setProdFloorPrice(float prodFloorPrice) {
         this.prodFloorPrice = prodFloorPrice;
     }
-    
+
     @Override
     public String toString() {
         return productName;
     }
-    
+
 }

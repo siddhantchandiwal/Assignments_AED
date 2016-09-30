@@ -67,6 +67,7 @@ public class VendorWorkAreaJPanel extends javax.swing.JPanel {
 
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnBack.setText("< Back");
+        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -97,10 +98,10 @@ public class VendorWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(btnManageCatalog, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(btnBack)
-                .addContainerGap(273, Short.MAX_VALUE))
+                .addContainerGap(263, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCreateCatalog, btnManageCatalog});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnBack, btnCreateCatalog, btnManageCatalog});
 
     }// </editor-fold>//GEN-END:initComponents
 

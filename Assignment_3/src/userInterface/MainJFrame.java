@@ -117,7 +117,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnVendorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendorActionPerformed
         // TODO add your handling code here:
-        VendorListJPanel panel = new VendorListJPanel(userProcessContainer, vendorDirectory, catalogDirectory);
+         VendorListJPanel panel = new VendorListJPanel(userProcessContainer, vendorDirectory, catalogDirectory);
         userProcessContainer.add("VendorListJPanel" , panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -135,8 +135,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagerActionPerformed
         // TODO add your handling code here:
-        ManageVendorJPanel panel = new ManageVendorJPanel(userProcessContainer,catalogDirectory, vendorDirectory);
-        userProcessContainer.add("ManageCatalogJPanel", panel);
+        ManagerLoginJPanel panel = new ManagerLoginJPanel(userProcessContainer,catalogDirectory, vendorDirectory);
+        userProcessContainer.add("ManagerLoginJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManagerActionPerformed

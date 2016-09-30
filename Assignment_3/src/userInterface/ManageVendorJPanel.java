@@ -25,20 +25,18 @@ public class ManageVendorJPanel extends javax.swing.JPanel {
     /**
      * Creates new form SupplierCatalogJPanel
      */
-    
     private JPanel userProcessContainer;
     private CatalogDirectory catalogDirectory;
     private VendorDirectory vendorDirectory;
-   
 
-    ManageVendorJPanel(JPanel userProcessContainer,CatalogDirectory catalogDirectory, VendorDirectory vendorDirectory) {
-       initComponents();
+    ManageVendorJPanel(JPanel userProcessContainer, CatalogDirectory catalogDirectory, VendorDirectory vendorDirectory) {
+        initComponents();
         this.userProcessContainer = userProcessContainer;
         this.catalogDirectory = catalogDirectory;
         this.vendorDirectory = vendorDirectory;
         tblManager.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 16));
-        populateTable(); 
-        
+        populateTable();
+
     }
 
     /**
@@ -75,7 +73,7 @@ public class ManageVendorJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblManager);
 
         btnAddSupplier.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnAddSupplier.setText("Add Supplier");
+        btnAddSupplier.setText("Add Vendor");
         btnAddSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddSupplierActionPerformed(evt);
@@ -106,10 +104,10 @@ public class ManageVendorJPanel extends javax.swing.JPanel {
                 .addGap(163, 163, 163)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnAddSupplier)
-                        .addGap(82, 82, 82)
+                        .addGap(107, 107, 107)
                         .addComponent(btnDeleteSupplier))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(192, Short.MAX_VALUE))
@@ -119,12 +117,12 @@ public class ManageVendorJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddSupplier)
                     .addComponent(btnDeleteSupplier)
                     .addComponent(btnBack))
-                .addContainerGap(298, Short.MAX_VALUE))
+                .addContainerGap(297, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -137,7 +135,7 @@ public class ManageVendorJPanel extends javax.swing.JPanel {
             dtm.addRow(row);
         }
     }
-    
+
     private void btnDeleteSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteSupplierActionPerformed
         // TODO add your handling code here:
         int selectedRow = tblManager.getSelectedRow();
@@ -161,21 +159,21 @@ public class ManageVendorJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnDeleteSupplierActionPerformed
 
+    private void btnAddSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSupplierActionPerformed
+        // TODO add your handling code here:
+        AddVendorJPanel panel = new AddVendorJPanel(userProcessContainer, vendorDirectory);
+        userProcessContainer.add("AddVendorJPanel", panel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+
+    }//GEN-LAST:event_btnAddSupplierActionPerformed
+
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
-
-    private void btnAddSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSupplierActionPerformed
-        // TODO add your handling code here:
-         AddVendorJPanel panel = new AddVendorJPanel(userProcessContainer, vendorDirectory);
-            userProcessContainer.add("AddVendorJPanel", panel);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
-          
-    }//GEN-LAST:event_btnAddSupplierActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

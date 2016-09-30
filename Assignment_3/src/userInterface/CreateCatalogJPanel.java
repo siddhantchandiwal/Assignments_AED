@@ -11,26 +11,22 @@ import java.awt.CardLayout;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
 /**
  *
  * @author Siddhant
  */
 public class CreateCatalogJPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form CreateCatalogJPanel
-     */
     private JPanel userProcessContainer;
     private CatalogDirectory catalogDirectory;
     String select;
 
-   public CreateCatalogJPanel(JPanel userProcessContainer, CatalogDirectory catalogDirectory, String select) {
+    public CreateCatalogJPanel(JPanel userProcessContainer, CatalogDirectory catalogDirectory, String select) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.catalogDirectory = catalogDirectory;
-        this.select=select;
-        }
+        this.select = select;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -188,15 +184,15 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblModelNumber)
-                                        .addGap(30, 30, 30)
+                                        .addGap(18, 18, 18)
                                         .addComponent(txtModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(30, 30, 30)
-                                        .addComponent(txtProductName))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -206,7 +202,7 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
                                                 .addComponent(lblFloorPrice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addComponent(lblProdFeature, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(lblProdBenefits, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(30, 30, 30)
+                                        .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -220,7 +216,7 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
                                                 .addComponent(jScrollPane3)
                                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
                                                 .addComponent(jScrollPane2)))))
-                                .addGap(18, 18, 18)))))
+                                .addGap(30, 30, 30)))))
                 .addContainerGap(376, Short.MAX_VALUE))
         );
 
@@ -289,17 +285,17 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
 
     }// </editor-fold>//GEN-END:initComponents
 
-    public void resetField(){
+    public void resetField() {
         txtProductName.setText("");
         txtModelNumber.setText("");
-       // txtVendorName.setText("");
+        // txtVendorName.setText("");
         txtDescription.setText("");
         txtBasePrice.setText("");
         txtCeilingPrice.setText("");
         txtFloorPrice.setText("");
         txtFeature.setText("");
         txtBenefits.setText("");
-        
+
     }
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
@@ -310,16 +306,15 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        
+
         String productName = txtProductName.getText();
         String modelNumber = txtModelNumber.getText();
-       // String vendorName = txtVendorName.getText();
-        String description=txtDescription.getText();
-        String feature=txtDescription.getText();
-        String benefits=txtBenefits.getText();
-        
-            
-      if ((productName.isEmpty()) || (productName.startsWith(" ")) || (modelNumber.isEmpty()) || (modelNumber.startsWith(" "))) {
+        // String vendorName = txtVendorName.getText();
+        String description = txtDescription.getText();
+        String feature = txtDescription.getText();
+        String benefits = txtBenefits.getText();
+
+        if ((productName.isEmpty()) || (productName.startsWith(" ")) || (modelNumber.isEmpty()) || (modelNumber.startsWith(" "))) {
             JOptionPane.showMessageDialog(this, "Please fill all the details", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -327,25 +322,25 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
         float prodBasePrice;
         float prodCeilingPrice;
         float prodFloorPrice;
-     
-             String basePrice;
-             String ceilingPrice;
-             String floorPrice;
-             
-             basePrice=String.valueOf(txtBasePrice.getText());
-             ceilingPrice=String.valueOf(txtCeilingPrice.getText());
-             floorPrice=String.valueOf(txtFloorPrice.getText());
-             
-             if ((basePrice.isEmpty()) || (basePrice.startsWith(" ")) || (ceilingPrice.isEmpty()) || (ceilingPrice.startsWith(" "))
+
+        String basePrice;
+        String ceilingPrice;
+        String floorPrice;
+
+        basePrice = String.valueOf(txtBasePrice.getText());
+        ceilingPrice = String.valueOf(txtCeilingPrice.getText());
+        floorPrice = String.valueOf(txtFloorPrice.getText());
+
+        if ((basePrice.isEmpty()) || (basePrice.startsWith(" ")) || (ceilingPrice.isEmpty()) || (ceilingPrice.startsWith(" "))
                 || (floorPrice.isEmpty()) || (floorPrice.startsWith(" "))) {
             JOptionPane.showMessageDialog(this, "Please fill all the Price details", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         try {
-             prodBasePrice=Float.parseFloat(txtBasePrice.getText());
-             prodCeilingPrice=Float.parseFloat(txtCeilingPrice.getText());
-             prodFloorPrice=Float.parseFloat(txtFloorPrice.getText());
-            
+            prodBasePrice = Float.parseFloat(txtBasePrice.getText());
+            prodCeilingPrice = Float.parseFloat(txtCeilingPrice.getText());
+            prodFloorPrice = Float.parseFloat(txtFloorPrice.getText());
+
             if ((prodBasePrice < 0) || (prodCeilingPrice < 0) || (prodFloorPrice < 0)) {
                 JOptionPane.showMessageDialog(this, "No negative Values please", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
@@ -354,27 +349,27 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please add appropriate values", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
-        try{
-            if (prodBasePrice>prodCeilingPrice){
+
+        try {
+            if (prodBasePrice > prodCeilingPrice) {
                 JOptionPane.showMessageDialog(this, "Base Price cannot be greater than Ceiling Price", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Please add appropriate values", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
-        try{
-            if (prodBasePrice<prodFloorPrice){
+
+        try {
+            if (prodBasePrice < prodFloorPrice) {
                 JOptionPane.showMessageDialog(this, "Floor Price cannot be greater than Base Price", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Please add appropriate values", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
+
         Catalog catalog = catalogDirectory.addCatalog();
         catalog.setProductName(productName);
         catalog.setModelNumber(modelNumber);
@@ -385,18 +380,16 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
         catalog.setProdFloorPrice(prodFloorPrice);
         catalog.setProdFeature(feature);
         catalog.setBenefits(benefits);
-        
+
         JOptionPane.showMessageDialog(this, "Catalog Created Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-        
         resetField();
-        
+
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         // TODO add your handling code here:
         resetField();
     }//GEN-LAST:event_btnResetActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

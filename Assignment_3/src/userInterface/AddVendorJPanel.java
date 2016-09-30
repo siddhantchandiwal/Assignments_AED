@@ -22,17 +22,17 @@ public class AddVendorJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AddVendorJPanel
      */
-    
     private JPanel userProcessContainer;
     private VendorDirectory vendorDirectory;
+
     public AddVendorJPanel() {
-        
+
     }
 
     AddVendorJPanel(JPanel userProcessContainer, VendorDirectory vendorDirectory) {
         initComponents();
-        this.userProcessContainer=userProcessContainer;
-        this.vendorDirectory=vendorDirectory;
+        this.userProcessContainer = userProcessContainer;
+        this.vendorDirectory = vendorDirectory;
     }
 
     /**
@@ -56,6 +56,7 @@ public class AddVendorJPanel extends javax.swing.JPanel {
 
         btnSubmit.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSubmit.setText("Submit");
+        btnSubmit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
@@ -64,6 +65,7 @@ public class AddVendorJPanel extends javax.swing.JPanel {
 
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnBack.setText("< Back");
+        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -92,14 +94,14 @@ public class AddVendorJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblVendorName)
                     .addComponent(txtVendorName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSubmit)
                     .addComponent(btnBack))
-                .addContainerGap(331, Short.MAX_VALUE))
+                .addContainerGap(342, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblVendorName, txtVendorName});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnBack, btnSubmit, lblVendorName, txtVendorName});
 
     }// </editor-fold>//GEN-END:initComponents
 
@@ -118,20 +120,20 @@ public class AddVendorJPanel extends javax.swing.JPanel {
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
         String vendorName = txtVendorName.getText();
-        
-        if ((vendorName.isEmpty()) || (vendorName.startsWith(" ")) ) {
+
+        if ((vendorName.isEmpty()) || (vendorName.startsWith(" "))) {
             JOptionPane.showMessageDialog(this, "Please enter Vendor Name", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
+
         if (!(Pattern.matches("^[a-zA-Z]+$", txtVendorName.getText().trim()))) {
             JOptionPane.showMessageDialog(this, "Please enter only alphabets", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
-        Vendor vendor=vendorDirectory.addVendor();
+
+        Vendor vendor = vendorDirectory.addVendor();
         vendor.setVendorName(vendorName);
-        JOptionPane.showMessageDialog(this, "Vendor Added Successfully");
+        JOptionPane.showMessageDialog(this, "Vendor Added Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
         txtVendorName.setText("");
     }//GEN-LAST:event_btnSubmitActionPerformed
 

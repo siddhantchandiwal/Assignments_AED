@@ -56,7 +56,8 @@ public class VendorListJPanel extends javax.swing.JPanel {
         btnGo = new javax.swing.JButton();
         VendorComboBox = new javax.swing.JComboBox<>();
         lblSelectVendorName = new javax.swing.JLabel();
-        btnBack = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JPasswordField();
 
         btnGo.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnGo.setText("Go >>");
@@ -72,29 +73,31 @@ public class VendorListJPanel extends javax.swing.JPanel {
         lblSelectVendorName.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblSelectVendorName.setText("Vendor Name:");
 
-        btnBack.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnBack.setText("< Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel1.setText("Password:");
+
+        txtPassword.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblSelectVendorName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(VendorComboBox, 0, 146, Short.MAX_VALUE)
-                    .addComponent(btnGo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnGo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtPassword))
                 .addContainerGap(462, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {VendorComboBox, txtPassword});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -102,47 +105,53 @@ public class VendorListJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VendorComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSelectVendorName))
-                .addGap(51, 51, 51)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGo)
-                    .addComponent(btnBack))
-                .addContainerGap(368, Short.MAX_VALUE))
+                    .addComponent(jLabel1)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addComponent(btnGo)
+                .addContainerGap(324, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnBack, btnGo});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {VendorComboBox, jLabel1, lblSelectVendorName, txtPassword});
 
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoActionPerformed
         // TODO add your handling code here:
+        
         String select = null;
+        String password=new String(txtPassword.getPassword());
         try{
             select=VendorComboBox.getSelectedItem().toString();
+            if(password.equals(select)){
+                VendorWorkAreaJPanel panel = new VendorWorkAreaJPanel(userProcessContainer, vendorDirectory, catalogDirectory, select);
+            userProcessContainer.add("CatalogMngWorkAreaJPanel", panel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer); 
+            txtPassword.setText("");
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Please enter correct Password");
+                return;
+            }
+            
         }catch(Exception e){
            // e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Please select Vendor Name", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-            VendorWorkAreaJPanel panel = new VendorWorkAreaJPanel(userProcessContainer, vendorDirectory, catalogDirectory, select);
-            userProcessContainer.add("CatalogMngWorkAreaJPanel", panel);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
-        
-        
+  
+              
     }//GEN-LAST:event_btnGoActionPerformed
-
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> VendorComboBox;
-    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnGo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblSelectVendorName;
+    private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
 }

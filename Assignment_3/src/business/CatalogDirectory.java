@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package business;
+
 import java.util.ArrayList;
 
 /**
@@ -11,11 +12,11 @@ import java.util.ArrayList;
  * @author Siddhant
  */
 public class CatalogDirectory {
-    
+
     private ArrayList<Catalog> cataloglist;
-    
-    public CatalogDirectory(){
-        this.cataloglist=new ArrayList<Catalog>();
+
+    public CatalogDirectory() {
+        this.cataloglist = new ArrayList<Catalog>();
     }
 
     public ArrayList<Catalog> getCataloglist() {
@@ -25,15 +26,13 @@ public class CatalogDirectory {
     public void setCataloglist(ArrayList<Catalog> cataloglist) {
         this.cataloglist = cataloglist;
     }
-    
-    public Catalog addCatalog(){
-        Catalog catalog=new Catalog();
+
+    public Catalog addCatalog() {
+        Catalog catalog = new Catalog();
         cataloglist.add(catalog);
         return catalog;
     }
-    
-    
-    
+
     public Catalog searchCatalog(String productName) {
         for (Catalog catalog : cataloglist) {
             if (catalog.getProductName().equals(productName)) {
@@ -47,6 +46,4 @@ public class CatalogDirectory {
         cataloglist.remove(catalog);
     }
 
-     
-    
 }

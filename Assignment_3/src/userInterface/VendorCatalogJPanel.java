@@ -86,6 +86,7 @@ public class VendorCatalogJPanel extends javax.swing.JPanel {
 
         btnSearchByProductName.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSearchByProductName.setText("Search by Product Name:");
+        btnSearchByProductName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnSearchByProductName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchByProductNameActionPerformed(evt);
@@ -94,6 +95,7 @@ public class VendorCatalogJPanel extends javax.swing.JPanel {
 
         btnViewDetails.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnViewDetails.setText("View Details");
+        btnViewDetails.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnViewDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewDetailsActionPerformed(evt);
@@ -102,6 +104,7 @@ public class VendorCatalogJPanel extends javax.swing.JPanel {
 
         btnDeleteDetails.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnDeleteDetails.setText("Delete");
+        btnDeleteDetails.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnDeleteDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteDetailsActionPerformed(evt);
@@ -110,6 +113,7 @@ public class VendorCatalogJPanel extends javax.swing.JPanel {
 
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnBack.setText("< Back");
+        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -123,7 +127,6 @@ public class VendorCatalogJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(169, 169, 169)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBack)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
@@ -132,7 +135,9 @@ public class VendorCatalogJPanel extends javax.swing.JPanel {
                                 .addComponent(btnSearchByProductName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGap(36, 36, 36)
                             .addComponent(txtProductName)))
-                    .addComponent(btnDeleteDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnBack, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
+                        .addComponent(btnDeleteDetails, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(241, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -169,10 +174,10 @@ public class VendorCatalogJPanel extends javax.swing.JPanel {
         if (catalog == null) {
             JOptionPane.showMessageDialog(this, "Product Name does not exist", "Information", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            /*ViewCatalogJPanel panel = new ViewCatalogJPanel(userProcessContainer, catalog);
+            ViewCatalogJPanel panel = new ViewCatalogJPanel(userProcessContainer, catalog);
             userProcessContainer.add("ViewAccountJPanel", panel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);*/
+            layout.next(userProcessContainer);
             } 
 
     }//GEN-LAST:event_btnSearchByProductNameActionPerformed

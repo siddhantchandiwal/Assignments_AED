@@ -68,7 +68,6 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
         txtSearchbyVendorName = new javax.swing.JTextField();
         txtSearchbyBasePrice = new javax.swing.JTextField();
         btnViewDetail = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
         btnSearchbyProductName = new javax.swing.JButton();
         btnSearchbyModelNumber = new javax.swing.JButton();
         btnSearchbyVendorName = new javax.swing.JButton();
@@ -104,22 +103,16 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
 
         btnViewDetail.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnViewDetail.setText("View Detail");
+        btnViewDetail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnViewDetail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewDetailActionPerformed(evt);
             }
         });
 
-        btnBack.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnBack.setText("< Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-
         btnSearchbyProductName.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSearchbyProductName.setText("Search by Product Name:");
+        btnSearchbyProductName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnSearchbyProductName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchbyProductNameActionPerformed(evt);
@@ -128,6 +121,7 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
 
         btnSearchbyModelNumber.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSearchbyModelNumber.setText("Search by Model Number:");
+        btnSearchbyModelNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnSearchbyModelNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchbyModelNumberActionPerformed(evt);
@@ -136,6 +130,7 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
 
         btnSearchbyVendorName.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSearchbyVendorName.setText("Search by Vendor Name:");
+        btnSearchbyVendorName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnSearchbyVendorName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchbyVendorNameActionPerformed(evt);
@@ -144,6 +139,7 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
 
         btnSearchbyBasePrice.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSearchbyBasePrice.setText("Search by Base Price:");
+        btnSearchbyBasePrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnSearchbyBasePrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchbyBasePriceActionPerformed(evt);
@@ -152,6 +148,12 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
 
         btnSearchByKeywordDesc.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSearchByKeywordDesc.setText("Search by Keword in Desc:");
+        btnSearchByKeywordDesc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnSearchByKeywordDesc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchByKeywordDescActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -162,44 +164,45 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(225, 225, 225)
                         .addComponent(btnSearchbyProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
+                        .addGap(18, 18, 18)
                         .addComponent(txtSearchbyProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(225, 225, 225)
                         .addComponent(btnSearchbyModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
+                        .addGap(18, 18, 18)
                         .addComponent(txtSearchbyModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(225, 225, 225)
                         .addComponent(btnSearchbyVendorName, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
+                        .addGap(18, 18, 18)
                         .addComponent(txtSearchbyVendorName, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(btnSearchbyBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(txtSearchbyBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(btnSearchByKeywordDesc)
-                        .addGap(30, 30, 30)
-                        .addComponent(txtKeyword, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(252, 252, 252)
-                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(113, 113, 113)
-                        .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(122, 122, 122)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(225, 225, 225)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnSearchbyBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtSearchbyBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnSearchByKeywordDesc)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtKeyword, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(130, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnSearchByKeywordDesc, btnSearchbyBasePrice, btnSearchbyProductName, txtKeyword, txtSearchbyBasePrice, txtSearchbyModelNumber, txtSearchbyProductName, txtSearchbyVendorName});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSearchbyProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSearchbyProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -222,15 +225,16 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
                         .addComponent(btnSearchbyBasePrice))
                     .addComponent(txtSearchbyBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSearchByKeywordDesc)
-                    .addComponent(txtKeyword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtKeyword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearchByKeywordDesc))
                 .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(93, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnSearchByKeywordDesc, btnSearchbyBasePrice, btnSearchbyModelNumber, btnSearchbyProductName, btnSearchbyVendorName, txtKeyword, txtSearchbyBasePrice, txtSearchbyModelNumber, txtSearchbyProductName, txtSearchbyVendorName});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchbyProductNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchbyProductNameActionPerformed
@@ -312,16 +316,24 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnViewDetailActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+    private void btnSearchByKeywordDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchByKeywordDescActionPerformed
         // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
+        String Desc = txtKeyword.getText();
+        if ((Desc.isEmpty()) || (Desc.startsWith(" "))) {
+            JOptionPane.showMessageDialog(this, "Please enter any keyword", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        Catalog catalog = catalogDirectory.searchCatalog(txtKeyword.getText());
+        if (catalog == null) {
+            JOptionPane.showMessageDialog(this, "Description is not present", "Information", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+          //enter the code here to update the table automatically
+        }
+    }//GEN-LAST:event_btnSearchByKeywordDescActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSearchByKeywordDesc;
     private javax.swing.JButton btnSearchbyBasePrice;
     private javax.swing.JButton btnSearchbyModelNumber;

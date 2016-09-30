@@ -12,11 +12,11 @@ import java.util.ArrayList;
  * @author Siddhant
  */
 public class VendorDirectory {
-    
+
     private ArrayList<Vendor> vendorList;
-    
-    public VendorDirectory(){
-        this.vendorList=new ArrayList<Vendor>();
+
+    public VendorDirectory() {
+        this.vendorList = new ArrayList<Vendor>();
     }
 
     public ArrayList<Vendor> getVendorlist() {
@@ -26,16 +26,15 @@ public class VendorDirectory {
     public void setVendorlist(ArrayList<Vendor> vendorList) {
         this.vendorList = vendorList;
     }
-    
-    public Vendor addVendor(){
-        Vendor vendor=new Vendor();
+
+    public Vendor addVendor() {
+        Vendor vendor = new Vendor();
         vendorList.add(vendor);
         return vendor;
     }
-    
-     
+
     public void delete(Vendor vendorCatalog) {
         vendorList.remove(vendorCatalog);
     }
-          
+
 }
