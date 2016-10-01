@@ -4,17 +4,18 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/VendorWorkAreaJPanel.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/ManageVendorJPanel.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/VendorCatalogJPanel.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/MainJFrame.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/VendorListJPanel.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/business/VendorDirectory.java</file>
             <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/business/CatalogDirectory.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/CustomerMngCatalogJPanel.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/business/VendorDirectory.java</file>
             <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/AddVendorJPanel.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/CreateCatalogJPanel.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/ViewCatalogJPanel.java</file>
             <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/CustomerViewCatalogJPanel.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/ManagerLoginJPanel.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/VendorCatalogJPanel.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/ManageVendorJPanel.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/VendorListJPanel.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/CustomerMngCatalogJPanel.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/business/Catalog.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/userInterface/CreateCatalogJPanel.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Assignment_3/src/business/Vendor.java</file>
         </group>
     </open-files>
 </project-private>

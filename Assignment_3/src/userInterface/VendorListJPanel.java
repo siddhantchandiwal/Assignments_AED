@@ -61,6 +61,7 @@ public class VendorListJPanel extends javax.swing.JPanel {
 
         btnGo.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnGo.setText("Go >>");
+        btnGo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnGo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGoActionPerformed(evt);
@@ -78,6 +79,7 @@ public class VendorListJPanel extends javax.swing.JPanel {
         jLabel1.setText("Password:");
 
         txtPassword.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -109,8 +111,8 @@ public class VendorListJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
-                .addComponent(btnGo)
+                .addGap(50, 50, 50)
+                .addComponent(btnGo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(324, Short.MAX_VALUE))
         );
 

@@ -74,6 +74,7 @@ public class ManageVendorJPanel extends javax.swing.JPanel {
 
         btnAddSupplier.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnAddSupplier.setText("Add Vendor");
+        btnAddSupplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnAddSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddSupplierActionPerformed(evt);
@@ -82,6 +83,7 @@ public class ManageVendorJPanel extends javax.swing.JPanel {
 
         btnDeleteSupplier.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnDeleteSupplier.setText("Delete Vendor");
+        btnDeleteSupplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnDeleteSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteSupplierActionPerformed(evt);
@@ -90,6 +92,7 @@ public class ManageVendorJPanel extends javax.swing.JPanel {
 
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnBack.setText("< Back");
+        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -112,6 +115,9 @@ public class ManageVendorJPanel extends javax.swing.JPanel {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(192, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAddSupplier, btnBack, btnDeleteSupplier});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -120,10 +126,13 @@ public class ManageVendorJPanel extends javax.swing.JPanel {
                 .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddSupplier)
-                    .addComponent(btnDeleteSupplier)
+                    .addComponent(btnDeleteSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBack))
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addContainerGap(303, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAddSupplier, btnBack, btnDeleteSupplier});
+
     }// </editor-fold>//GEN-END:initComponents
 
     public void populateTable() {

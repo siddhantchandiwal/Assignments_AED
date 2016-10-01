@@ -53,6 +53,7 @@ public class AddVendorJPanel extends javax.swing.JPanel {
         lblVendorName.setText("Vendor Name:");
 
         txtVendorName.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtVendorName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnSubmit.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSubmit.setText("Submit");
@@ -130,11 +131,21 @@ public class AddVendorJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please enter only alphabets", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
-        Vendor vendor = vendorDirectory.addVendor();
-        vendor.setVendorName(vendorName);
-        JOptionPane.showMessageDialog(this, "Vendor Added Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-        txtVendorName.setText("");
+        boolean contains = false;
+        for (Vendor vendor : vendorDirectory.getVendorlist()) {
+            if (vendor.getVendorName().equalsIgnoreCase(vendorName)) {
+                contains = true;
+                break;
+            }
+        }
+        if (!contains) {
+            Vendor vendor = vendorDirectory.addVendor();
+            vendor.setVendorName(vendorName);
+            JOptionPane.showMessageDialog(this, "Vendor Added Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+            txtVendorName.setText("");
+        } else {
+            JOptionPane.showMessageDialog(this, "Vendor name already exists", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
 

@@ -11,6 +11,7 @@ import java.awt.CardLayout;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
 /**
  *
  * @author Siddhant
@@ -223,6 +224,8 @@ public class CreateCatalogJPanel extends javax.swing.JPanel {
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblBasePrice, lblCeilingPrice, lblFloorPrice, lblModelNumber, lblProdBenefits, lblProdFeature, lblProductDescription, lblProductName});
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jScrollPane1, jScrollPane3, txtModelNumber});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnReset, btnSubmit});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

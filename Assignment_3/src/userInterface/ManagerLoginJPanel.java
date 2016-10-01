@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author chand
+ * @author Siddhant
  */
 public class ManagerLoginJPanel extends javax.swing.JPanel {
 
@@ -53,6 +53,7 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
 
         btnGo.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnGo.setText("Go >>");
+        btnGo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnGo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGoActionPerformed(evt);
@@ -60,6 +61,7 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
         });
 
         txtPassword.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -75,8 +77,10 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
                         .addComponent(lblPassword)
                         .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnGo)
-                            .addComponent(txtPassword))))
+                            .addComponent(txtPassword)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnGo, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap(453, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -89,9 +93,12 @@ public class ManagerLoginJPanel extends javax.swing.JPanel {
                     .addComponent(lblPassword)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
-                .addComponent(btnGo)
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addComponent(btnGo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(285, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblPassword, txtPassword});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoActionPerformed

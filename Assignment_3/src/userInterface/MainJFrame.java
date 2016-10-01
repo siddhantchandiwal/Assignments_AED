@@ -15,8 +15,8 @@ import javax.swing.JPanel;
  * @author Siddhant
  */
 public class MainJFrame extends javax.swing.JFrame {
-    
-   // private JPanel userProcessContainer;
+
+    // private JPanel userProcessContainer;
     private CatalogDirectory catalogDirectory;
     private VendorDirectory vendorDirectory;
 
@@ -25,7 +25,7 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     public MainJFrame() {
         initComponents();
-       // this.userProcessContainer=userProcessContainer();
+        // this.userProcessContainer=userProcessContainer();
         this.catalogDirectory = new CatalogDirectory();
         this.vendorDirectory = new VendorDirectory();
     }
@@ -44,12 +44,14 @@ public class MainJFrame extends javax.swing.JFrame {
         btnVendor = new javax.swing.JButton();
         btnCustomer = new javax.swing.JButton();
         btnManager = new javax.swing.JButton();
+        lblCompany = new javax.swing.JLabel();
         userProcessContainer = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnVendor.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnVendor.setText("Vendor");
+        btnVendor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnVendor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVendorActionPerformed(evt);
@@ -58,6 +60,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         btnCustomer.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnCustomer.setText("Customer");
+        btnCustomer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCustomerActionPerformed(evt);
@@ -66,11 +69,16 @@ public class MainJFrame extends javax.swing.JFrame {
 
         btnManager.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnManager.setText("Manager");
+        btnManager.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManagerActionPerformed(evt);
             }
         });
+
+        lblCompany.setFont(new java.awt.Font("Tahoma", 3, 16)); // NOI18N
+        lblCompany.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCompany.setText("ATCorp");
 
         javax.swing.GroupLayout leftJPanelLayout = new javax.swing.GroupLayout(leftJPanel);
         leftJPanel.setLayout(leftJPanelLayout);
@@ -78,22 +86,25 @@ public class MainJFrame extends javax.swing.JFrame {
             leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(leftJPanelLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCustomer)
-                    .addComponent(btnVendor, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnManager, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnVendor, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                    .addComponent(btnManager, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                    .addComponent(btnCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblCompany, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         leftJPanelLayout.setVerticalGroup(
             leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(leftJPanelLayout.createSequentialGroup()
                 .addGap(46, 46, 46)
-                .addComponent(btnManager)
+                .addComponent(btnManager, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
-                .addComponent(btnVendor)
+                .addComponent(btnVendor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
-                .addComponent(btnCustomer)
-                .addContainerGap(287, Short.MAX_VALUE))
+                .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
+                .addComponent(lblCompany)
+                .addGap(33, 33, 33))
         );
 
         jSplitPane1.setLeftComponent(leftJPanel);
@@ -117,11 +128,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnVendorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendorActionPerformed
         // TODO add your handling code here:
-         VendorListJPanel panel = new VendorListJPanel(userProcessContainer, vendorDirectory, catalogDirectory);
-        userProcessContainer.add("VendorListJPanel" , panel);
+        VendorListJPanel panel = new VendorListJPanel(userProcessContainer, vendorDirectory, catalogDirectory);
+        userProcessContainer.add("VendorListJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-                
+
     }//GEN-LAST:event_btnVendorActionPerformed
 
     private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
@@ -130,12 +141,12 @@ public class MainJFrame extends javax.swing.JFrame {
         userProcessContainer.add("CustomerMngCatalogJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-        
+
     }//GEN-LAST:event_btnCustomerActionPerformed
 
     private void btnManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagerActionPerformed
         // TODO add your handling code here:
-        ManagerLoginJPanel panel = new ManagerLoginJPanel(userProcessContainer,catalogDirectory, vendorDirectory);
+        ManagerLoginJPanel panel = new ManagerLoginJPanel(userProcessContainer, catalogDirectory, vendorDirectory);
         userProcessContainer.add("ManagerLoginJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -181,6 +192,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnManager;
     private javax.swing.JButton btnVendor;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JLabel lblCompany;
     private javax.swing.JPanel leftJPanel;
     private javax.swing.JPanel userProcessContainer;
     // End of variables declaration//GEN-END:variables

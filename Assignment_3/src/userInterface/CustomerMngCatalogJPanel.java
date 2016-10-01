@@ -10,6 +10,7 @@ import business.CatalogDirectory;
 import business.VendorDirectory;
 import java.awt.CardLayout;
 import java.awt.Font;
+import java.util.Iterator;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -19,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Siddhant
  */
 public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
-    
+
     private JPanel userProcessContainer;
     private CatalogDirectory catalogDirectory;
     private VendorDirectory vendorDirectory;
@@ -27,27 +28,25 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CustomerMngCatalogJPanel
      */
-    
-
     CustomerMngCatalogJPanel(JPanel userProcessContainer, CatalogDirectory catalogDirectory, VendorDirectory vendorDirectory) {
-       initComponents();
+        initComponents();
         this.userProcessContainer = userProcessContainer;
         this.catalogDirectory = catalogDirectory;
-        this.vendorDirectory=vendorDirectory;
+        this.vendorDirectory = vendorDirectory;
         tblCustomerCatalog.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 16));
         populateTable();
     }
-     
-     public void populateTable() {
+
+    public void populateTable() {
         DefaultTableModel dtm = (DefaultTableModel) tblCustomerCatalog.getModel();
         dtm.setRowCount(0);
         for (Catalog catalog : catalogDirectory.getCataloglist()) {
-            Object[] row = new Object[6];
+            Object[] row = new Object[5];
             row[0] = catalog;
             row[1] = catalog.getModelNumber();
             row[2] = catalog.getVendorName();
             row[3] = catalog.getProdBasePrice();
-            row[4] = catalog.getProductDescription();
+            //row[4] = catalog.getProductDescription();
             dtm.addRow(row);
         }
     }
@@ -65,26 +64,25 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
         tblCustomerCatalog = new javax.swing.JTable();
         txtSearchbyProductName = new javax.swing.JTextField();
         txtSearchbyModelNumber = new javax.swing.JTextField();
-        txtSearchbyVendorName = new javax.swing.JTextField();
-        txtSearchbyBasePrice = new javax.swing.JTextField();
         btnViewDetail = new javax.swing.JButton();
         btnSearchbyProductName = new javax.swing.JButton();
+        btnResetFilter = new javax.swing.JButton();
         btnSearchbyModelNumber = new javax.swing.JButton();
-        btnSearchbyVendorName = new javax.swing.JButton();
-        btnSearchbyBasePrice = new javax.swing.JButton();
-        txtKeyword = new javax.swing.JTextField();
-        btnSearchByKeywordDesc = new javax.swing.JButton();
+        btnSearchByVendorName = new javax.swing.JButton();
+        txtSearchbyVendorName = new javax.swing.JTextField();
+        btnSearchByBasePrice = new javax.swing.JButton();
+        txtSearchbyBasePrice = new javax.swing.JTextField();
 
         tblCustomerCatalog.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Product Name", "Model Number", "Vendor Name", "Base Price", "Description"
+                "Product Name", "Model Number", "Vendor Name", "Base Price"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -96,10 +94,6 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
         txtSearchbyProductName.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         txtSearchbyModelNumber.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-
-        txtSearchbyVendorName.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-
-        txtSearchbyBasePrice.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         btnViewDetail.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnViewDetail.setText("View Detail");
@@ -119,41 +113,42 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnResetFilter.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        btnResetFilter.setText("Reset Filter");
+        btnResetFilter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnResetFilter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetFilterActionPerformed(evt);
+            }
+        });
+
         btnSearchbyModelNumber.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSearchbyModelNumber.setText("Search by Model Number:");
-        btnSearchbyModelNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnSearchbyModelNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchbyModelNumberActionPerformed(evt);
             }
         });
 
-        btnSearchbyVendorName.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnSearchbyVendorName.setText("Search by Vendor Name:");
-        btnSearchbyVendorName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnSearchbyVendorName.addActionListener(new java.awt.event.ActionListener() {
+        btnSearchByVendorName.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        btnSearchByVendorName.setText("Search by Vendor Name:");
+        btnSearchByVendorName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchbyVendorNameActionPerformed(evt);
+                btnSearchByVendorNameActionPerformed(evt);
             }
         });
 
-        btnSearchbyBasePrice.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnSearchbyBasePrice.setText("Search by Base Price:");
-        btnSearchbyBasePrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnSearchbyBasePrice.addActionListener(new java.awt.event.ActionListener() {
+        txtSearchbyVendorName.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        btnSearchByBasePrice.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        btnSearchByBasePrice.setText("Ssearch by Base Price:");
+        btnSearchByBasePrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchbyBasePriceActionPerformed(evt);
+                btnSearchByBasePriceActionPerformed(evt);
             }
         });
 
-        btnSearchByKeywordDesc.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnSearchByKeywordDesc.setText("Search by Keword in Desc:");
-        btnSearchByKeywordDesc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnSearchByKeywordDesc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchByKeywordDescActionPerformed(evt);
-            }
-        });
+        txtSearchbyBasePrice.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -162,40 +157,30 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(btnSearchbyProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtSearchbyProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(btnSearchbyModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtSearchbyModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(btnSearchbyVendorName, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtSearchbyVendorName, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(122, 122, 122)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(225, 225, 225)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnSearchbyBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtSearchbyBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnSearchByKeywordDesc)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtKeyword, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(btnSearchByBasePrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnResetFilter, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnSearchbyProductName, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                                .addComponent(btnSearchbyModelNumber, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnSearchByVendorName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtSearchbyProductName, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                            .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSearchbyModelNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                            .addComponent(txtSearchbyVendorName)
+                            .addComponent(txtSearchbyBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(130, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnSearchByKeywordDesc, btnSearchbyBasePrice, btnSearchbyProductName, txtKeyword, txtSearchbyBasePrice, txtSearchbyModelNumber, txtSearchbyProductName, txtSearchbyVendorName});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnSearchByBasePrice, btnSearchByVendorName, btnSearchbyModelNumber, btnSearchbyProductName, txtSearchbyBasePrice, txtSearchbyModelNumber, txtSearchbyProductName, txtSearchbyVendorName});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnResetFilter, btnViewDetail});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,34 +191,31 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSearchbyProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSearchbyProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(btnSearchbyModelNumber))
-                    .addComponent(txtSearchbyModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtSearchbyModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(btnSearchbyVendorName))
-                    .addComponent(txtSearchbyVendorName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(btnSearchbyBasePrice))
-                    .addComponent(txtSearchbyBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSearchbyModelNumber)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtKeyword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearchByKeywordDesc))
+                    .addComponent(btnSearchByVendorName)
+                    .addComponent(txtSearchbyVendorName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSearchByBasePrice)
+                    .addComponent(txtSearchbyBasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
-                .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnResetFilter))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnSearchByKeywordDesc, btnSearchbyBasePrice, btnSearchbyModelNumber, btnSearchbyProductName, btnSearchbyVendorName, txtKeyword, txtSearchbyBasePrice, txtSearchbyModelNumber, txtSearchbyProductName, txtSearchbyVendorName});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnSearchByBasePrice, btnSearchByVendorName, btnSearchbyModelNumber, btnSearchbyProductName, txtSearchbyBasePrice, txtSearchbyModelNumber, txtSearchbyProductName, txtSearchbyVendorName});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnResetFilter, btnViewDetail});
 
     }// </editor-fold>//GEN-END:initComponents
 
@@ -245,62 +227,31 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
             return;
         }
 
-        Catalog catalog = catalogDirectory.searchCatalog(txtSearchbyProductName.getText());
-        if (catalog == null) {
-            JOptionPane.showMessageDialog(this, "Product Name does not exist", "Information", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-          //enter the code here to update the table automatically
-        }
-    }//GEN-LAST:event_btnSearchbyProductNameActionPerformed
+         {
+            //enter the code here to update the table automatically
+            DefaultTableModel dtm = (DefaultTableModel) tblCustomerCatalog.getModel();
+            dtm.setRowCount(0);
 
-    private void btnSearchbyModelNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchbyModelNumberActionPerformed
-        // TODO add your handling code here:
-        String ModelNumber = txtSearchbyModelNumber.getText();
-        if ((ModelNumber.isEmpty()) || (ModelNumber.startsWith(" "))) {
-            JOptionPane.showMessageDialog(this, "Please enter Model Number", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+            for (Iterator<Catalog> it = catalogDirectory.getCataloglist().iterator(); it.hasNext();) {
+                Catalog catalog1 = it.next();
+                if (catalog1.getProductName().contains(txtSearchbyProductName.getText())) {
+                    Object[] row = new Object[4];
+                    row[0] = catalog1;
+                    row[1] = catalog1.getModelNumber();
+                    row[2] = catalog1.getVendorName();
+                    row[3] = catalog1.getProdBasePrice();
+                    //row[4] = catalog1.getProductDescription();
+                    dtm.addRow(row);
 
-        Catalog catalog = catalogDirectory.searchCatalog(txtSearchbyProductName.getText());
-        if (catalog == null) {
-            JOptionPane.showMessageDialog(this, "Model Number does not exist", "Information", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-          //enter the code here to update the table automatically
+                    // populateTable();
+                }
+            }
         }
-    }//GEN-LAST:event_btnSearchbyModelNumberActionPerformed
-
-    private void btnSearchbyVendorNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchbyVendorNameActionPerformed
-        // TODO add your handling code here:
-        String VendorName = txtSearchbyVendorName.getText();
-        if ((VendorName.isEmpty()) || (VendorName.startsWith(" "))) {
-            JOptionPane.showMessageDialog(this, "Please enter Vendor Name", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        Catalog catalog = catalogDirectory.searchCatalog(txtSearchbyProductName.getText());
-        if (catalog == null) {
-            JOptionPane.showMessageDialog(this, "Vendor Name does not exist", "Information", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-          //enter the code here to update the table automatically
-        }
-    }//GEN-LAST:event_btnSearchbyVendorNameActionPerformed
-
-    private void btnSearchbyBasePriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchbyBasePriceActionPerformed
-        // TODO add your handling code here:
-        String BasePrice = txtSearchbyBasePrice.getText();
-        if ((BasePrice.isEmpty()) || (BasePrice.startsWith(" "))) {
-            JOptionPane.showMessageDialog(this, "Please enter Base Price", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        Catalog catalog = catalogDirectory.searchCatalog(txtSearchbyProductName.getText());
-        if (catalog == null) {
-            JOptionPane.showMessageDialog(this, "Base Price does not exist", "Information", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-          //enter the code here to update the table automatically
+         if(tblCustomerCatalog.getRowCount()==0){
+            JOptionPane.showMessageDialog(this, "Model Number does not exist","Warning", JOptionPane.WARNING_MESSAGE );
         }
         
-    }//GEN-LAST:event_btnSearchbyBasePriceActionPerformed
+    }//GEN-LAST:event_btnSearchbyProductNameActionPerformed
 
     private void btnViewDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailActionPerformed
         // TODO add your handling code here:
@@ -316,33 +267,133 @@ public class CustomerMngCatalogJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnViewDetailActionPerformed
 
-    private void btnSearchByKeywordDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchByKeywordDescActionPerformed
+    private void btnResetFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetFilterActionPerformed
         // TODO add your handling code here:
-        String Desc = txtKeyword.getText();
-        if ((Desc.isEmpty()) || (Desc.startsWith(" "))) {
-            JOptionPane.showMessageDialog(this, "Please enter any keyword", "Warning", JOptionPane.WARNING_MESSAGE);
+        populateTable();
+        txtSearchbyProductName.setText("");
+        txtSearchbyModelNumber.setText("");
+        txtSearchbyVendorName.setText("");
+        txtSearchbyBasePrice.setText("");
+    }//GEN-LAST:event_btnResetFilterActionPerformed
+
+    private void btnSearchbyModelNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchbyModelNumberActionPerformed
+        // TODO add your handling code here:
+        String ModelNumber = txtSearchbyModelNumber.getText();
+        if ((ModelNumber.isEmpty()) || (ModelNumber.startsWith(" "))) {
+            JOptionPane.showMessageDialog(this, "Please enter Model Number", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        Catalog catalog = catalogDirectory.searchCatalog(txtKeyword.getText());
+        /*Catalog catalog = catalogDirectory.searchCatalog(ModelNumber);
         if (catalog == null) {
-            JOptionPane.showMessageDialog(this, "Description is not present", "Information", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-          //enter the code here to update the table automatically
+            JOptionPane.showMessageDialog(this, "Model Number does not exist", "Information", JOptionPane.INFORMATION_MESSAGE);
+        } else {*/
+        //enter the code here to update the table automatically
+        DefaultTableModel dtm = (DefaultTableModel) tblCustomerCatalog.getModel();
+        dtm.setRowCount(0);
+
+        for (Iterator<Catalog> it = catalogDirectory.getCataloglist().iterator(); it.hasNext();) {
+            Catalog catalog1 = it.next();
+            if (catalog1.getModelNumber().contains(txtSearchbyModelNumber.getText())) {
+                Object[] row = new Object[4];
+                row[0] = catalog1;
+                row[1] = catalog1.getModelNumber();
+                row[2] = catalog1.getVendorName();
+                row[3] = catalog1.getProdBasePrice();
+                //row[4] = catalog1.getProductDescription();
+                dtm.addRow(row);
+
+                // populateTable();
+                //}
+            }
         }
-    }//GEN-LAST:event_btnSearchByKeywordDescActionPerformed
+        if(tblCustomerCatalog.getRowCount()==0){
+            JOptionPane.showMessageDialog(this, "Model Number does not exist","Warning", JOptionPane.WARNING_MESSAGE );
+        }
+    }//GEN-LAST:event_btnSearchbyModelNumberActionPerformed
+
+    private void btnSearchByVendorNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchByVendorNameActionPerformed
+        // TODO add your handling code here:
+        String VendorName = txtSearchbyVendorName.getText();
+        if ((VendorName.isEmpty()) || (VendorName.startsWith(" "))) {
+            JOptionPane.showMessageDialog(this, "Please enter Vendor Name", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        /*Catalog catalog = catalogDirectory.searchCatalog(ModelNumber);
+        if (catalog == null) {
+            JOptionPane.showMessageDialog(this, "Model Number does not exist", "Information", JOptionPane.INFORMATION_MESSAGE);
+        } else {*/
+        //enter the code here to update the table automatically
+        DefaultTableModel dtm = (DefaultTableModel) tblCustomerCatalog.getModel();
+        dtm.setRowCount(0);
+
+        for (Iterator<Catalog> it = catalogDirectory.getCataloglist().iterator(); it.hasNext();) {
+            Catalog catalog1 = it.next();
+            if (catalog1.getVendorName().contains(txtSearchbyVendorName.getText())) {
+                Object[] row = new Object[4];
+                row[0] = catalog1;
+                row[1] = catalog1.getModelNumber();
+                row[2] = catalog1.getVendorName();
+                row[3] = catalog1.getProdBasePrice();
+                //row[4] = catalog1.getProductDescription();
+                dtm.addRow(row);
+
+                // populateTable();
+                //}
+            }
+        }
+        if(tblCustomerCatalog.getRowCount()==0){
+            JOptionPane.showMessageDialog(this, "Vendor Name does not exist","Warning", JOptionPane.WARNING_MESSAGE );
+        }
+    }//GEN-LAST:event_btnSearchByVendorNameActionPerformed
+
+    private void btnSearchByBasePriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchByBasePriceActionPerformed
+        // TODO add your handling code here:
+        String BasePrice = txtSearchbyBasePrice.getText();
+        if ((BasePrice.isEmpty()) || (BasePrice.startsWith(" "))) {
+            JOptionPane.showMessageDialog(this, "Please enter Base Price", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        /*Catalog catalog = catalogDirectory.searchCatalog(ModelNumber);
+        if (catalog == null) {
+            JOptionPane.showMessageDialog(this, "Model Number does not exist", "Information", JOptionPane.INFORMATION_MESSAGE);
+        } else {*/
+        //enter the code here to update the table automatically
+        DefaultTableModel dtm = (DefaultTableModel) tblCustomerCatalog.getModel();
+        dtm.setRowCount(0);
+
+        for (Iterator<Catalog> it = catalogDirectory.getCataloglist().iterator(); it.hasNext();) {
+            Catalog catalog1 = it.next();
+            if (String.valueOf(catalog1.getProdBasePrice()).contains(txtSearchbyBasePrice.getText())) {
+                Object[] row = new Object[4];
+                row[0] = catalog1;
+                row[1] = catalog1.getModelNumber();
+                row[2] = catalog1.getVendorName();
+                row[3] = catalog1.getProdBasePrice();
+                //row[4] = catalog1.getProductDescription();
+                dtm.addRow(row);
+
+                // populateTable();
+                //}
+            }
+        }
+        if(tblCustomerCatalog.getRowCount()==0){
+            JOptionPane.showMessageDialog(this, "Base Price does not exist","Warning", JOptionPane.WARNING_MESSAGE );
+        }
+    }//GEN-LAST:event_btnSearchByBasePriceActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSearchByKeywordDesc;
-    private javax.swing.JButton btnSearchbyBasePrice;
+    private javax.swing.JButton btnResetFilter;
+    private javax.swing.JButton btnSearchByBasePrice;
+    private javax.swing.JButton btnSearchByVendorName;
     private javax.swing.JButton btnSearchbyModelNumber;
     private javax.swing.JButton btnSearchbyProductName;
-    private javax.swing.JButton btnSearchbyVendorName;
     private javax.swing.JButton btnViewDetail;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblCustomerCatalog;
-    private javax.swing.JTextField txtKeyword;
     private javax.swing.JTextField txtSearchbyBasePrice;
     private javax.swing.JTextField txtSearchbyModelNumber;
     private javax.swing.JTextField txtSearchbyProductName;

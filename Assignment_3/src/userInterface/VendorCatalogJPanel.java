@@ -26,25 +26,25 @@ public class VendorCatalogJPanel extends javax.swing.JPanel {
     private CatalogDirectory catalogDirectory;
     String select;
 
-   public VendorCatalogJPanel(JPanel userProcessContainer, CatalogDirectory catalogDirectory, String select) {
+    public VendorCatalogJPanel(JPanel userProcessContainer, CatalogDirectory catalogDirectory, String select) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.catalogDirectory = catalogDirectory;
-        this.select=select;
+        this.select = select;
         tblSupplier.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 16));
         populateTable();
     }
-    
+
     public void populateTable() {
         DefaultTableModel dtm = (DefaultTableModel) tblSupplier.getModel();
         dtm.setRowCount(0);
         for (Catalog catalog : catalogDirectory.getCataloglist()) {
-            if(catalog.getVendorName().equals(select)){
-            Object[] row = new Object[3];
-            row[0] = catalog;
-            row[1] = catalog.getModelNumber();
-            row[2] = catalog.getVendorName();
-            dtm.addRow(row);
+            if (catalog.getVendorName().equals(select)) {
+                Object[] row = new Object[3];
+                row[0] = catalog;
+                row[1] = catalog.getModelNumber();
+                row[2] = catalog.getVendorName();
+                dtm.addRow(row);
             }
         }
     }
@@ -101,6 +101,8 @@ public class VendorCatalogJPanel extends javax.swing.JPanel {
                 btnViewDetailsActionPerformed(evt);
             }
         });
+
+        txtProductName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnDeleteDetails.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnDeleteDetails.setText("Delete");
@@ -178,7 +180,7 @@ public class VendorCatalogJPanel extends javax.swing.JPanel {
             userProcessContainer.add("ViewAccountJPanel", panel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
-            } 
+        }
 
     }//GEN-LAST:event_btnSearchByProductNameActionPerformed
 
@@ -198,22 +200,22 @@ public class VendorCatalogJPanel extends javax.swing.JPanel {
 
     private void btnDeleteDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDetailsActionPerformed
         // TODO add your handling code here:
-       int[] rows = tblSupplier.getSelectedRows();
-    
-       if (rows.length >= 0) {
-           int dialogButton = JOptionPane.YES_NO_OPTION;
-           int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete Selected Catalogs ?", "Warning", dialogButton);
-           if (dialogResult == JOptionPane.YES_OPTION) {
-              for(int k=rows.length-1;k>=0; k--){
-                   Catalog catalog = (Catalog) tblSupplier.getValueAt(rows[k], 0);
-                   catalogDirectory.deleteCatalog(catalog);
-                   populateTable();
-              }
-           }
-       } else {
-           JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
-       }
-        
+        int[] rows = tblSupplier.getSelectedRows();
+
+        if (rows.length >= 0) {
+            int dialogButton = JOptionPane.YES_NO_OPTION;
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete Selected Catalogs ?", "Warning", dialogButton);
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                for (int k = rows.length - 1; k >= 0; k--) {
+                    Catalog catalog = (Catalog) tblSupplier.getValueAt(rows[k], 0);
+                    catalogDirectory.deleteCatalog(catalog);
+                    populateTable();
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+
     }//GEN-LAST:event_btnDeleteDetailsActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

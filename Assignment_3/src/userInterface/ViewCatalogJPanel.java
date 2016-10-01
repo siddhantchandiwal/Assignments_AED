@@ -18,7 +18,7 @@ import javax.swing.JPanel;
  * @author Siddhant
  */
 public class ViewCatalogJPanel extends javax.swing.JPanel {
-    
+
     private JPanel userProcessContainer;
     private Catalog catalog;
     private Vendor vendor;
@@ -26,14 +26,13 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ViewCatalogJPanel
      */
-
     ViewCatalogJPanel(JPanel userProcessContainer, Catalog catalog) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.catalog = catalog;
         populateCatalogDetails();
-       // btnSave.setEnabled(false);
-       // btnUpdate.setEnabled(true);
+        // btnSave.setEnabled(false);
+        // btnUpdate.setEnabled(true);
         txtProductName.setEnabled(false);
         txtModelNumber.setEnabled(false);
         txtVendorName.setEnabled(false);
@@ -42,9 +41,9 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         txtCeilingPrice.setEnabled(false);
         txtFloorPrice.setEnabled(false);
         txtFeature.setEnabled(false);
-        txtBenefits.setEnabled(false); 
+        txtBenefits.setEnabled(false);
     }
-    
+
     private void populateCatalogDetails() {
         txtProductName.setText(catalog.getProductName());
         txtModelNumber.setText(catalog.getModelNumber());
@@ -55,7 +54,7 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         txtFloorPrice.setText(String.valueOf(catalog.getProdFloorPrice()));
         txtFeature.setText(catalog.getProdFeature());
         txtBenefits.setText(catalog.getBenefits());
-        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -334,12 +333,12 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         String productName = txtProductName.getText();
         String modelNumber = txtModelNumber.getText();
         String vendorName = txtVendorName.getText();
-        String description=txtDescription.getText();
-        String feature=txtDescription.getText();
-        String benefits=txtBenefits.getText();
+        String description = txtDescription.getText();
+        String feature = txtDescription.getText();
+        String benefits = txtBenefits.getText();
 
         if ((productName.isEmpty()) || (productName.startsWith(" ")) || (modelNumber.isEmpty()) || (modelNumber.startsWith(" "))
-            || (vendorName.isEmpty()) || (vendorName.startsWith(" "))) {
+                || (vendorName.isEmpty()) || (vendorName.startsWith(" "))) {
             JOptionPane.showMessageDialog(this, "Please fill all the details", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -352,19 +351,19 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         String ceilingPrice;
         String floorPrice;
 
-        basePrice=String.valueOf(txtBasePrice.getText());
-        ceilingPrice=String.valueOf(txtCeilingPrice.getText());
-        floorPrice=String.valueOf(txtFloorPrice.getText());
+        basePrice = String.valueOf(txtBasePrice.getText());
+        ceilingPrice = String.valueOf(txtCeilingPrice.getText());
+        floorPrice = String.valueOf(txtFloorPrice.getText());
 
         if ((basePrice.isEmpty()) || (basePrice.startsWith(" ")) || (ceilingPrice.isEmpty()) || (ceilingPrice.startsWith(" "))
-            || (floorPrice.isEmpty()) || (floorPrice.startsWith(" "))) {
+                || (floorPrice.isEmpty()) || (floorPrice.startsWith(" "))) {
             JOptionPane.showMessageDialog(this, "Please fill all the Price details", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         try {
-            prodBasePrice=Float.parseFloat(txtBasePrice.getText());
-            prodCeilingPrice=Float.parseFloat(txtCeilingPrice.getText());
-            prodFloorPrice=Float.parseFloat(txtFloorPrice.getText());
+            prodBasePrice = Float.parseFloat(txtBasePrice.getText());
+            prodCeilingPrice = Float.parseFloat(txtCeilingPrice.getText());
+            prodFloorPrice = Float.parseFloat(txtFloorPrice.getText());
 
             if ((prodBasePrice < 0) || (prodCeilingPrice < 0) || (prodFloorPrice < 0)) {
                 JOptionPane.showMessageDialog(this, "No negative Values please", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -375,22 +374,22 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
             return;
         }
 
-        try{
-            if (prodBasePrice>prodCeilingPrice){
+        try {
+            if (prodBasePrice > prodCeilingPrice) {
                 JOptionPane.showMessageDialog(this, "Base Price cannot be greater than Ceiling Price", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Please add appropriate values", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        try{
-            if (prodBasePrice<prodFloorPrice){
+        try {
+            if (prodBasePrice < prodFloorPrice) {
                 JOptionPane.showMessageDialog(this, "Floor Price cannot be greater than Base Price", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Please add appropriate values", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -421,8 +420,7 @@ public class ViewCatalogJPanel extends javax.swing.JPanel {
         btnUpdate.setEnabled(true);
 
     }//GEN-LAST:event_btnSaveActionPerformed
-    
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

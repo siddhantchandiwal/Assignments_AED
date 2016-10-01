@@ -18,8 +18,8 @@ public class CustomerViewCatalogJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CustomerViewCatalogJPanel
      */
-   private JPanel userProcessContainer;
-   private Catalog catalog;
+    private JPanel userProcessContainer;
+    private Catalog catalog;
 
     CustomerViewCatalogJPanel(JPanel userProcessContainer, Catalog catalog) {
         initComponents();
@@ -27,7 +27,7 @@ public class CustomerViewCatalogJPanel extends javax.swing.JPanel {
         this.catalog = catalog;
         populateCatalogDetails();
     }
-    
+
     private void populateCatalogDetails() {
         txtProductName.setText(catalog.getProductName());
         txtModelNumber.setText(catalog.getModelNumber());
@@ -38,7 +38,7 @@ public class CustomerViewCatalogJPanel extends javax.swing.JPanel {
         txtFloorPrice.setText(String.valueOf(catalog.getProdFloorPrice()));
         txtFeature.setText(catalog.getProdFeature());
         txtBenefits.setText(catalog.getBenefits());
-        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -194,7 +194,7 @@ public class CustomerViewCatalogJPanel extends javax.swing.JPanel {
                             .addComponent(lblProductName, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
                             .addComponent(lblProdFeature, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblProdBenefits, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(30, 30, 30)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtProductName, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtModelNumber, javax.swing.GroupLayout.Alignment.LEADING)

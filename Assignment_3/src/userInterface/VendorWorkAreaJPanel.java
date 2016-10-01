@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package userInterface;
+
 import business.Catalog;
 import business.CatalogDirectory;
 import business.VendorDirectory;
@@ -15,23 +16,21 @@ import javax.swing.JPanel;
  * @author Siddhant
  */
 public class VendorWorkAreaJPanel extends javax.swing.JPanel {
-    
+
     private JPanel userProcessContainer;
     private CatalogDirectory catalogDirectory;
     private VendorDirectory vendorDirectory;
     String select;
-    
-       /**
+
+    /**
      * Creates new form CatalogMngWorkAreaJPanel
      */
-    
-
-   public VendorWorkAreaJPanel(JPanel userProcessContainer, VendorDirectory vendorDirectory, CatalogDirectory catalogDirectory, String select) {
-         initComponents();
+    public VendorWorkAreaJPanel(JPanel userProcessContainer, VendorDirectory vendorDirectory, CatalogDirectory catalogDirectory, String select) {
+        initComponents();
         this.userProcessContainer = userProcessContainer;
         this.catalogDirectory = catalogDirectory;
-        this.vendorDirectory=vendorDirectory;
-        this.select=select;
+        this.vendorDirectory = vendorDirectory;
+        this.select = select;
     }
 
     /**
@@ -87,7 +86,7 @@ public class VendorWorkAreaJPanel extends javax.swing.JPanel {
                 .addContainerGap(554, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCreateCatalog, btnManageCatalog});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnBack, btnCreateCatalog, btnManageCatalog});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,7 +96,7 @@ public class VendorWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(50, 50, 50)
                 .addComponent(btnManageCatalog, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
-                .addComponent(btnBack)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(263, Short.MAX_VALUE))
         );
 
