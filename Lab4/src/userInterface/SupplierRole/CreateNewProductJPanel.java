@@ -58,14 +58,18 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Create New Product");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setText("Product Name:");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel3.setText("Product ID:");
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel4.setText("Product Price:");
 
         txtID.setEnabled(false);
 
+        btnBack.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +77,7 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnAddProduct.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnAddProduct.setText("Add Product");
         btnAddProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,20 +130,22 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBack)
                     .addComponent(btnAddProduct))
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addContainerGap(248, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProductActionPerformed
         // TODO add your handling code here:
-        Product product=supplier.getProductCatalog().addProduct();
-        product.setProdName(txtName.getText());
-      //  product.setModelNumber(Integer.parseInt(txtID.getText()));
-        product.setPrice(Integer.parseInt(txtPrice.getText()));
-        
+      Product product=supplier.getProductCatalog().addProduct();
+      int price;  
+      try{
+            price = Integer.parseInt(txtPrice.getText());
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(this, "Please enter proper values");
+          return;
+      }
         String name=txtName.getText();
-        //String price=String.valueOf(txtPrice.getText());
-        
+               
          if ((name.isEmpty()) || (name.startsWith(" "))) {
             JOptionPane.showMessageDialog(this, "Please fill all the details", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
@@ -148,13 +155,11 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please enter only alphabets", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-          
-          if (!(Pattern.matches("^[0-9]+$", txtPrice.getText().trim()))) {
-            JOptionPane.showMessageDialog(this, "Please enter only numbers in Price Field", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
         
+        product.setProdName(name);
+        product.setPrice(price);
         JOptionPane.showMessageDialog(this, "Product Added Successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
+
     }//GEN-LAST:event_btnAddProductActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

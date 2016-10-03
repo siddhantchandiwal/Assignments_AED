@@ -44,6 +44,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        btnAdmin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnAdmin.setText("Administrator");
         btnAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,6 +52,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnSupplier.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnSupplier.setText("Supplier Manager");
         btnSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,7 +60,9 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnCustomer.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnCustomer.setText("Customer Role");
+        btnCustomer.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -81,7 +85,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(btnSupplier)
                 .addGap(75, 75, 75)
                 .addComponent(btnCustomer)
-                .addContainerGap(262, Short.MAX_VALUE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(jPanel1);

@@ -72,6 +72,10 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Manage Product Catalog");
 
+        txtName.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        txtName.setEnabled(false);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setText("Supplier:");
 
         tblProductCatalog.setModel(new javax.swing.table.DefaultTableModel(
@@ -92,6 +96,7 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblProductCatalog);
 
+        btnSearch.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSearch.setText("Search >>");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +104,7 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnDeleteProduct.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnDeleteProduct.setText("Delete Products>>");
         btnDeleteProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,6 +112,7 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnViewProductDetail.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnViewProductDetail.setText("View Product Details>>");
         btnViewProductDetail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,6 +120,7 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnCreateNewProduct.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnCreateNewProduct.setText("Create New Product>>");
         btnCreateNewProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,6 +128,7 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnBack.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,7 +182,7 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreateNewProduct)
                     .addComponent(btnBack))
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -30,6 +30,7 @@ public class ViewProductDetailJpanel extends javax.swing.JPanel {
         txtName.setText(product.getProdName());
         txtID.setText(String.valueOf(product.getModelNumber()));
         txtPrice.setText(String.valueOf(product.getPrice()));
+        btnSave.setEnabled(false);
         
     }
 
@@ -56,12 +57,19 @@ public class ViewProductDetailJpanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("View Product Detail");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setText("Product Name:");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel3.setText("Product ID:");
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel4.setText("Product Price:");
 
+        txtID.setEditable(false);
+        txtID.setEnabled(false);
+
+        btnBack.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,6 +77,7 @@ public class ViewProductDetailJpanel extends javax.swing.JPanel {
             }
         });
 
+        btnSave.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +85,7 @@ public class ViewProductDetailJpanel extends javax.swing.JPanel {
             }
         });
 
+        btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnUpdate.setText("Update Product");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,7 +118,7 @@ public class ViewProductDetailJpanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(220, 220, 220)
                         .addComponent(jLabel1)))
-                .addContainerGap(417, Short.MAX_VALUE))
+                .addContainerGap(346, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +142,7 @@ public class ViewProductDetailJpanel extends javax.swing.JPanel {
                     .addComponent(btnBack)
                     .addComponent(btnSave)
                     .addComponent(btnUpdate))
-                .addContainerGap(253, Short.MAX_VALUE))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -157,6 +167,8 @@ public class ViewProductDetailJpanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         product.setPrice(Integer.parseInt(txtPrice.getText()));
         product.setProdName(txtName.getText());
+       btnUpdate.setEnabled(true);
+       btnSave.setEnabled(false);
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -164,6 +176,7 @@ public class ViewProductDetailJpanel extends javax.swing.JPanel {
         txtName.setEditable(true);
         txtPrice.setEditable(true);
         btnSave.setEnabled(true);
+        btnUpdate.setEnabled(false);
     }//GEN-LAST:event_btnUpdateActionPerformed
 
 

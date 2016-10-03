@@ -78,6 +78,7 @@ public class ManageSupplier extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblSupplierName);
 
+        btnBack.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +86,7 @@ public class ManageSupplier extends javax.swing.JPanel {
             }
         });
 
+        btnRemove.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnRemove.setText("Remove");
         btnRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +94,7 @@ public class ManageSupplier extends javax.swing.JPanel {
             }
         });
 
+        btnViewSupplier.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnViewSupplier.setText("View Supplier");
         btnViewSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +102,7 @@ public class ManageSupplier extends javax.swing.JPanel {
             }
         });
 
+        btnAddSupplier.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnAddSupplier.setText("Add Supplier");
         btnAddSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,9 +121,9 @@ public class ManageSupplier extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(btnBack)
-                            .addGap(77, 77, 77)
-                            .addComponent(btnRemove)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnRemove)
+                            .addGap(47, 47, 47)
                             .addComponent(btnViewSupplier))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(309, Short.MAX_VALUE))
@@ -136,7 +140,7 @@ public class ManageSupplier extends javax.swing.JPanel {
                     .addComponent(btnViewSupplier))
                 .addGap(52, 52, 52)
                 .addComponent(btnAddSupplier)
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

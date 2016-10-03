@@ -46,8 +46,10 @@ public class SearchForProductJPanel extends javax.swing.JPanel {
         lblHeader.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblHeader.setText("Search for Product");
 
+        lblproductID.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         lblproductID.setText("Product ID:");
 
+        btnSearchNow.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSearchNow.setText("Search Now>>");
         btnSearchNow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,6 +57,7 @@ public class SearchForProductJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnBack.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,8 +95,11 @@ public class SearchForProductJPanel extends javax.swing.JPanel {
                     .addComponent(btnSearchNow))
                 .addGap(28, 28, 28)
                 .addComponent(btnBack)
-                .addContainerGap(312, Short.MAX_VALUE))
+                .addContainerGap(299, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnSearchNow, txtProductID});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchNowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchNowActionPerformed
