@@ -104,10 +104,26 @@ public class AddSupplier extends javax.swing.JPanel {
 
     private void btnAddSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSupplierActionPerformed
         // TODO add your handling code here:
+        if((txtName.getText().isEmpty()) ||(txtName.getText().startsWith(" "))){
+            JOptionPane.showMessageDialog(this, "Please enter Supplier Name");
+            return;
+        }
+          
+        int temp=1;
+        for(Supplier supplier: supplierDirectory.getSupplierDirectory()){
+            if(supplier.getSupplierName().equals(txtName.getText())){
+                temp=0;
+            }
+            }
+        if(temp==0){
+                JOptionPane.showMessageDialog(this, "Supplier Name already exists");
+                return;
+            }
+    
+        
         Supplier supplier=supplierDirectory.addSupplier();
         supplier.setSupplierName(txtName.getText());
-        
-              
+                      
         JOptionPane.showMessageDialog(this, "Supplier added Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_btnAddSupplierActionPerformed

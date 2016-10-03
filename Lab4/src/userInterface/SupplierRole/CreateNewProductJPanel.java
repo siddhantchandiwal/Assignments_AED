@@ -136,7 +136,7 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
 
     private void btnAddProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProductActionPerformed
         // TODO add your handling code here:
-      Product product=supplier.getProductCatalog().addProduct();
+      
       int price;  
       try{
             price = Integer.parseInt(txtPrice.getText());
@@ -155,7 +155,7 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please enter only alphabets", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
+        Product product=supplier.getProductCatalog().addProduct();
         product.setProdName(name);
         product.setPrice(price);
         JOptionPane.showMessageDialog(this, "Product Added Successfully", "Information", JOptionPane.INFORMATION_MESSAGE);

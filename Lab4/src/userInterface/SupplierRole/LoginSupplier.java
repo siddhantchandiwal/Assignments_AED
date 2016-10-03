@@ -8,6 +8,7 @@ package userInterface.SupplierRole;
 import business.Supplier;
 import business.SupplierDirectory;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -103,11 +104,16 @@ public class LoginSupplier extends javax.swing.JPanel {
 
     private void btnGoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoActionPerformed
         // TODO add your handling code here:
+        
         Supplier supplier = (Supplier)supplierComboBox.getSelectedItem();
+        if(supplierComboBox.getSelectedItem()!=null){
         SupplierWorkAreaJPanel swajp=new SupplierWorkAreaJPanel(userProcessContainer, supplier);
         userProcessContainer.add("SupplierWorkAreaJPanel", swajp);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
+        }else{
+            JOptionPane.showMessageDialog(this, "Please select Supplier first");
+        }
     }//GEN-LAST:event_btnGoActionPerformed
 
     private void supplierComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supplierComboBoxActionPerformed

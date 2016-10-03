@@ -9,6 +9,8 @@ import business.Product;
 import business.Supplier;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import userInterface.AdmininstrativeRole.ManageSupplier;
 
@@ -23,6 +25,7 @@ public class ViewProductDetailJpanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     Product product;
+    Supplier supplier;
     ViewProductDetailJpanel(JPanel userProcessContainer, Product product) {
         initComponents();
         this.userProcessContainer=userProcessContainer;
@@ -31,6 +34,8 @@ public class ViewProductDetailJpanel extends javax.swing.JPanel {
         txtID.setText(String.valueOf(product.getModelNumber()));
         txtPrice.setText(String.valueOf(product.getPrice()));
         btnSave.setEnabled(false);
+        txtName.setEditable(false);
+        txtPrice.setEditable(false);
         
     }
 
@@ -165,10 +170,32 @@ public class ViewProductDetailJpanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+        
+       // Product product=supplier.getProductCatalog().addProduct();
+      int price;  
+      try{
+            price = Integer.parseInt(txtPrice.getText());
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(this, "Please enter proper values");
+          return;
+      }
+        String name=txtName.getText();
+               
+         if ((name.isEmpty()) || (name.startsWith(" "))) {
+            JOptionPane.showMessageDialog(this, "Please fill all the details", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+         
+          if (!(Pattern.matches("^[a-zA-Z]+$", txtName.getText().trim()))) {
+            JOptionPane.showMessageDialog(this, "Please enter only alphabets", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
         product.setPrice(Integer.parseInt(txtPrice.getText()));
         product.setProdName(txtName.getText());
        btnUpdate.setEnabled(true);
        btnSave.setEnabled(false);
+       JOptionPane.showMessageDialog(this, "Product Updated Successfully!!!", "Success", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed

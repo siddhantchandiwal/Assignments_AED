@@ -9,6 +9,9 @@ import business.Product;
 import business.Supplier;
 import business.SupplierDirectory;
 import java.awt.CardLayout;
+import java.awt.Component;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -104,6 +107,16 @@ public class SearchForProductJPanel extends javax.swing.JPanel {
 
     private void btnSearchNowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchNowActionPerformed
         // TODO add your handling code here:
+        
+        if((txtProductID.getText().isEmpty()) ||(txtProductID.getText().startsWith(" "))){
+            JOptionPane.showMessageDialog(this, "Please enter Product ID first");
+            return;
+        }
+        
+         if (!(Pattern.matches("^[0-9]+$", txtProductID.getText().trim()))) {
+            JOptionPane.showMessageDialog(this, "Please enter proper values", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         int productId=Integer.parseInt(txtProductID.getText());
         Product product=supplier.getProductCatalog().searchProduct(productId);
         ViewProductDetailJpanel vpdjp=new ViewProductDetailJpanel(userProcessContainer, product);
@@ -115,9 +128,13 @@ public class SearchForProductJPanel extends javax.swing.JPanel {
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
-        CardLayout layout= (CardLayout)userProcessContainer.getLayout();
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length-1];
+        ManageProductCatalogJPanel mpcjp = (ManageProductCatalogJPanel)component;
+        mpcjp.refreshTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-        
+                        
     }//GEN-LAST:event_btnBackActionPerformed
 
 
