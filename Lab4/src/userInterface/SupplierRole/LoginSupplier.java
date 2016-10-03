@@ -5,17 +5,32 @@
  */
 package userInterface.SupplierRole;
 
+import business.Supplier;
+import business.SupplierDirectory;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
- * @author chand
+ * @author Siddhant
  */
 public class LoginSupplier extends javax.swing.JPanel {
 
     /**
      * Creates new form LoginSupplier
      */
-    public LoginSupplier() {
+     JPanel userProcessContainer;
+     SupplierDirectory supplierDirectory;
+    
+    public LoginSupplier(JPanel userProcessContainer, SupplierDirectory supplierDirectory) {
         initComponents();
+        this.userProcessContainer=userProcessContainer;
+        this.supplierDirectory=supplierDirectory;
+        supplierComboBox.removeAllItems();
+        
+        for(Supplier supplier:supplierDirectory.getSupplierDirectory()){
+            supplierComboBox.addItem(supplier); 
+        }
     }
 
     /**
@@ -27,19 +42,78 @@ public class LoginSupplier extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        supplierComboBox = new javax.swing.JComboBox<>();
+        btnGo = new javax.swing.JButton();
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setText("Supplier Login");
+
+        jLabel2.setText("Supplier Name: ");
+
+        supplierComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        supplierComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supplierComboBoxActionPerformed(evt);
+            }
+        });
+
+        btnGo.setText("Go>>");
+        btnGo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(283, 283, 283)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(supplierComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(71, 71, 71)
+                .addComponent(btnGo)
+                .addContainerGap(270, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(92, 92, 92)
+                .addComponent(jLabel1)
+                .addGap(84, 84, 84)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(supplierComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGo))
+                .addContainerGap(353, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnGoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoActionPerformed
+        // TODO add your handling code here:
+        Supplier supplier = (Supplier)supplierComboBox.getSelectedItem();
+        SupplierWorkAreaJPanel swajp=new SupplierWorkAreaJPanel(userProcessContainer, supplier);
+        userProcessContainer.add("SupplierWorkAreaJPanel", swajp);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnGoActionPerformed
+
+    private void supplierComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supplierComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_supplierComboBoxActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JComboBox<Object> supplierComboBox;
     // End of variables declaration//GEN-END:variables
 }

@@ -25,8 +25,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     public AdminWorkAreaJPanel(JPanel userProcessContainer, SupplierDirectory supplierDirectory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.supplierDirectory = supplierDirectory;
-        
+        this.supplierDirectory = supplierDirectory; 
         
     }
 

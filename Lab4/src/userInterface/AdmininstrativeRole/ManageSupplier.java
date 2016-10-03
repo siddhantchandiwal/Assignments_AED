@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author chand
+ * @author Siddhant
  */
 public class ManageSupplier extends javax.swing.JPanel {
 
@@ -167,9 +167,9 @@ public class ManageSupplier extends javax.swing.JPanel {
         // TODO add your handling code here:
         int[] rows = tblSupplierName.getSelectedRows();
 
-        if (rows.length >= 0) {
+        if (rows.length > 0) {
             int dialogButton = JOptionPane.YES_NO_OPTION;
-            int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete Selected Rows ?", "Warning", dialogButton);
+            int dialogResult = JOptionPane.showConfirmDialog(this, "Would you like to delete Selected Rows ?", "Warning", dialogButton);
             if (dialogResult == JOptionPane.YES_OPTION) {
                 for (int k = rows.length - 1; k >= 0; k--) {
                     Supplier s = (Supplier) tblSupplierName.getValueAt(rows[k], 0);
@@ -178,7 +178,7 @@ public class ManageSupplier extends javax.swing.JPanel {
                 }
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
         }
 
     }//GEN-LAST:event_btnRemoveActionPerformed

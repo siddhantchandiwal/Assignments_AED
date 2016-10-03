@@ -8,6 +8,7 @@ package userInterface;
 import business.SupplierDirectory;
 import java.awt.CardLayout;
 import userInterface.AdmininstrativeRole.AdminWorkAreaJPanel;
+import userInterface.SupplierRole.LoginSupplier;
 
 /**
  *
@@ -51,6 +52,11 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         btnSupplier.setText("Supplier Manager");
+        btnSupplier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSupplierActionPerformed(evt);
+            }
+        });
 
         btnCustomer.setText("Customer Role");
 
@@ -104,6 +110,14 @@ public class MainJFrame extends javax.swing.JFrame {
         CardLayout layout= (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnAdminActionPerformed
+
+    private void btnSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupplierActionPerformed
+        // TODO add your handling code here:
+        LoginSupplier loginSupplierPanel = new LoginSupplier(userProcessContainer, supplierDirectory);
+        userProcessContainer.add("LoginSupplier", loginSupplierPanel);
+        CardLayout layout= (CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnSupplierActionPerformed
 
     /**
      * @param args the command line arguments

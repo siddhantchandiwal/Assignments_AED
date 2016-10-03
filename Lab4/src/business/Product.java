@@ -45,5 +45,8 @@ public class Product {
         this.modelNumber = modelNumber;
     }
     
-    
+    @Override
+    public String toString(){
+        return prodName;
+    }
 }
