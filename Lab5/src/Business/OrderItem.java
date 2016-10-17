@@ -7,7 +7,7 @@ package Business;
 
 /**
  *
- * @author admin
+ * @author Siddhant
  */
 public class OrderItem {
     private int quantity;

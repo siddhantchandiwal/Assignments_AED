@@ -147,8 +147,7 @@ public class ManageSuppliers extends javax.swing.JPanel {
         ViewSupplier vs = new ViewSupplier(userProcessContainer, s);
         userProcessContainer.add("ViewSupplier", vs);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        
+        layout.next(userProcessContainer); 
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed

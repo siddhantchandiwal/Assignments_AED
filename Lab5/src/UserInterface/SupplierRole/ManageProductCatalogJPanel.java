@@ -145,14 +145,16 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
 
         int row = productCatalog.getSelectedRow();
-        if(row<0){
+        if(row<=0){
             JOptionPane.showMessageDialog(null, "Pls select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
         }
+        else{
         Product p = (Product)productCatalog.getValueAt(row, 0);
         ViewProductDetailJPanel vpdjp = new ViewProductDetailJPanel(userProcessContainer, p);
         userProcessContainer.add("ViewProductDetailJPanel", vpdjp);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        }
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed

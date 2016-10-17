@@ -171,6 +171,7 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
         if(stringPrice.isEmpty()==false){
             int price = Integer.parseInt(stringPrice);
             p.setPrice(price);
+       //     p.setSupplierName(supplier.getSupplyName());
         }
         JOptionPane.showMessageDialog(null, "Product added!", "Info", JOptionPane.INFORMATION_MESSAGE);
 }//GEN-LAST:event_btnAddActionPerformed

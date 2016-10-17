@@ -7,7 +7,7 @@ package Business;
 
 /**
  *
- * @author admin
+ * @author Siddhant
  */
 public class Business {
     private SupplierDirectory supplierDirectory;

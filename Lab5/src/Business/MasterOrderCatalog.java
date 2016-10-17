@@ -9,15 +9,14 @@ import java.util.ArrayList;
 
 /**
  *
- * @author admin
+ * @author Siddhant
  */
 public class MasterOrderCatalog {
-    
+
     private ArrayList<Order> orderCatalog;
 
     public MasterOrderCatalog() {
-    orderCatalog=new ArrayList<Order>();
-    
+        orderCatalog = new ArrayList<Order>();
     }
 
     public ArrayList<Order> getOrderCatalog() {
@@ -27,20 +26,14 @@ public class MasterOrderCatalog {
     public void setOrderCatalog(ArrayList<Order> orderCatalog) {
         this.orderCatalog = orderCatalog;
     }
-    
-    
-    public Order addOrder(Order o)
-    {
-        
 
-    orderCatalog.add(o);
-    
-    return o;}
-    
-    public void removeOrder(Order o)
-    {
+    public Order addOrder(Order o) {
+        orderCatalog.add(o);
+        return o;
+    }
+
+    public void removeOrder(Order o) {
         orderCatalog.remove(0);
     }
-    
-    
+
 }
