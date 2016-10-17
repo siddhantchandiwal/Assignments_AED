@@ -325,13 +325,13 @@ layout.previous(userProcessContainer);
         int row = productTable.getSelectedRow();
         if(row<0){
             JOptionPane.showMessageDialog(null, "Pls select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
-        }
+        }else{
         Product p = (Product)productTable.getValueAt(row, 0);
         ViewProductDetailJPanel vpdjp = new ViewProductDetailJPanel(userProcessContainer, p);
         userProcessContainer.add("ViewProductDetailJPanel", vpdjp);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-
+        }
 
 
 
@@ -474,6 +474,7 @@ if(selectedRow<0)
 OrderItem oi=(OrderItem) orderTable.getValueAt(selectedRow, 0);
 int currentAvail=oi.getProduct().getAvail();
 int oldQty=oi.getQuantity();
+try{
 int newQty=Integer.parseInt(txtNewQuantity.getText()); // try catch
 if(newQty>(currentAvail + oldQty))
 {
@@ -493,12 +494,10 @@ else
     refreshOrderTable();
    // populateTable();
 }
-
-
-
-
-
-
+}
+catch(Exception e){
+    JOptionPane.showMessageDialog(this, "Please enter proper values");
+}
 
 // TODO add your handling code here:
         
@@ -539,16 +538,17 @@ populateTable();;
 
     private void btnViewOrderItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderItemActionPerformed
 
-           int row = orderTable.getSelectedRow();
+         
+        int row = orderTable.getSelectedRow();
         if(row<0){
             JOptionPane.showMessageDialog(null, "Pls select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
-        }
+        }else{
         OrderItem oi = (OrderItem)orderTable.getValueAt(row, 0);
         ViewOrderItemDetailJPanel vpdjp = new ViewOrderItemDetailJPanel(userProcessContainer, oi);
         userProcessContainer.add("ViewOrderItemDetailJPanel", vpdjp);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-        
+        }
         
         
         
