@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Business;
+
 import java.util.ArrayList;
 
 /**
@@ -32,7 +33,7 @@ public class UserAccountDirectory {
         return e;
     }
 
-    public void deleteUserAccount( UserAccount e) {
+    public void deleteUserAccount(UserAccount e) {
         userAccountDirectory.remove(e);
     }
 
