@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab5/src/UserInterface/AdminstrativeRole/ManageSuppliers.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab5/src/UserInterface/AdminstrativeRole/AddSupplier.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab5/src/Business/Supplier.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab5/src/Business/MasterOrderCatalog.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab5/src/Business/ProductCatalog.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab5/src/Business/Order.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab5/src/Business/Business.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab5/src/UserInterface/AdminstrativeRole/AdminWorkAreaJPanel.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab5/src/Business/Product.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab5/src/Business/SupplierDirectory.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab5/src/Business/OrderItem.java</file>
+            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab5/src/UserInterface/MainJFrame.java</file>
+        </group>
     </open-files>
 </project-private>

@@ -275,6 +275,7 @@ public class AddAccountJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_rbtnActiveActionPerformed
 
+    
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
          upc.remove(this);
