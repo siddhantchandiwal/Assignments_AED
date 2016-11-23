@@ -2,34 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/WorkQueue/WorkQueue.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/Role/AdminRole.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/UserInterface/AdministrativeRole/NewJPanel.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/Organization/DoctorOrganization.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/Role/Role.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/WorkQueue/LabTestWorkRequest.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/WorkQueue/WorkRequest.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/UserInterface/AdministrativeRole/ManageOrganizationJPanel.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/Employee/Employee.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/Role/LabAssistantRole.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/ConfigureABusiness.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/Organization/Organization.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/Business.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/Organization/OrganizationDirectory.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/UserInterface/LabAssistantRole/ProcessWorkRequestJPanel.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/Role/DoctorRole.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/Organization/LabOrganization.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/Employee/EmployeeDirectory.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/UserInterface/DoctorRole/RequestLabTestJPanel.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/UserAccount/UserAccount.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/UserInterface/DoctorRole/DoctorWorkAreaJPanel.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/UserAccount/UserAccountDirectory.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/UserInterface/AdministrativeRole/AdminWorkAreaJPanel.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/Business/Organization/AdminOrganization.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/UserInterface/AdministrativeRole/ManageUserAccountJPanel.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/UserInterface/AdministrativeRole/ManageEmployeeJPanel.java</file>
-            <file>file:/E:/Fall%202016/AED/AED_Lab/chandiwal_siddhant_001286480/Lab7/src/UserInterface/LabAssistantRole/LabAssistantWorkAreaJPanel.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
